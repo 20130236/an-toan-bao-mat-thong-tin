@@ -10,27 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6389381a-4df7-4693-b13c-4e92e2d4aded" name="Changes" comment="commit lại và fix trang chi tiết sp">
-      <change afterPath="$PROJECT_DIR$/.idea/HappyHome.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.0.2/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0.2/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.0.2/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0.2/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.0.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0.2/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.0.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0.2/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.0.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0.2/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.0.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0.2/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.0.2/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/do-an-cuoi-ky.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_6_2023_11_49_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_6_2023_11_49_AM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/filter/Authorization.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/filter/Authorization.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/happyhome-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/happyhome-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/UserAPI.class.uniqueId0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/UserDAO.class.uniqueId1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/UserService.class.uniqueId2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Log.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/user-data.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/user-data.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/API_LOGISTIC/GetFee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/API_LOGISTIC/GetFee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/db.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/service/API_LOGISTIC/GetFee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/API_LOGISTIC/GetFee.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,28 +99,32 @@
   &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="2K8PPlScjwDkiL8rSid0tOCjWmb" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dat-clone-gopcode5&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Lesson/an toan bao mat/cuoi-ky&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/datng/Downloads/github-copilot-intellij-1.4.2.3864.zip",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "File.Encoding",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\HappyHome_fixapi\src\main\webapp\views\admin" />
@@ -150,13 +144,13 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.HappyHomevps [build]">
-    <configuration name="DataTable" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="controller.admin.datatable.DataTable" />
-      <module name="happyhome" />
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.75">
+    <configuration name="DBConnection" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dao.DBConnection" />
+      <module name="happyhome.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="controller.admin.datatable.*" />
+          <option name="PATTERN" value="dao.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -166,7 +160,7 @@
     </configuration>
     <configuration name="GetFee" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="service.API_LOGISTIC.GetFee" />
-      <module name="happyhome" />
+      <module name="happyhome.main" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="service.API_LOGISTIC.*" />
@@ -234,17 +228,17 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Tomcat 8.5.34" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.34" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="Tomcat 9.0.75" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.75" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="happyhome:war">
+        <artifact name="Gradle : org.example : happyhome-1.0-SNAPSHOT.war (exploded)">
           <settings>
-            <option name="CONTEXT_PATH" value="/" />
+            <option name="CONTEXT_PATH" value="/lab" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="e6508265-88eb-455d-8c7d-d1d4fdbcac5e" />
+        <option name="BASE_DIRECTORY_NAME" value="eaa680f0-8d8a-45fb-a711-357f925b2d72" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -252,7 +246,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="51881" />
+        <option name="DEBUG_PORT" value="53408" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -317,24 +311,24 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="happyhome:war" />
+          <artifact name="Gradle : org.example : happyhome-1.0-SNAPSHOT.war (exploded)" />
         </option>
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.DataTable" />
+      <item itemvalue="Application.DBConnection" />
       <item itemvalue="Application.GetFee" />
       <item itemvalue="Application.RemainingProService" />
       <item itemvalue="Gradle.HappyHomevps [build]" />
       <item itemvalue="Gradle.HappyHomevps [docker_deploy]" />
-      <item itemvalue="Tomcat Server.Tomcat 8.5.34" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.75" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DBConnection" />
         <item itemvalue="Gradle.HappyHomevps [build]" />
-        <item itemvalue="Gradle.HappyHomevps [docker_deploy]" />
-        <item itemvalue="Application.DataTable" />
         <item itemvalue="Application.GetFee" />
+        <item itemvalue="Gradle.HappyHomevps [docker_deploy]" />
         <item itemvalue="Application.RemainingProService" />
       </list>
     </recent_temporary>
@@ -483,6 +477,9 @@
       <workItem from="1693489965558" duration="968000" />
       <workItem from="1699881560388" duration="1264000" />
       <workItem from="1699882832618" duration="89000" />
+      <workItem from="1700712504376" duration="369000" />
+      <workItem from="1700712911677" duration="366000" />
+      <workItem from="1700713449089" duration="689000" />
     </task>
     <task id="LOCAL-00001" summary="fix tính giá vận chuyển">
       <created>1686505220241</created>
