@@ -10,27 +10,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6389381a-4df7-4693-b13c-4e92e2d4aded" name="Changes" comment="commit lại và fix trang chi tiết sp">
-      <change afterPath="$PROJECT_DIR$/.idea/HappyHome.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.0.2/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0.2/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.0.2/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0.2/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.0.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0.2/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.0.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0.2/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.0.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0.2/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.0.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0.2/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.0.2/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/digitalsignature/ImageDownloadServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/digitalsignature/MD5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/digitalsignature/RSA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/digitalsignature/SignatureDownloadController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/digitalsignature/SignatureImageCreator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Template/web/img/other/cloud-upload.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Template/web/js/aes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Template/web/js/hmac-md5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Template/web/js/hmac-sha256.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Template/web/js/js-md5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Template/web/js/jsencrypt.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Template/web/js/md5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Template/web/js/sha256.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/fonts/Arial.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/fonts/Courier New.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/fonts/Helvetica.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/fonts/Times New Roman.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/fonts/Verdana.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/signature/icon.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/web/download-signature.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_6_2023_11_49_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_6_2023_11_49_AM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/filter/Authorization.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/filter/Authorization.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/happyhome-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/happyhome-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/UserAPI.class.uniqueId0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/UserDAO.class.uniqueId1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/UserService.class.uniqueId2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Log.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/user-data.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/user-data.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/web/API/DistrictServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/web/API/DistrictServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/web/API/FeeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/web/API/FeeServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/web/API/WardServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/web/API/WardServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/web/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/web/AccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/web/CartDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/web/CartDetail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/web/Order/AddOrderSuccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/web/Order/AddOrderSuccess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/web/ProductCheckOutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/web/ProductCheckOutController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/web/Success.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/web/Success.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/UserModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/common/web/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/common/web/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/common/web/js.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/common/web/js.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/product-checkout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/product-checkout.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/user-acount.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/user-acount.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,10 +79,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Interface" />
         <option value="Jsp File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -73,7 +92,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -121,7 +140,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;dat-clone-gopcode5&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Lesson/an toan bao mat/cuoi-ky&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Lesson/an toan bao mat/cuoi-ky-v2/an-toan-bao-mat-thong-tin/src/main/webapp/Template/web/js&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -133,8 +152,14 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\HappyHome_fixapi\src\main\webapp\views\admin" />
-      <recent name="E:\LapTrinhWeb\cuoi ky\HappyHome\src\main\webapp\Template\web\libs\jquery" />
+      <recent name="E:\Lesson\an toan bao mat\cuoi-ky-v2\an-toan-bao-mat-thong-tin\src\main\webapp\Template\web\js" />
+      <recent name="E:\Lesson\an toan bao mat\cuoi-ky-v2\an-toan-bao-mat-thong-tin\src\main\webapp\Template\web\img\other" />
+      <recent name="E:\Lesson\an toan bao mat\cuoi-ky-v2\an-toan-bao-mat-thong-tin\src\main\java\fonts" />
+      <recent name="E:\Lesson\an toan bao mat\cuoi-ky-v2\an-toan-bao-mat-thong-tin\src\main\java" />
+      <recent name="E:\Lesson\an toan bao mat\cuoi-ky-v2\an-toan-bao-mat-thong-tin\src\main\webapp" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Lesson\an toan bao mat\cuoi-ky-v2\an-toan-bao-mat-thong-tin\src\main\webapp\Template\web\js" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -150,7 +175,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.HappyHomevps [build]">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.34">
     <configuration name="DataTable" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="controller.admin.datatable.DataTable" />
       <module name="happyhome" />
@@ -164,12 +189,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GetFee" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="service.API_LOGISTIC.GetFee" />
-      <module name="happyhome" />
+    <configuration name="SignatureImageCreator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="digitalsignature.SignatureImageCreator" />
+      <module name="happyhome.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="service.API_LOGISTIC.*" />
+          <option name="PATTERN" value="digitalsignature.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -177,12 +202,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RemainingProService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="service.RemainingProService" />
-      <module name="happyhome" />
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="digitalsignature.Test" />
+      <module name="happyhome.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="service.*" />
+          <option name="PATTERN" value="digitalsignature.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -195,7 +220,7 @@
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -217,7 +242,7 @@
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -234,10 +259,32 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="an-toan-bao-mat-thong-tin [build]" type="GradleRunConfiguration" factoryName="Gradle" nameIsGenerated="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="Tomcat 8.5.34" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.34" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="happyhome:war">
+        <artifact name="Gradle : org.example : happyhome-1.0-SNAPSHOT.war">
           <settings>
             <option name="CONTEXT_PATH" value="/" />
           </settings>
@@ -317,25 +364,26 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="happyhome:war" />
+          <artifact name="Gradle : org.example : happyhome-1.0-SNAPSHOT.war" />
         </option>
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Test" />
+      <item itemvalue="Application.SignatureImageCreator" />
       <item itemvalue="Application.DataTable" />
-      <item itemvalue="Application.GetFee" />
-      <item itemvalue="Application.RemainingProService" />
+      <item itemvalue="Gradle.an-toan-bao-mat-thong-tin [build]" />
       <item itemvalue="Gradle.HappyHomevps [build]" />
       <item itemvalue="Gradle.HappyHomevps [docker_deploy]" />
       <item itemvalue="Tomcat Server.Tomcat 8.5.34" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test" />
         <item itemvalue="Gradle.HappyHomevps [build]" />
+        <item itemvalue="Application.SignatureImageCreator" />
         <item itemvalue="Gradle.HappyHomevps [docker_deploy]" />
         <item itemvalue="Application.DataTable" />
-        <item itemvalue="Application.GetFee" />
-        <item itemvalue="Application.RemainingProService" />
       </list>
     </recent_temporary>
   </component>
@@ -483,6 +531,10 @@
       <workItem from="1693489965558" duration="968000" />
       <workItem from="1699881560388" duration="1264000" />
       <workItem from="1699882832618" duration="89000" />
+      <workItem from="1700617953758" duration="27707000" />
+      <workItem from="1700659389448" duration="11384000" />
+      <workItem from="1700700897746" duration="11541000" />
+      <workItem from="1700722174085" duration="8285000" />
     </task>
     <task id="LOCAL-00001" summary="fix tính giá vận chuyển">
       <created>1686505220241</created>
@@ -591,6 +643,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/controller/admin/ImportProductController.java</url>
           <line>48</line>
           <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controller/web/Order/AddOrderSuccess.java</url>
+          <line>166</line>
+          <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

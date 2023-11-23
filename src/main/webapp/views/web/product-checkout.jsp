@@ -1,5 +1,7 @@
 <%@ page import="model.UserModel" %>
-<% UserModel user = (UserModel) request.getAttribute("user"); %>
+<% UserModel user = (UserModel) request.getAttribute("user");
+String message = request.getAttribute("message")==null?null:request.getAttribute("message").toString();
+%>
 <%@ page import="model.Product" %>
 <%@ page import="java.util.Collection" %>
 <%@ page import="model.ProductInCart" %>
@@ -71,6 +73,13 @@
             color: #fff;
         }
 
+        textarea
+        {
+            resize: none;
+            overflow-y: scroll;
+            height:90px;
+        }
+
     </style>
 
 </head>
@@ -124,6 +133,9 @@
                                                     </a>
                                                 </li>
                                             </ul>
+                                            <% if(message != null){%>
+                                            <div style="color:#dc3545;"><%=message%></div>
+                                            <%}%>
                                             <div class="tab-content">
                                                 <div class="tab-pane fade in active show" id="checkout-guest-form"
                                                      role="tabpanel">
@@ -250,18 +262,60 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="clearfix">
-                                                    <div class="row">
-                                                        <button type="submit"
-                                                                class="continue btn btn-primary pull-xs-right"
-                                                                style="margin-top: 15px;margin-bottom: 25px">Hoàn tất
-                                                            đặt
-                                                            hàng
-                                                        </button>
+
+                                                <input id="hashText" type="hidden" value="" name="hashText">
+
+                                            </div>
+                                        </div>
+                                        <div class="checkout-personal-step">
+                                            <h3 class="step-title h3" >
+                                                <span class="step-number">4</span>XÁC THỰC
+                                            </h3>
+                                        </div>
+                                        <div class="content step-active ">
+                                            <ul class="nav nav-inline">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" data-toggle="tab"
+                                                       href="#checkout-guest-form">
+                                                        XÁC THỰC ĐƠN HÀNG
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div class="tab-content">
+                                                <div class="tab-pane fade in active show" role="tabpanel">
+                                                    <div>
+                                                        <div class="form-group row">
+                                                            <textarea class="form-control" name="privateKey" id="privateKey"
+                                                                      placeholder="private key"
+                                                                      rows="3"></textarea>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="form-group" style="">
+                                                <label>Tải chữ ký lên</label>
+                                                <div class="input-group">
+                                                    <div class="custom-file">
+                                                        <input type="file"  class="custom-file-input" name="fileName" id="fileName"  multiple min="1" max="1" style="display:none;" onchange="handleFileSelect(event)"> <br>
+                                                        <input id="id_pro" type="hidden" name="id_pro" value="">
+                                                    </div>
+                                                </div>
+                                                <div style="position: relative;">
+                                                    <img id="signature-image" src="<c:url value="/Template/web/img/other/cloud-upload.jpg"/>" alt="" style="width: 400px;height:160px;border: 1px solid rgba(0,0,0,.125);position: relative">
+                                                </div>
+                                            </div>
                                         </div>
+                                        <div class="clearfix">
+                                            <div class="row">
+                                                <button type="submit"
+                                                        class="continue btn btn-primary pull-xs-right"
+                                                        style="margin-top: 15px;margin-bottom: 25px">Hoàn tất
+                                                    đặt
+                                                    hàng
+                                                </button>
+                                            </div>
+                                        </div>
+
                                     </div>
                                     <div class="cart-grid-right col-xs-12 col-lg-4">
                                         <div class="cart-summary">
@@ -408,8 +462,9 @@
         });
         // Lưu giá trị ban đầu của cartTotal vào biến tạm thời
         var initialCartTotal = parseInt($('.cart-total .value').text().replace(/[^\d]/g, ''));
+
         // Lấy giá trị của select box Xã và gửi dữ liệu lên server
-        $('#ward').change(function () {
+      /*  $('#ward').change(function () {
             ward = $(this).val();
             if (province && district && ward && province.trim() !== '' && district.trim() !== '' && ward.trim() !== '') {
                 $.ajax({
@@ -439,7 +494,20 @@
                     }
                 });
             }
-        });
+        });*/
+        // Hiển thị giá trị trong span
+        var shippingFee = 20000;
+        // Tính toán newCartTotal bằng cách cộng giá trị mới của cartTotal với shippingFee
+        var newCartTotal = initialCartTotal + shippingFee;
+
+        // Set giá trị cho input
+        $('#shipping-fee-input').val(shippingFee);
+
+        // Hiển thị giá trị trong span
+        $('#cart-subtotal-shipping .value').text(shippingFee.toLocaleString('vi-VN') + '₫');
+
+        // Hiển thị giá trị mới của tổng
+        $('.cart-total .value').text(newCartTotal.toLocaleString('vi-VN') + ' ₫ (bao gồm thuế.)');
     });
 </script>
 <script>
@@ -462,6 +530,37 @@
             $('#ward-value').val($(this).find("option:selected").text());
         });
     });
+
+    function displayImage(input) {
+        let fileReader = new FileReader();
+        fileReader.onload = function (fileLoaderEvent) {
+            let srcData = fileLoaderEvent.target.result;
+            $("#signature-image").attr("src",srcData);
+        }
+        fileReader.readAsDataURL(input.files[0]);
+    }
+
+    $("#fileName").change(function(){
+        displayImage(this);
+    });
+
+    $("#signature-image").click(function() {
+        $("input[id='fileName']").click();
+    });
+
+    function handleFileSelect(event) {
+        var file = event.target.files[0];
+        var reader = new FileReader();
+
+        reader.onload = function(event) {
+            var fileContent = event.target.result;
+            // Perform file hashing
+            var hash = md5(fileContent);
+            $("#hashText").val(hash);
+            console.log("hashResult" + hash)
+        };
+        reader.readAsArrayBuffer(file);
+    }
 
 </script>
 

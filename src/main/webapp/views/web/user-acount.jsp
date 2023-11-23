@@ -162,6 +162,17 @@
                                         </div>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <th class="first_item">Chữ ký điện tử:</th>
+                                    <td>
+                                        <div class="form-group">
+                                            <div>
+                                                <input class="form-control" id="signature" name="signature" type="text" value="<%=user.getSignature()==null?"":user.getSignature()%>">
+                                                <label id="signature-error" class="error" for="signature" style="display: inline;"></label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>

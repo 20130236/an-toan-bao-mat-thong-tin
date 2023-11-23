@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.BufferedReader;
 import java.io.IOException;
 
-@WebServlet(name = "FeeServlet", urlPatterns = "/FeeServlet")
+@WebServlet(name = "FeeServlet", urlPatterns = "/lab/FeeServlet")
 public class FeeServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String provinceId = request.getParameter("province");

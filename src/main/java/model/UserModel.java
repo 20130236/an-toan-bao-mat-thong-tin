@@ -24,6 +24,7 @@ public class UserModel extends Item {
 
     String roleTitle;
 
+    String signature;
     public UserModel(int id, String userName, String passWord, int role, String fullName, String phoneNum, String email, String address, int enable,String gender ) {
         this.id = id;
         this.userName = userName;
@@ -205,5 +206,13 @@ public class UserModel extends Item {
                 String.valueOf(num_log_in),
                 roleTitle,
         };
+    }
+
+    public String getSignature() {
+        return signature;
+    }
+
+    public void setSignature(String signature) {
+        this.signature = signature;
     }
 }

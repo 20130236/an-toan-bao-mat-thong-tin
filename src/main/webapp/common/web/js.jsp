@@ -24,3 +24,6 @@
 <script src="<c:url value="/Template/web/js/theme.js"/>"></script>
 <script src="<c:url value="/Template/web/libs/jquery/jquery.twbsPagination.js"/>"></script>
 
+<script src="<c:url value="/Template/web/js/js-md5.js"/>"></script>
+
+

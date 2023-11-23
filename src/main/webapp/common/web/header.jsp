@@ -250,8 +250,8 @@
                                         <tr>
                                             <td colspan="3" class="d-flex justify-content-center">
                                                 <div class="cart-button">
-                                                    <a href="<c:url value="/cart_detail"/>" title="View Cart">Xem giỏ hàng</a>
-                                                    <a href="<c:url value="/checkout"/>" title="Checkout">Thanh toán</a>
+                                                    <a href="<c:url value="/lab/cart_detail"/>" title="View Cart">Xem giỏ hàng</a>
+                                                    <a href="<c:url value="/lab/checkout"/>" title="Checkout">Thanh toán</a>
                                                 </div>
                                             </td>
                                         </tr>
