@@ -53,19 +53,19 @@ public class GetFee {
     }
 
     public static void main(String[] args) throws IOException {
-        String token = Login_API.login();
-        try {
-            String from_district_id = "2264";
-            String from_ward_id = "90816";
-            String to_district_id = "2270";
-            String to_ward_id = "231013";
-
-            Double Fee = calculateShippingFee(token, from_district_id, from_ward_id, to_district_id, to_ward_id);
-            System.out.println("Phí vận chuyển: " + Fee);
-        } catch (IOException e) {
-            System.err.println("Error calculating fee: " + e.getMessage());
-        }
-
+//        String token = Login_API.login();
+//        try {
+//            String from_district_id = "2264";
+//            String from_ward_id = "90816";
+//            String to_district_id = "2270";
+//            String to_ward_id = "231013";
+//
+//            Double Fee = calculateShippingFee(token, from_district_id, from_ward_id, to_district_id, to_ward_id);
+//            System.out.println("Phí vận chuyển: " + Fee);
+//        } catch (IOException e) {
+//            System.err.println("Error calculating fee: " + e.getMessage());
+//        }
+        System.out.println("Phí vận chuyển:");
     }
 
 }

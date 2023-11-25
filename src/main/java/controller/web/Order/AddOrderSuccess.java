@@ -65,15 +65,20 @@ public class AddOrderSuccess extends HttpServlet {
         String wardValue = request.getParameter("ward-value");
         String valAdd = wardValue +", "+ districtValue+", "+provinceValue;
 
+        StringBuilder result = new StringBuilder();
         try {
             Order order = new Order(orderid, user.getUserName(), totalAmount, fee, orderDate, paymentMethod, valId, 0, valAdd, message, phone);
             orderService.addOder(order);
-
             order.setOder_id(orderid);
+            //
+
+            result.append(order.toString());
 
             for (ProductInCart product : cart.getListProductInCart()) {
                 Order_detail orderDetail = new Order_detail(0, order, product.getProduct().getProduct_id(), product.getProduct().getPrice_sell(), product.getQuantity(), 0, (product.getProduct().getPrice_sell() * product.getQuantity()));
                 orderService.addOrderDetail(orderDetail);
+
+                result.append(orderDetail.toString());
             }
 
             session.removeAttribute("cart");
@@ -82,6 +87,12 @@ public class AddOrderSuccess extends HttpServlet {
             response.sendRedirect(request.getContextPath() + "/home");
             return;
         }
+        //tao hoa don
+        String data = result.toString();
+        String hash = service.CheckOrders.CheckOrder.check(data);
+        System.out.println(data);
+        System.out.println(hash);
+
         response.sendRedirect("/lab/success");
 //        RequestDispatcher rd = request.getRequestDispatcher("/views/web/order-success.jsp");
 //        rd.forward(request, response);
