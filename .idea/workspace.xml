@@ -9,47 +9,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6389381a-4df7-4693-b13c-4e92e2d4aded" name="Changes" comment="commit lại và fix trang chi tiết sp">
-      <change afterPath="$PROJECT_DIR$/src/main/java/digitalsignature/ImageDownloadServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/digitalsignature/MD5.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/digitalsignature/RSA.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/digitalsignature/SignatureDownloadController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/digitalsignature/SignatureImageCreator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/Template/web/img/other/cloud-upload.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/Template/web/js/aes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/Template/web/js/hmac-md5.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/Template/web/js/hmac-sha256.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/Template/web/js/js-md5.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/Template/web/js/jsencrypt.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/Template/web/js/md5.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/Template/web/js/sha256.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/fonts/Arial.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/fonts/Courier New.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/fonts/Helvetica.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/fonts/Times New Roman.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/fonts/Verdana.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/signature/icon.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/web/download-signature.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_6_2023_11_49_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_6_2023_11_49_AM__Changes_.xml" afterDir="false" />
+    <list default="true" id="6389381a-4df7-4693-b13c-4e92e2d4aded" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/web/KeyUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/digitalsignature/API/KeyAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/digitalsignature/API/KeyModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/digitalsignature/DES.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/web/user-key.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/web/API/DistrictServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/web/API/DistrictServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/web/API/FeeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/web/API/FeeServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/web/API/WardServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/web/API/WardServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/web/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/web/AccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/web/CartDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/web/CartDetail.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/web/Order/AddOrderSuccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/web/Order/AddOrderSuccess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/web/ProductCheckOutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/web/ProductCheckOutController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/web/Success.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/web/Success.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/UserModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/digitalsignature/RSA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/digitalsignature/RSA.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/common/web/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/common/web/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/common/web/js.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/common/web/js.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/product-checkout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/product-checkout.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/user-acount.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/user-acount.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,9 +52,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="HTML File" />
         <option value="Jsp File" />
         <option value="Class" />
-        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -534,7 +506,9 @@
       <workItem from="1700617953758" duration="27707000" />
       <workItem from="1700659389448" duration="11384000" />
       <workItem from="1700700897746" duration="11541000" />
-      <workItem from="1700722174085" duration="8285000" />
+      <workItem from="1700722174085" duration="8651000" />
+      <workItem from="1700788382460" duration="32000" />
+      <workItem from="1700880215299" duration="22371000" />
     </task>
     <task id="LOCAL-00001" summary="fix tính giá vận chuyển">
       <created>1686505220241</created>
@@ -578,7 +552,15 @@
       <option name="project" value="LOCAL" />
       <updated>1686674062690</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="user tạo chữ ký của mình thông qua hệ thống, hệ thống sẽ gửi chữ ký qua email user, user sử dụng chữ ký của mình và private key để xác thực đơn hàng khi thanh toán">
+      <option name="closed" value="true" />
+      <created>1700732189823</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1700732189823</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -614,7 +596,8 @@
     <MESSAGE value="fix @WebFilter(filterName = &quot;Utf8Filter&quot;, urlPatterns = {&quot;/*&quot;}) add urlPatterns = {&quot;/*&quot;} for all page" />
     <MESSAGE value="fix định dạng tiền đ + fix phân trang" />
     <MESSAGE value="commit lại và fix trang chi tiết sp" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit lại và fix trang chi tiết sp" />
+    <MESSAGE value="user tạo chữ ký của mình thông qua hệ thống, hệ thống sẽ gửi chữ ký qua email user, user sử dụng chữ ký của mình và private key để xác thực đơn hàng khi thanh toán" />
+    <option name="LAST_COMMIT_MESSAGE" value="user tạo chữ ký của mình thông qua hệ thống, hệ thống sẽ gửi chữ ký qua email user, user sử dụng chữ ký của mình và private key để xác thực đơn hàng khi thanh toán" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -645,9 +628,14 @@
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/digitalsignature/API/KeyAPI.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/controller/web/Order/AddOrderSuccess.java</url>
-          <line>166</line>
-          <option name="timeStamp" value="29" />
+          <line>99</line>
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

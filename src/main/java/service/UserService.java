@@ -2,6 +2,7 @@ package service;
 
 import dao.RoleDAO;
 import dao.UserDAO;
+import digitalsignature.API.KeyModel;
 import digitalsignature.SignatureImageCreator;
 import model.UserModel;
 
@@ -201,6 +202,11 @@ public class UserService {
 
     public static String getSignature(int uid) {
         return UserDAO.getSignature(uid);
+    }
+
+    public static void createKey(KeyModel keyModel, int id) {
+
+        UserDAO.createKey(keyModel,id);
     }
 }
 

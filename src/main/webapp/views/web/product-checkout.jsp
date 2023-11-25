@@ -115,7 +115,8 @@ String message = request.getAttribute("message")==null?null:request.getAttribute
             <div class="container">
                 <div class="row">
                     <div id="content-wrapper" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 onecol">
-                        <form action="<c:url value="/add_order_success"/>" method="POST" name="order" id="form_order">
+                        <form action="<c:url value="/add_order_success"/>" method="POST" name="order" id="form_order" enctype="multipart/form-data"
+                        >
                             <div id="main">
                                 <div class="cart-grid row">
                                     <div class="col-md-8 check-info">
@@ -285,24 +286,30 @@ String message = request.getAttribute("message")==null?null:request.getAttribute
                                                 <div class="tab-pane fade in active show" role="tabpanel">
                                                     <div>
                                                         <div class="form-group row">
-                                                            <textarea class="form-control" name="privateKey" id="privateKey"
-                                                                      placeholder="private key"
-                                                                      rows="3"></textarea>
+                                                            <div class="form-group" style="">
+                                                                <label>Tải khóa lên</label>
+                                                                <div class="input-group">
+                                                                    <div class="custom-file">
+                                                                        <input type="file"  class="custom-file-input" name="privateKeyFile" id="privateKeyFile" onchange="displayPrivateKeyFile(this)"> <br>
+                                                                        <label id="privateKeyFileName" class="custom-file-label">Chọn file</label>
+                                                                    </div>
+                                                                </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="form-group" style="">
-                                                <label>Tải chữ ký lên</label>
-                                                <div class="input-group">
-                                                    <div class="custom-file">
-                                                        <input type="file"  class="custom-file-input" name="fileName" id="fileName"  multiple min="1" max="1" style="display:none;" onchange="handleFileSelect(event)"> <br>
-                                                        <input id="id_pro" type="hidden" name="id_pro" value="">
+                                                    <div class="form-group row">
+                                                        <div class="form-group" style="">
+                                                            <label>Tải chữ ký lên</label>
+                                                            <div class="input-group">
+                                                                <div class="custom-file">
+                                                                    <input type="file"  class="custom-file-input" name="fileName" id="fileName"  multiple min="1" max="1" style="display:none;" onchange="handleFileSelect(event)">
+                                                                </div>
+                                                            </div>
+                                                            <div style="position: relative;">
+                                                                <img id="signature-image" src="<c:url value="/Template/web/img/other/cloud-upload.jpg"/>" alt="" style="width: 400px;height:160px;border: 1px solid rgba(0,0,0,.125);position: relative">
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div style="position: relative;">
-                                                    <img id="signature-image" src="<c:url value="/Template/web/img/other/cloud-upload.jpg"/>" alt="" style="width: 400px;height:160px;border: 1px solid rgba(0,0,0,.125);position: relative">
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="clearfix">
@@ -364,6 +371,7 @@ String message = request.getAttribute("message")==null?null:request.getAttribute
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                             </div>
                         </form>
                     </div>
@@ -560,6 +568,11 @@ String message = request.getAttribute("message")==null?null:request.getAttribute
             console.log("hashResult" + hash)
         };
         reader.readAsArrayBuffer(file);
+    }
+
+    function displayPrivateKeyFile(input){
+        let textLabel = document.getElementById("privateKeyFileName");
+        textLabel.textContent = input.files[0].name;
     }
 
 </script>

@@ -1,5 +1,6 @@
 package dao;
 
+import digitalsignature.API.KeyModel;
 import model.UserModel;
 
 import java.sql.PreparedStatement;
@@ -580,6 +581,63 @@ public class UserDAO {
             rs = pst.executeQuery();
             while(rs.next()){
                 result = rs.getString("signature");
+            }
+            return result;
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static void createKey(KeyModel keyModel, int id) {
+        if(selectKey(id) == null){
+            insertKey(keyModel,id);
+        } else{
+            updateKey(keyModel,id);
+        }
+    }
+
+    private static void insertKey(KeyModel keyModel,int id){
+        PreparedStatement pst;
+        String sql;
+        try {
+            sql = "insert into `key` (user_id,public_key,status) values(?,?,?,?)";
+            pst = DBConnection.getConnection().prepareStatement(sql);
+            pst.setInt(1, id);
+            pst.setString(2, keyModel.getPublicKey());
+            pst.setInt(3, 1);;
+            pst.executeUpdate();
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void updateKey(KeyModel keyModel,int id){
+        PreparedStatement pst;
+        String sql;
+        try {
+            sql = "update `key` set public_key = ? where user_id = ?";
+            pst = DBConnection.getConnection().prepareStatement(sql);
+            pst.setString(1,keyModel.getPublicKey());
+            pst.setInt(2,id);
+            pst.executeUpdate();
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static String selectKey(int id){
+        PreparedStatement pst;
+        String sql;
+        ResultSet rs;
+        String result = null;
+        try {
+            sql = "select public_key from `key` where user_id = ? and status = 1";
+            pst = DBConnection.getConnection().prepareStatement(sql);
+            pst.setInt(1,id);
+            rs = pst.executeQuery();
+            while(rs.next()){
+                result = rs.getString("public_key");
             }
             return result;
         } catch (ClassNotFoundException | SQLException e) {

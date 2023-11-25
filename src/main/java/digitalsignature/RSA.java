@@ -21,9 +21,11 @@ public class RSA {
     private PrivateKey privateKey;
     private KeyPair keyPair;
 
+    private Integer keySize = 1024;
+
     public void createKey() throws NoSuchAlgorithmException {
         KeyPairGenerator keyGenerator = KeyPairGenerator.getInstance(RSA);
-        keyGenerator.initialize(1024);
+        keyGenerator.initialize(keySize);
         keyPair = keyGenerator.genKeyPair();
         privateKey = keyPair.getPrivate();
         publicKey = keyPair.getPublic();
@@ -155,6 +157,10 @@ public class RSA {
         PrivateKey priv = fact.generatePrivate(keySpec);
         Arrays.fill(clear, (byte) 0);
         this.privateKey = priv;
+    }
+
+    public void setKeySize(Integer keySize){
+        this.keySize = keySize;
     }
 }
 

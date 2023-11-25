@@ -1,9 +1,14 @@
 package controller.web.Order;
 
 import beans.Cart;
+import dao.ProductSearchDAO;
 import digitalsignature.MD5;
 import digitalsignature.RSA;
 import model.*;
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.FileUploadException;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import service.*;
 import service.API_LOGISTIC.Login_API;
 import service.API_LOGISTIC.Province;
@@ -17,11 +22,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
 import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
 import java.security.DigestInputStream;
 import java.security.MessageDigest;
 import java.sql.Date;
@@ -32,7 +35,15 @@ import java.util.Objects;
 @WebServlet(name = "AddOrderSuccess", value = "/add_order_success")
 public class AddOrderSuccess extends HttpServlet {
 
-     RSA rsa = new RSA();
+    RSA rsa = new RSA();
+    private ServletFileUpload uploader = null;
+
+    public void init() throws ServletException{
+        DiskFileItemFactory fileFactory = new DiskFileItemFactory();
+        File filesDir = (File) getServletContext().getAttribute("javax.servlet.context.tempdir");
+        fileFactory.setRepository(filesDir);
+        this.uploader = new ServletFileUpload(fileFactory);
+    }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -41,6 +52,8 @@ public class AddOrderSuccess extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         OrderService oderService = new OrderService();
         int orderid = oderService.getMaxMHD();
         response.setContentType("text/html;charset=UTF-8");
@@ -70,12 +83,12 @@ public class AddOrderSuccess extends HttpServlet {
         String provinceId = request.getParameter("province-id");
         String districtId = request.getParameter("district-id");
         String wardId = request.getParameter("ward-id");
-        String valId = provinceId+":"+districtId+":"+wardId;
+
         //
         String provinceValue = request.getParameter("province-value");
         String districtValue = request.getParameter("district-value");
         String wardValue = request.getParameter("ward-value");
-        String valAdd = wardValue +", "+ districtValue+", "+provinceValue;
+
 
         //API LOGISTIC
         Login_API login_api = new Login_API();
@@ -84,7 +97,46 @@ public class AddOrderSuccess extends HttpServlet {
 
         String publicKey = UserService.getPublicKey(user.getId());
         String hashText = request.getParameter("hashText");
-        String privateKey = request.getParameter("privateKey");
+        String privateKey = null;
+
+        try {
+            List<FileItem> fileItemsList = uploader.parseRequest(request);
+            for (FileItem fileItem : fileItemsList) {
+                String fieldName = fileItem.getFieldName();
+                System.out.println(fieldName);
+               if( fieldName.equals("phone")){
+                   phone = fileItem.getString("UTF-8");
+               } else if(fieldName.equals("paymentMethod")){
+                   paymentMethod = fileItem.getString("UTF-8");
+               } else if(fieldName.equals("address")){
+                   address = fileItem.getString("UTF-8");
+               } else if(fieldName.equals("message")){
+                   message = fileItem.getString("UTF-8");
+               } else if(fieldName.equals("province-id")){
+                   provinceId = fileItem.getString();
+               } else if(fieldName.equals("district-id")){
+                   districtId = fileItem.getString();
+               } else if(fieldName.equals("ward-id")){
+                   wardId = fileItem.getString();
+               } else if(fieldName.equals("province-value")){
+                   provinceValue = fileItem.getString();
+               } else if(fieldName.equals("district-value")){
+                   districtValue = fileItem.getString();
+               } else if(fieldName.equals("ward-value")){
+                   wardValue = fileItem.getString();
+               } else if(fieldName.equals("hashText")){
+                   hashText = fileItem.getString();
+               } else if(fieldName.equals("privateKeyFile")){
+                   privateKey = getPrivateKeyFromFile(fileItem);
+               }
+
+            }
+        } catch (FileUploadException e) {
+            throw new RuntimeException(e);
+        }
+
+        String valAdd = wardValue +", "+ districtValue+", "+provinceValue;
+        String valId = provinceId+":"+districtId+":"+wardId;
 
         String encryptText = null;
         try {
@@ -107,7 +159,6 @@ public class AddOrderSuccess extends HttpServlet {
 
         try {
             if(!checkSignature(encryptText,file,publicKey)){
-
                 PostService service = new PostService();
                 ProductService productService = new ProductService();
                 List<Post_Category> list = service.getListPostCategory();
@@ -186,5 +237,30 @@ public class AddOrderSuccess extends HttpServlet {
             System.out.println("wrong path");
         }
         return null;
+    }
+
+    private String getPrivateKeyFromFile(FileItem fileItem){
+        String privateKey = null;
+        try {
+                        //InputStream fileInputStream = fileItem.getInputStream();
+                        //BufferedReader reader = new BufferedReader(new InputStreamReader(fileInputStream));
+                        byte[] fileContent = fileItem.get();
+                        privateKey = new String(fileContent, StandardCharsets.UTF_8);
+                        privateKey = privateKey.replaceAll("\\n", "")
+                                .replaceAll("\\r", "")
+                                .replaceAll("\\s", "");
+                        System.out.println("privateKey" + privateKey);
+                    } catch (Exception ex) {
+                throw new RuntimeException(ex);
+        }
+        return privateKey;
+    }
+
+    private String getFileExtension(String fileName) {
+        int dotIndex = fileName.lastIndexOf('.');
+        if (dotIndex > 0 && dotIndex < fileName.length() - 1) {
+            return fileName.substring(dotIndex + 1).toLowerCase();
+        }
+        return "";
     }
 }

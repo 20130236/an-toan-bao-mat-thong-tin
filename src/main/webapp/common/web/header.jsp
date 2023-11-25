@@ -174,7 +174,7 @@
                                 <% } %>
                                 <% if(user != null) {%>
                                 <div>
-                                    <a class="check-out" href="<c:url value="/checkout"/>" rel="nofollow" title="Checkout">
+                                    <a class="check-out" href="<c:url value="/lab/checkout"/>" rel="nofollow" title="Checkout">
                                         <i class="fa fa-check" aria-hidden="true"></i>
                                         <span>Thanh toán</span>
                                     </a>
@@ -191,7 +191,12 @@
                                         <span>Danh sách yêu thích</span>
                                     </a>
                                 </div>
-
+                                <div class="link_wishlist">
+                                    <a href="<c:url value="/user_key"/>" title="Private Key">
+                                        <i class="fa fa-key"></i>
+                                        <span>Tạo private key</span>
+                                    </a>
+                                </div>
 
                                 <div class="link_wishlist">
                                     <a href="<c:url value="/logout"></c:url>" title="Logout">
