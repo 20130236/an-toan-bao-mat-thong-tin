@@ -23,31 +23,31 @@ public class KeyAPI extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-            BufferedReader reader = new BufferedReader(new InputStreamReader(request.getInputStream()));
-            String jsonString = reader.readLine();
-            JSONObject obj = new JSONObject(jsonString);
-            String pageName = obj.getString("keySize");
-
-            // Extract the value of the 'keySize' parameter
-            Integer keySize = obj.getInt("keySize");
-            UserModel userModel = (UserModel) request.getSession().getAttribute("user");
-            try {
-                rsa.setKeySize(keySize);
-                rsa.createKey();
-            } catch (NoSuchAlgorithmException e) {
-                throw new RuntimeException(e);
-            }
-            String privateKey =  rsa.getPrivateKey();
-            String publicKey  = rsa.getPublicKey();
-            KeyModel keyModel = new KeyModel();
-            keyModel.setPublicKey(publicKey);
-            keyModel.setPrivateKey(privateKey);
-            UserService.createKey(keyModel,userModel.getId());
-
-            String filePath = createFilePrivateKey(userModel.getUserName(),privateKey);
-            System.out.println(filePath);
+//            BufferedReader reader = new BufferedReader(new InputStreamReader(request.getInputStream()));
+//            String jsonString = reader.readLine();
+//            JSONObject obj = new JSONObject(jsonString);
+//            String pageName = obj.getString("keySize");
+//
+//            // Extract the value of the 'keySize' parameter
+//            Integer keySize = obj.getInt("keySize");
+//            UserModel userModel = (UserModel) request.getSession().getAttribute("user");
+//            try {
+//                rsa.setKeySize(keySize);
+//                rsa.createKey();
+//            } catch (NoSuchAlgorithmException e) {
+//                throw new RuntimeException(e);
+//            }
+//            String privateKey =  rsa.getPrivateKey();
+//            String publicKey  = rsa.getPublicKey();
+//            KeyModel keyModel = new KeyModel();
+//            keyModel.setPublicKey(publicKey);
+//            keyModel.setPrivateKey(privateKey);
+//            UserService.createKey(keyModel,userModel.getId());
+//
+//            String filePath = createFilePrivateKey(userModel.getUserName(),privateKey);
+//            System.out.println(filePath);
             JSONObject json = new JSONObject();
-            json.put("path", filePath);
+//            json.put("path", filePath);
             // Set response content type
             response.setContentType("application/json");
             // Send the JSON response

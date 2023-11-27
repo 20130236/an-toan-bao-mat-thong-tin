@@ -1,6 +1,6 @@
 <%@ page import="model.UserModel" %>
 <% UserModel user = (UserModel) request.getAttribute("user");
-String message = request.getAttribute("message")==null?null:request.getAttribute("message").toString();
+    String message = request.getAttribute("message") == null ? null : request.getAttribute("message").toString();
 %>
 <%@ page import="model.Product" %>
 <%@ page import="java.util.Collection" %>
@@ -73,11 +73,10 @@ String message = request.getAttribute("message")==null?null:request.getAttribute
             color: #fff;
         }
 
-        textarea
-        {
+        textarea {
             resize: none;
             overflow-y: scroll;
-            height:90px;
+            height: 90px;
         }
 
     </style>
@@ -115,7 +114,8 @@ String message = request.getAttribute("message")==null?null:request.getAttribute
             <div class="container">
                 <div class="row">
                     <div id="content-wrapper" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 onecol">
-                        <form action="<c:url value="/add_order_success"/>" method="POST" name="order" id="form_order" enctype="multipart/form-data"
+                        <form action="<c:url value="/add_order_success"/>" method="POST" name="order" id="form_order"
+                              enctype="multipart/form-data"
                         >
                             <div id="main">
                                 <div class="cart-grid row">
@@ -134,8 +134,9 @@ String message = request.getAttribute("message")==null?null:request.getAttribute
                                                     </a>
                                                 </li>
                                             </ul>
-                                            <% if(message != null){%>
-                                            <div style="color:#dc3545;"><%=message%></div>
+                                            <% if (message != null) {%>
+                                            <div style="color:#dc3545;"><%=message%>
+                                            </div>
                                             <%}%>
                                             <div class="tab-content">
                                                 <div class="tab-pane fade in active show" id="checkout-guest-form"
@@ -269,7 +270,7 @@ String message = request.getAttribute("message")==null?null:request.getAttribute
                                             </div>
                                         </div>
                                         <div class="checkout-personal-step">
-                                            <h3 class="step-title h3" >
+                                            <h3 class="step-title h3">
                                                 <span class="step-number">4</span>XÁC THỰC
                                             </h3>
                                         </div>
@@ -290,39 +291,56 @@ String message = request.getAttribute("message")==null?null:request.getAttribute
                                                                 <label>Tải khóa lên</label>
                                                                 <div class="input-group">
                                                                     <div class="custom-file">
-                                                                        <input type="file"  class="custom-file-input" name="privateKeyFile" id="privateKeyFile" onchange="displayPrivateKeyFile(this)"> <br>
-                                                                        <label id="privateKeyFileName" class="custom-file-label">Chọn file</label>
+                                                                        <%-- <input type="file"  class="custom-file-input" name="privateKeyFile" id="privateKeyFile" onchange="displayPrivateKeyFile(this)"> <br>--%>
+                                                                        <%-- <label id="privateKeyFileName" class="custom-file-label">Chọn file</label>--%>
+                                                                            <form id="uploadForm" enctype="multipart/form-data">
+                                                                                <label for="privateKeyFile">Select Private Key File:</label>
+                                                                                <input type="file" name="privateKeyFile" id="privateKeyFile" required>
+                                                                                <br>
+                                                                                <input type="button" value="Upload" id="uploadButton">
+                                                                            </form>
+
+                                                                            <div id="resultMessage"></div>
+
+
                                                                     </div>
                                                                 </div>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
                                                     <div class="form-group row">
                                                         <div class="form-group" style="">
                                                             <label>Tải chữ ký lên</label>
                                                             <div class="input-group">
                                                                 <div class="custom-file">
-                                                                    <input type="file"  class="custom-file-input" name="fileName" id="fileName"  multiple min="1" max="1" style="display:none;" onchange="handleFileSelect(event)">
+                                                                    <input type="file" class="custom-file-input"
+                                                                           name="fileName" id="fileName" multiple
+                                                                           min="1" max="1" style="display:none;"
+                                                                           onchange="handleFileSelect(event)">
                                                                 </div>
                                                             </div>
                                                             <div style="position: relative;">
-                                                                <img id="signature-image" src="<c:url value="/Template/web/img/other/cloud-upload.jpg"/>" alt="" style="width: 400px;height:160px;border: 1px solid rgba(0,0,0,.125);position: relative">
+                                                                <img id="signature-image"
+                                                                     src="<c:url value="/Template/web/img/other/cloud-upload.jpg"/>"
+                                                                     alt=""
+                                                                     style="width: 400px;height:160px;border: 1px solid rgba(0,0,0,.125);position: relative">
                                                             </div>
                                                         </div>
                                                     </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="clearfix">
-                                            <div class="row">
-                                                <button type="submit"
-                                                        class="continue btn btn-primary pull-xs-right"
-                                                        style="margin-top: 15px;margin-bottom: 25px">Hoàn tất
-                                                    đặt
-                                                    hàng
-                                                </button>
+                                            <div class="clearfix">
+                                                <div class="row">
+                                                    <button type="submit"
+                                                            class="continue btn btn-primary pull-xs-right"
+                                                            style="margin-top: 15px;margin-bottom: 25px">Hoàn tất
+                                                        đặt
+                                                        hàng
+                                                    </button>
+                                                </div>
                                             </div>
-                                        </div>
 
+                                        </div>
                                     </div>
                                     <div class="cart-grid-right col-xs-12 col-lg-4">
                                         <div class="cart-summary">
@@ -364,14 +382,13 @@ String message = request.getAttribute("message")==null?null:request.getAttribute
                                                     <span class="label js-subtotal">
                                                       <a href=""><%=p.getProduct().getName()%></a>
                                                     </span>
-                                                    <span class="value"><%=p.getQuantity()%> x <%=p.getProduct().formatCurrency(p.getProduct().getPrice_sell())%> =<%=p.getProduct().formatCurrency(p.getQuantity()*p.getProduct().getPrice_sell())%></span>
+                                                    <span class="value"><%=p.getQuantity()%> x <%=p.getProduct().formatCurrency(p.getProduct().getPrice_sell())%> =<%=p.getProduct().formatCurrency(p.getQuantity() * p.getProduct().getPrice_sell())%></span>
                                                 </div>
                                                 <%}%>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                             </div>
                         </form>
                     </div>
@@ -389,10 +406,10 @@ String message = request.getAttribute("message")==null?null:request.getAttribute
     const cartTotal22 = ${cart.total};
 
     // Chuyển đổi định dạng tiền tệ sang VND
-    const formattedCartTotal22 = cartTotal22.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
+    const formattedCartTotal22 = cartTotal22.toLocaleString('vi-VN', {style: 'currency', currency: 'VND'});
 
     // Hiển thị giá trị đã được định dạng trên trang web
-    document.getElementById("cart-totalThanhtoan").innerHTML = formattedCartTotal22 ;
+    document.getElementById("cart-totalThanhtoan").innerHTML = formattedCartTotal22;
     document.getElementById("cart-totalThanhtoan1").innerHTML = formattedCartTotal22 + " (bao gồm thuế.)";
 
 </script>
@@ -472,37 +489,37 @@ String message = request.getAttribute("message")==null?null:request.getAttribute
         var initialCartTotal = parseInt($('.cart-total .value').text().replace(/[^\d]/g, ''));
 
         // Lấy giá trị của select box Xã và gửi dữ liệu lên server
-      /*  $('#ward').change(function () {
-            ward = $(this).val();
-            if (province && district && ward && province.trim() !== '' && district.trim() !== '' && ward.trim() !== '') {
-                $.ajax({
-                    type: "POST",
-                    url: "FeeServlet",
-                    data: {
-                        province: province,
-                        district: district,
-                        ward: ward
-                    },
-                    success: function (result) {
-                        var shippingFee = parseInt(result);
-                        // Tính toán newCartTotal bằng cách cộng giá trị mới của cartTotal với shippingFee
-                        var newCartTotal = initialCartTotal + shippingFee;
+        /*  $('#ward').change(function () {
+              ward = $(this).val();
+              if (province && district && ward && province.trim() !== '' && district.trim() !== '' && ward.trim() !== '') {
+                  $.ajax({
+                      type: "POST",
+                      url: "FeeServlet",
+                      data: {
+                          province: province,
+                          district: district,
+                          ward: ward
+                      },
+                      success: function (result) {
+                          var shippingFee = parseInt(result);
+                          // Tính toán newCartTotal bằng cách cộng giá trị mới của cartTotal với shippingFee
+                          var newCartTotal = initialCartTotal + shippingFee;
 
-                        // Set giá trị cho input
-                        $('#shipping-fee-input').val(shippingFee);
+                          // Set giá trị cho input
+                          $('#shipping-fee-input').val(shippingFee);
 
-                        // Hiển thị giá trị trong span
-                        $('#cart-subtotal-shipping .value').text(shippingFee.toLocaleString('vi-VN') + '₫');
+                          // Hiển thị giá trị trong span
+                          $('#cart-subtotal-shipping .value').text(shippingFee.toLocaleString('vi-VN') + '₫');
 
-                        // Hiển thị giá trị mới của tổng
-                        $('.cart-total .value').text(newCartTotal.toLocaleString('vi-VN') + ' ₫ (bao gồm thuế.)');
-                    },
-                    error: function () {
-                        alert('Đã có lỗi xảy ra!');
-                    }
-                });
-            }
-        });*/
+                          // Hiển thị giá trị mới của tổng
+                          $('.cart-total .value').text(newCartTotal.toLocaleString('vi-VN') + ' ₫ (bao gồm thuế.)');
+                      },
+                      error: function () {
+                          alert('Đã có lỗi xảy ra!');
+                      }
+                  });
+              }
+          });*/
         // Hiển thị giá trị trong span
         var shippingFee = 20000;
         // Tính toán newCartTotal bằng cách cộng giá trị mới của cartTotal với shippingFee
@@ -518,64 +535,48 @@ String message = request.getAttribute("message")==null?null:request.getAttribute
         $('.cart-total .value').text(newCartTotal.toLocaleString('vi-VN') + ' ₫ (bao gồm thuế.)');
     });
 </script>
+<<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
 <script>
     $(document).ready(function() {
-        $('#province').on('change', function() {
-            var provinceId = $(this).val();
-            $('#province-id').val(provinceId);
-            $('#province-value').val($(this).find("option:selected").text());
-        });
+        $('#uploadButton').on('click', function() {
+            var formData = new FormData();
+            var fileInput = $('#privateKeyFile')[0].files[0];
 
-        $('#district').on('change', function() {
-            var districtId = $(this).val();
-            $('#district-id').val(districtId);
-            $('#district-value').val($(this).find("option:selected").text());
-        });
+            formData.append('privateKeyFile', fileInput);
 
-        $('#ward').on('change', function() {
-            var wardCode = $(this).val();
-            $('#ward-id').val(wardCode);
-            $('#ward-value').val($(this).find("option:selected").text());
+            $.ajax({
+                url: 'keyVerificationServlet',
+                type: 'POST',
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                xhr: function() {
+                    var xhr = new XMLHttpRequest();
+
+                    // Xử lý sự kiện progress
+                    xhr.upload.addEventListener('progress', function(event) {
+                        if (event.lengthComputable) {
+                            var percentComplete = (event.loaded / event.total) * 100;
+                            console.log('Đã tải lên ' + percentComplete.toFixed(2) + '%');
+                        }
+                    }, false);
+
+                    return xhr;
+                },
+                success: function(response) {
+                    // Xử lý phản hồi từ servlet
+                    $('#resultMessage').html(response);
+                },
+                error: function() {
+                    alert('Đã có lỗi xảy ra trong quá trình gửi yêu cầu.');
+                }
+            });
         });
     });
-
-    function displayImage(input) {
-        let fileReader = new FileReader();
-        fileReader.onload = function (fileLoaderEvent) {
-            let srcData = fileLoaderEvent.target.result;
-            $("#signature-image").attr("src",srcData);
-        }
-        fileReader.readAsDataURL(input.files[0]);
-    }
-
-    $("#fileName").change(function(){
-        displayImage(this);
-    });
-
-    $("#signature-image").click(function() {
-        $("input[id='fileName']").click();
-    });
-
-    function handleFileSelect(event) {
-        var file = event.target.files[0];
-        var reader = new FileReader();
-
-        reader.onload = function(event) {
-            var fileContent = event.target.result;
-            // Perform file hashing
-            var hash = md5(fileContent);
-            $("#hashText").val(hash);
-            console.log("hashResult" + hash)
-        };
-        reader.readAsArrayBuffer(file);
-    }
-
-    function displayPrivateKeyFile(input){
-        let textLabel = document.getElementById("privateKeyFileName");
-        textLabel.textContent = input.files[0].name;
-    }
-
 </script>
+
 
 
 </body>

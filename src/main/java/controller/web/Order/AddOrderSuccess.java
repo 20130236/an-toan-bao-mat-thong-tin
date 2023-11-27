@@ -29,6 +29,8 @@ import java.security.DigestInputStream;
 import java.security.MessageDigest;
 import java.sql.Date;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Objects;
 
@@ -126,9 +128,10 @@ public class AddOrderSuccess extends HttpServlet {
                    wardValue = fileItem.getString();
                } else if(fieldName.equals("hashText")){
                    hashText = fileItem.getString();
-               } else if(fieldName.equals("privateKeyFile")){
-                   privateKey = getPrivateKeyFromFile(fileItem);
                }
+//               else if(fieldName.equals("privateKeyFile")){
+//                   privateKey = getPrivateKeyFromFile(fileItem);
+//               }
 
             }
         } catch (FileUploadException e) {
@@ -262,5 +265,10 @@ public class AddOrderSuccess extends HttpServlet {
             return fileName.substring(dotIndex + 1).toLowerCase();
         }
         return "";
+    }
+    public static String getCurrentTimestamp() {
+        LocalDateTime currentDateTime = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        return currentDateTime.format(formatter);
     }
 }

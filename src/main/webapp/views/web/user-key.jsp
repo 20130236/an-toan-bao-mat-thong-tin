@@ -26,20 +26,22 @@
 
     <jsp:include page="/common/web/css.jsp"></jsp:include>
     <style>
-        .error{
+        .error {
             float: left !important;
-            color:#dc3545 !important;
+            color: #dc3545 !important;
         }
-        input[type="radio"]{
+
+        input[type="radio"] {
             opacity: 0;
             left: 28px;
             position: relative;
             cursor: pointer;
         }
 
-        input[type="radio"]:checked~.design {
+        input[type="radio"]:checked ~ .design {
             background: #434343;
         }
+
         .design {
             width: 29px;
             height: 11px;
@@ -84,73 +86,92 @@
                 <div id="main">
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
-                            <form role="form" class="ng-pristine ng-valid">
                                 <div class="form-group">
-                                    <label for="keySize">Chọn độ dài khóa</label>
-                                    <select class="form-control input-lg ng-pristine ng-valid ng-touched" name="keySize" id="keySize">
-                                        <option value="512">515 bit</option>
-                                        <option value="1024">1024 bit</option>
-                                        <option value="2048">2048 bit</option>
-                                        <option value="3072">3072 bit</option>
-                                        <option value="4096">4096 bit</option>
-                                    </select>
+                                    <label>Tạo khoá (Khoá công khai và khoá bí mật)</label>
                                 </div>
-                                <div class="form-group">
-                                    <button id="btn-generateKey" class="btn btn-primary" name="generateKey" >Tạo khóa
-                                    </button>
-                                </div>
+                            <form action="keyGenerationServlet" method="get">
+                                <button type="submit">Tạo khoá công khai và tải khoá bí mật</button>
                             </form>
                         </div>
-                        <div class="privateKey">
-                            <div class="form-group">
-                                <a id="download-privateKey" class="btn btn-primary"
-                                   download
-                                   href="">
-                                    <i class="fa fa-download" aria-hidden="true"></i>
-                                    <span>Tải khóa</span>
-                                </a>
-                            </div>
-                        </div>
+<%--                        <form action="keyVerificationServlet" method="post" enctype="multipart/form-data">--%>
+<%--                            <label for="privateKeyFile">Select Private Key File:</label>--%>
+<%--                            <input type="file" name="privateKeyFile" id="privateKeyFile" required>--%>
+<%--                            <br>--%>
+<%--                            <input type="submit" value="Upload">--%>
+<%--                        </form>--%>
+                        <form id="uploadForm" enctype="multipart/form-data">
+                            <label for="privateKeyFile">Select Private Key File:</label>
+                            <input type="file" name="privateKeyFile" id="privateKeyFile" required>
+                            <br>
+                            <input type="button" value="Upload" id="uploadButton">
+                        </form>
+
+                        <div id="resultMessage"></div>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 </div>
 <!-- footer -->
 <jsp:include page="/common/web/footer.jsp"></jsp:include>
 <jsp:include page="/common/web/js.jsp"></jsp:include>
 
+<%--<script>--%>
+
+<%--    $("#btn-generateKey").on("click",function (e){--%>
+<%--        e.preventDefault();--%>
+<%--        let data = {--%>
+<%--            keySize :  $("#keySize").val()--%>
+<%--        }--%>
+<%--        console.log(data);--%>
+<%--        getFilePrivateKey(data);--%>
+<%--    });--%>
+
+<%--    function getFilePrivateKey(data) {--%>
+<%--        $.ajax({--%>
+<%--            type: "POST",--%>
+<%--            url: 'http://localhost:8080/api/user/key',--%>
+<%--            data: JSON.stringify(data),--%>
+<%--            dataType: 'json',--%>
+<%--            contentType: "application/json",--%>
+<%--            success: function(data) {--%>
+<%--                console.log(data);--%>
+<%--                $("#download-privateKey").attr("href",data.path);--%>
+<%--                alert("Tạo key thành công bạn có thể tải về");--%>
+<%--            },--%>
+<%--            error: function (error){--%>
+<%--                alert("lỗi khi tạo key");--%>
+<%--                console.log(error);--%>
+<%--            }--%>
+<%--        })--%>
+<%--    }--%>
+
+<%--</script>--%>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
+    $(document).ready(function() {
+        $('#uploadButton').on('click', function() {
+            var formData = new FormData($('#uploadForm')[0]);
 
-    $("#btn-generateKey").on("click",function (e){
-        e.preventDefault();
-        let data = {
-            keySize :  $("#keySize").val()
-        }
-        console.log(data);
-        getFilePrivateKey(data);
+            $.ajax({
+                url: 'keyVerificationServlet',
+                type: 'POST',
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function(response) {
+                    // Xử lý phản hồi từ servlet
+                    $('#resultMessage').html(response);
+                },
+                error: function() {
+                    alert('Đã có lỗi xảy ra trong quá trình gửi yêu cầu.');
+                }
+            });
+        });
     });
-
-    function getFilePrivateKey(data) {
-        $.ajax({
-            type: "POST",
-            url: 'http://localhost:8080/api/user/key',
-            data: JSON.stringify(data),
-            dataType: 'json',
-            contentType: "application/json",
-            success: function(data) {
-                console.log(data);
-                $("#download-privateKey").attr("href",data.path);
-                alert("Tạo key thành công bạn có thể tải về");
-            },
-            error: function (error){
-                alert("lỗi khi tạo key");
-                console.log(error);
-            }
-        })
-    }
-
 </script>
 </body>
 </html>
