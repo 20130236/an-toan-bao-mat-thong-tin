@@ -80,7 +80,6 @@
         }
 
     </style>
-
 </head>
 
 <body class="product-checkout checkout-cart">
@@ -291,17 +290,12 @@
                                                                 <label>Tải khóa lên</label>
                                                                 <div class="input-group">
                                                                     <div class="custom-file">
-                                                                        <%-- <input type="file"  class="custom-file-input" name="privateKeyFile" id="privateKeyFile" onchange="displayPrivateKeyFile(this)"> <br>--%>
-                                                                        <%-- <label id="privateKeyFileName" class="custom-file-label">Chọn file</label>--%>
-                                                                            <form id="uploadForm" enctype="multipart/form-data">
-                                                                                <label for="privateKeyFile">Select Private Key File:</label>
-                                                                                <input type="file" name="privateKeyFile" id="privateKeyFile" required>
-                                                                                <br>
-                                                                                <input type="button" value="Upload" id="uploadButton">
-                                                                            </form>
+                                                                         <input type="file"  class="custom-file-input" name="privateKeyFile" id="privateKeyFile" onchange="displayPrivateKeyFile(this)"> <br>
+                                                                         <label id="privateKeyFileName" class="custom-file-label">Chọn file</label>
 
-                                                                            <div id="resultMessage"></div>
-
+<%--                                                                                <label for="privateKeyFile">Select Private Key File:</label>--%>
+                                                                            <!-- File input field -->
+<%--                                                                            <input type="file" name="privateKeyFile" id="privateKeyFile" required>--%>
 
                                                                     </div>
                                                                 </div>
@@ -535,49 +529,63 @@
         $('.cart-total .value').text(newCartTotal.toLocaleString('vi-VN') + ' ₫ (bao gồm thuế.)');
     });
 </script>
-<<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
 <script>
     $(document).ready(function() {
-        $('#uploadButton').on('click', function() {
-            var formData = new FormData();
-            var fileInput = $('#privateKeyFile')[0].files[0];
+        $('#province').on('change', function() {
+            var provinceId = $(this).val();
+            $('#province-id').val(provinceId);
+            $('#province-value').val($(this).find("option:selected").text());
+        });
 
-            formData.append('privateKeyFile', fileInput);
+        $('#district').on('change', function() {
+            var districtId = $(this).val();
+            $('#district-id').val(districtId);
+            $('#district-value').val($(this).find("option:selected").text());
+        });
 
-            $.ajax({
-                url: 'keyVerificationServlet',
-                type: 'POST',
-                data: formData,
-                cache: false,
-                contentType: false,
-                processData: false,
-                xhr: function() {
-                    var xhr = new XMLHttpRequest();
-
-                    // Xử lý sự kiện progress
-                    xhr.upload.addEventListener('progress', function(event) {
-                        if (event.lengthComputable) {
-                            var percentComplete = (event.loaded / event.total) * 100;
-                            console.log('Đã tải lên ' + percentComplete.toFixed(2) + '%');
-                        }
-                    }, false);
-
-                    return xhr;
-                },
-                success: function(response) {
-                    // Xử lý phản hồi từ servlet
-                    $('#resultMessage').html(response);
-                },
-                error: function() {
-                    alert('Đã có lỗi xảy ra trong quá trình gửi yêu cầu.');
-                }
-            });
+        $('#ward').on('change', function() {
+            var wardCode = $(this).val();
+            $('#ward-id').val(wardCode);
+            $('#ward-value').val($(this).find("option:selected").text());
         });
     });
+
+    function displayImage(input) {
+        let fileReader = new FileReader();
+        fileReader.onload = function (fileLoaderEvent) {
+            let srcData = fileLoaderEvent.target.result;
+            $("#signature-image").attr("src",srcData);
+        }
+        fileReader.readAsDataURL(input.files[0]);
+    }
+
+    $("#fileName").change(function(){
+        displayImage(this);
+    });
+
+    $("#signature-image").click(function() {
+        $("input[id='fileName']").click();
+    });
+
+    function handleFileSelect(event) {
+        var file = event.target.files[0];
+        var reader = new FileReader();
+
+        reader.onload = function(event) {
+            var fileContent = event.target.result;
+            // Perform file hashing
+            var hash = md5(fileContent);
+            $("#hashText").val(hash);
+            console.log("hashResult" + hash)
+        };
+        reader.readAsArrayBuffer(file);
+    }
+
+    function displayPrivateKeyFile(input){
+        let textLabel = document.getElementById("privateKeyFileName");
+        textLabel.textContent = input.files[0].name;
+    }
+
 </script>
-
-
-
 </body>
 </html>

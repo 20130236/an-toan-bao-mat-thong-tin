@@ -93,20 +93,6 @@
                                 <button type="submit">Tạo khoá công khai và tải khoá bí mật</button>
                             </form>
                         </div>
-<%--                        <form action="keyVerificationServlet" method="post" enctype="multipart/form-data">--%>
-<%--                            <label for="privateKeyFile">Select Private Key File:</label>--%>
-<%--                            <input type="file" name="privateKeyFile" id="privateKeyFile" required>--%>
-<%--                            <br>--%>
-<%--                            <input type="submit" value="Upload">--%>
-<%--                        </form>--%>
-                        <form id="uploadForm" enctype="multipart/form-data">
-                            <label for="privateKeyFile">Select Private Key File:</label>
-                            <input type="file" name="privateKeyFile" id="privateKeyFile" required>
-                            <br>
-                            <input type="button" value="Upload" id="uploadButton">
-                        </form>
-
-                        <div id="resultMessage"></div>
                     </div>
                 </div>
             </div>
@@ -149,29 +135,5 @@
 <%--    }--%>
 
 <%--</script>--%>
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script>
-    $(document).ready(function() {
-        $('#uploadButton').on('click', function() {
-            var formData = new FormData($('#uploadForm')[0]);
-
-            $.ajax({
-                url: 'keyVerificationServlet',
-                type: 'POST',
-                data: formData,
-                cache: false,
-                contentType: false,
-                processData: false,
-                success: function(response) {
-                    // Xử lý phản hồi từ servlet
-                    $('#resultMessage').html(response);
-                },
-                error: function() {
-                    alert('Đã có lỗi xảy ra trong quá trình gửi yêu cầu.');
-                }
-            });
-        });
-    });
-</script>
 </body>
 </html>
