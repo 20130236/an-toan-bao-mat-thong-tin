@@ -3,23 +3,25 @@ package controller.web.Order;
 import beans.Cart;
 import digitalsignature.RSA;
 import digitalsignature.USERKEY.DSA;
-import model.UserModel;
+import model.*;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import service.*;
 import service.API_LOGISTIC.Login_API;
-import service.OrderService;
+import service.API_LOGISTIC.Province;
+import service.API_LOGISTIC.Province_API;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
 import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
 import java.security.DigestInputStream;
 import java.security.MessageDigest;
 import java.security.PrivateKey;
@@ -28,7 +30,9 @@ import java.sql.Date;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Base64;
 import java.util.List;
+import java.util.Objects;
 
 @WebServlet(name = "AddOrderSuccess", value = "/add_order_success")
 @MultipartConfig
@@ -54,6 +58,8 @@ public class AddOrderSuccess extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
+
+
         OrderService oderService = new OrderService();
         int orderid = oderService.getMaxMHD();
         response.setContentType("text/html;charset=UTF-8");
@@ -89,14 +95,11 @@ public class AddOrderSuccess extends HttpServlet {
         String districtValue = request.getParameter("district-value");
         String wardValue = request.getParameter("ward-value");
 
-
         //API LOGISTIC
         Login_API login_api = new Login_API();
         String API_KEY = login_api.login();
         session.setAttribute("parameterName", API_KEY);
-//
-////        String publicKey = UserService.getPublicKey(user.getId());
-//        String hashText = request.getParameter("hashText");
+
 
 
         // Lấy tệp tin từ request
@@ -132,126 +135,73 @@ public class AddOrderSuccess extends HttpServlet {
 //        System.out.println("Keys match: " + keysMatch);
 
         // Trả về kết quả trực tiếp cho trình duyệt
-        response.getWriter().println("Keys match: " + keysMatch);
+        //response.getWriter().println("Keys match: " + keysMatch);
 
 
-        try {
-            List<FileItem> fileItemsList = uploader.parseRequest(request);
-            for (FileItem fileItem : fileItemsList) {
-                String fieldName = fileItem.getFieldName();
-                System.out.println(fieldName);
-                if( fieldName.equals("phone")){
-                    phone = fileItem.getString("UTF-8");
-                } else if(fieldName.equals("paymentMethod")){
-                    paymentMethod = fileItem.getString("UTF-8");
-                } else if(fieldName.equals("address")){
-                    address = fileItem.getString("UTF-8");
-                } else if(fieldName.equals("message")){
-                    message = fileItem.getString("UTF-8");
-                } else if(fieldName.equals("province-id")){
-                    provinceId = fileItem.getString();
-                } else if(fieldName.equals("district-id")){
-                    districtId = fileItem.getString();
-                } else if(fieldName.equals("ward-id")){
-                    wardId = fileItem.getString();
-                } else if(fieldName.equals("province-value")){
-                    provinceValue = fileItem.getString();
-                } else if(fieldName.equals("district-value")){
-                    districtValue = fileItem.getString();
-                } else if(fieldName.equals("ward-value")){
-                    wardValue = fileItem.getString();
-                }
-//                else if(fieldName.equals("hashText")){
-//                    hashText = fileItem.getString();
-//                } else if(fieldName.equals("privateKeyFile")){
-//                    privateKey = getPrivateKeyFromFile(fileItem);
-//                }
-
-            }
-        } catch (FileUploadException e) {
-            throw new RuntimeException(e);
-        }
-
-//
-//        String valAdd = wardValue + ", " + districtValue + ", " + provinceValue;
-//        String valId = provinceId + ":" + districtId + ":" + wardId;
-
-        String encryptText = null;
-//        try {
-//            rsa.loadPrivateKey(privateKey);
-//            encryptText = rsa.encrypt(hashText);
-//        } catch (Exception e) {
-//            throw new RuntimeException(e);
-//        }
-
-//        String relativePath = UserService.getSignature(user.getId());
-//        ServletContext servletContext = getServletContext();
-//        // Get the real path of the font file within the web application
-//        String realPath = servletContext.getRealPath(relativePath);
-//        // Save the image to a file
-//
-
-        //fix trên trước :v
-
-
-//        File file = new File(realPath);
-//        if(file.isFile()){
-//            System.out.println(file.getAbsolutePath());
-//        }
-//
-//        try {
-//            if(!checkSignature(encryptText,file,publicKey)){
-//                PostService service = new PostService();
-//                ProductService productService = new ProductService();
-//                List<Post_Category> list = service.getListPostCategory();
-//                request.setAttribute("listAr", list);
-//                //Lay ra danh sach loai sp de chen vao header
-//                List<Product_type> listType = productService.getAllProduct_type();
-//                request.setAttribute("listType", listType);
-//                //Lay ra thong tin de chen vao footer
-//                IntroService intr = new IntroService();
-//                Introduce intro = intr.getIntro();
-//                request.setAttribute("info", intro);
-//
-//                if (Objects.isNull(user)) {
-//                    response.sendRedirect("/login");
-//                } else if (Objects.isNull(cart)) {
-//                    response.sendRedirect("/home");
-//
-//                } else if (!Objects.isNull(user)) {
-//                    UserModel userModel = UserService.findById(user.getId());
-//                    request.setAttribute("user", userModel);
-//                    request.setAttribute("message","Chữ ký sai!");
-//                    List<Province> provinces = Province_API.convert(API_KEY);
-//                    request.setAttribute("listProvinces", provinces);
-//
-//                    RequestDispatcher rd = request.getRequestDispatcher("/views/web/product-checkout.jsp");
-//                    rd.forward(request, response);
-//                }
-//                return;
-//            }
-//        } catch (Exception e) {
-//            throw new RuntimeException(e);
-//        }
-//
-//        try {
-//            Order order = new Order(orderid, user.getUserName(), totalAmount, fee, orderDate, paymentMethod, valId, 0, valAdd, message, phone);
-//            orderService.addOder(order);
-//
-//            order.setOder_id(orderid);
-//
-//            for (ProductInCart product : cart.getListProductInCart()) {
-//                Order_detail orderDetail = new Order_detail(0, order, product.getProduct().getProduct_id(), product.getProduct().getPrice_sell(), product.getQuantity(), 0, (product.getProduct().getPrice_sell() * product.getQuantity()));
-//                orderService.addOrderDetail(orderDetail);
-//            }
-//
-//            session.removeAttribute("cart");
-//            cart = null;
-//        } catch (Exception e) {
-//            response.sendRedirect(request.getContextPath() + "/home");
-//            return;
-//        }
         if (keysMatch) {
+            String hashText = request.getParameter("hashText");
+            String valAdd = wardValue + ", " + districtValue + ", " + provinceValue;
+            String valId = provinceId + ":" + districtId + ":" + wardId;
+
+            //String encryptText = null;
+            //rsa.setPrivateKey(privateKey);
+            //rsa.setPublicKey(publicKey);
+
+//            try {
+//                encryptText = rsa.encrypt(hashText);
+//            } catch (Exception e){
+//                e.printStackTrace();
+//            }
+
+            String relativePath = UserService.getSignature(user.getId());
+            ServletContext servletContext = getServletContext();
+            String realPath = servletContext.getRealPath(relativePath);
+            File file = new File(realPath);
+            try {
+                if(!checkUser(hashText,file)){
+                    PostService service = new PostService();
+                    ProductService productService = new ProductService();
+                    List<Post_Category> list = service.getListPostCategory();
+                    request.setAttribute("listAr", list);
+                    //Lay ra danh sach loai sp de chen vao header
+                    List<Product_type> listType = productService.getAllProduct_type();
+                    request.setAttribute("listType", listType);
+                    //Lay ra thong tin de chen vao footer
+                    IntroService intr = new IntroService();
+                    Introduce intro = intr.getIntro();
+                    request.setAttribute("info", intro);
+
+                    UserModel userModel = UserService.findById(user.getId());
+                    request.setAttribute("user", userModel);
+                    request.setAttribute("message","Chữ ký sai!");
+                    List<Province> provinces = Province_API.convert(API_KEY);
+                    request.setAttribute("listProvinces", provinces);
+
+                    RequestDispatcher rd = request.getRequestDispatcher("/views/web/product-checkout.jsp");
+                    rd.forward(request, response);
+                    return;
+                }
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+
+            try {
+                Order order = new Order(orderid, user.getUserName(), totalAmount, fee, orderDate, paymentMethod, valId, 0, valAdd, message, phone);
+                orderService.addOder(order);
+
+                order.setOder_id(orderid);
+
+                for (ProductInCart product : cart.getListProductInCart()) {
+                    Order_detail orderDetail = new Order_detail(0, order, product.getProduct().getProduct_id(), product.getProduct().getPrice_sell(), product.getQuantity(), 0, (product.getProduct().getPrice_sell() * product.getQuantity()));
+                    orderService.addOrderDetail(orderDetail);
+                }
+
+                session.removeAttribute("cart");
+                cart = null;
+            } catch (Exception e) {
+                response.sendRedirect(request.getContextPath() + "/home");
+                return;
+            }
             // Nếu khớp nhau, chuyển hướng đến trang success
             response.sendRedirect(request.getContextPath() + "/lab/success");
         }
@@ -266,11 +216,11 @@ public class AddOrderSuccess extends HttpServlet {
         }
     }
 
-    public boolean checkSignature(String encryptText, File signature, String publicKey) throws Exception {
+    public boolean checkUser(String hashText, File signature) throws Exception {
+        System.out.println("hashText:" + hashText);
+        System.out.println("signature:" + signature);
         String hashSignature = getHashFromFile(signature);
-        rsa.loadPublicKey(publicKey);
-        String decryptText = rsa.decrypt(encryptText);
-        return decryptText.equals(hashSignature);
+        return  hashSignature.equals(hashText);
     }
 
 
@@ -291,30 +241,7 @@ public class AddOrderSuccess extends HttpServlet {
         return null;
     }
 
-    //    private String getPrivateKeyFromFile(FileItem fileItem){
-//        String privateKey = null;
-//        try {
-//                        //InputStream fileInputStream = fileItem.getInputStream();
-//                        //BufferedReader reader = new BufferedReader(new InputStreamReader(fileInputStream));
-//                        byte[] fileContent = fileItem.get();
-//                        privateKey = new String(fileContent, StandardCharsets.UTF_8);
-//                        privateKey = privateKey.replaceAll("\\n", "")
-//                                .replaceAll("\\r", "")
-//                                .replaceAll("\\s", "");
-//                        System.out.println("privateKey" + privateKey);
-//                    } catch (Exception ex) {
-//                throw new RuntimeException(ex);
-//        }
-//        return privateKey;
-//    }
-//
-//    private String getFileExtension(String fileName) {
-//        int dotIndex = fileName.lastIndexOf('.');
-//        if (dotIndex > 0 && dotIndex < fileName.length() - 1) {
-//            return fileName.substring(dotIndex + 1).toLowerCase();
-//        }
-//        return "";
-//    }
+
     public static String getCurrentTimestamp() {
         LocalDateTime currentDateTime = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");

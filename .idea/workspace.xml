@@ -10,15 +10,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6389381a-4df7-4693-b13c-4e92e2d4aded" name="Changes" comment="doc file private key va check trung khop">
-      <change afterPath="$PROJECT_DIR$/out/production/classes/digitalsignature/USERKEY/KeyVerificationServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_11_2023_3_40_CH__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_11_2023_3_40_CH__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/controller/web/Order/AddOrderSuccess.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/web/Order/AddOrderSuccess.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/digitalsignature/USERKEY/DSA.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/digitalsignature/USERKEY/DSA.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/digitalsignature/RSA.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/digitalsignature/RSA.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/digitalsignature/USERKEY/KeyVerificationServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/db.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/web/Order/AddOrderSuccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/web/Order/AddOrderSuccess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/digitalsignature/USERKEY/DSA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/digitalsignature/USERKEY/DSA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/digitalsignature/USERKEY/KeyVerificationServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/product-checkout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/product-checkout.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/user-key.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/user-key.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/digitalsignature/RSA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/digitalsignature/RSA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +62,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="dung" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -200,7 +201,7 @@
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -314,9 +315,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.HappyHomevps [build]" />
         <item itemvalue="Application.KeyVerificationServlet" />
         <item itemvalue="Application.DSA" />
-        <item itemvalue="Gradle.HappyHomevps [build]" />
         <item itemvalue="Application.ProductService" />
         <item itemvalue="Application.DBConnection" />
       </list>
@@ -471,6 +472,7 @@
       <workItem from="1701168363343" duration="1575000" />
       <workItem from="1701171551323" duration="11281000" />
       <workItem from="1701187064599" duration="1239000" />
+      <workItem from="1701338749585" duration="1134000" />
     </task>
     <task id="LOCAL-00001" summary="fix tính giá vận chuyển">
       <created>1686505220241</created>
@@ -592,9 +594,9 @@
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/views/web/product-checkout.jsp</url>
-          <line>115</line>
-          <option name="timeStamp" value="28" />
+          <url>file://$PROJECT_DIR$/src/main/java/controller/web/Order/AddOrderSuccess.java</url>
+          <line>137</line>
+          <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

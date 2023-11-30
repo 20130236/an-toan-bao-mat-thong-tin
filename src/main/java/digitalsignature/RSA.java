@@ -151,12 +151,27 @@ public class RSA {
     }
 
     public void loadPrivateKey(String privateKey) throws Exception {
+
         byte[] clear = Base64.getDecoder().decode(privateKey.getBytes());
         PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(clear);
         KeyFactory fact = KeyFactory.getInstance("RSA");
         PrivateKey priv = fact.generatePrivate(keySpec);
         Arrays.fill(clear, (byte) 0);
         this.privateKey = priv;
+    }
+
+    public void loadBytePrivateKey(byte [] data) throws Exception {
+        KeyFactory keyFactory = KeyFactory.getInstance("DSA");
+        PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(data);
+        this.privateKey = keyFactory.generatePrivate(keySpec);
+    }
+
+    public void setPublicKey(PublicKey publicKey) {
+        this.publicKey = publicKey;
+    }
+
+    public void setPrivateKey(PrivateKey privateKey) {
+        this.privateKey = privateKey;
     }
 
     public void setKeySize(Integer keySize){
