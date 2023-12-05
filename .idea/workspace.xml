@@ -2,35 +2,68 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="Gradle : org.example : happyhome-1.0-SNAPSHOT.war" />
+      <artifact name="Gradle : org.example : happyhome-1.0-SNAPSHOT.war (exploded)" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6389381a-4df7-4693-b13c-4e92e2d4aded" name="Changes" comment="commit lại và fix trang chi tiết sp">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_6_2023_11_49_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_6_2023_11_49_AM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_11_2023_3_40_CH_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_11_2023_3_40_CH__Changes_.xml" beforeDir="false" />
+    <list default="true" id="6389381a-4df7-4693-b13c-4e92e2d4aded" name="Changes" comment="fix những lỗi liên quan tới kiểu dl date + fix bỏ api vận chuyển do lỗi">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/admin/AddProduct.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/admin/AddProduct.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/admin/CategoryControllerAdmin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/admin/CategoryControllerAdmin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/admin/DataUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/admin/DataUserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/admin/EditProduct.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/admin/EditProduct.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/admin/HomeControllerAdmin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/admin/HomeControllerAdmin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/admin/ImportProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/admin/ImportProductController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/admin/ImportProducts.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/admin/ImportProducts.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/admin/InfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/admin/InfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/admin/LogData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/admin/LogData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/admin/LoginControllerAdmin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/admin/LoginControllerAdmin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/admin/Order/CheckDetail.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/admin/Order/CheckDetail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/admin/Order/CheckOrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/admin/Order/CheckOrderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/admin/Order/CheckSuccess.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/admin/Order/CheckSuccess.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/admin/Order/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/admin/Order/OrderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/admin/Order/OrderDetail.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/admin/Order/OrderDetail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/admin/ProductManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/admin/ProductManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/admin/RoleData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/admin/RoleData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/admin/StatisticsLog.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/admin/StatisticsLog.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/controller/admin/statistic/DayAnalysis.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/admin/statistic/DayAnalysis.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/controller/admin/statistic/MonthAnalysis.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/admin/statistic/MonthAnalysis.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/admin/statistic/RemainingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/admin/statistic/RemainingController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/web/AccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/web/AccountController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/web/ChangePasswordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/web/ChangePasswordController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/web/ListProduct.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/web/ListProduct.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/web/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/web/LoginController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/controller/web/Order/AddOrderSuccess.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/web/Order/AddOrderSuccess.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/web/Order/DetailOrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/web/Order/DetailOrderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/web/RegisterController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/web/RegisterController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/web/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/web/RegisterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/web/ResetPasswordController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/web/ResetPasswordController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/web/ResetPasswordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/web/ResetPasswordController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/web/VerifySuccessController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/web/VerifySuccessController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/dao/ProductSearchDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/dao/ProductSearchDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/dao/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/dao/UserDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/digitalsignature/CheckOrders.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/digitalsignature/CheckOrders.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/digitalsignature/USERKEY/DSA.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/digitalsignature/USERKEY/DSA.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/model/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/model/Order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/model/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/model/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/service/API_LOGISTIC/GetFee.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/service/API_LOGISTIC/GetFee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/service/API_LOGISTIC/RegisterTransport.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/service/API_LOGISTIC/RegisterTransport.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/service/OrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/service/OrderService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/service/ServiceStatistics.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/service/ServiceStatistics.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/service/ServiceStatisticsDay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/service/ServiceStatisticsDay.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/db.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/web/Order/AddOrderSuccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/web/Order/AddOrderSuccess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/digitalsignature/USERKEY/DSA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/digitalsignature/USERKEY/DSA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/service/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/service/ProductService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/RoleDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/RoleDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/digitalsignature/CheckOrders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/digitalsignature/CheckOrders.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/ServiceStatistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/ServiceStatistics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/ServiceStatisticsDay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/ServiceStatisticsDay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/product-checkout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/product-checkout.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/check-invoice.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/check-invoice.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/checkorder-data.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/checkorder-data.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/invoice-data.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/invoice-data.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +83,23 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="happyhome" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="happyhome" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="happyhome" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -116,26 +165,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dat__checkorders&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Lesson/an toan bao mat/cuoi-ky&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.CheckOrders.executor": "Run",
+    "Application.DBConnection.executor": "Run",
+    "Application.Order.executor": "Run",
+    "Application.OrderService.executor": "Run",
+    "Application.ProductService.executor": "Run",
+    "Application.RoleDAO.executor": "Run",
+    "Application.UserService.executor": "Run",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Gradle.dung_dat_clone [build].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Tomcat Server.Tomcat 8.5.34.executor": "Run",
+    "Tomcat Server.Tomcat 9.0.75.executor": "Run",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "dat__checkorders",
+    "last_opened_file_path": "D:/CK_ATBM/dung_dat_clone/src/main/webapp/views/admin",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\CK_ATBM\dung_dat_clone\src\main\webapp\views\admin" />
       <recent name="D:\HappyHome_fixapi\src\main\webapp\views\admin" />
       <recent name="E:\LapTrinhWeb\cuoi ky\HappyHome\src\main\webapp\Template\web\libs\jquery" />
     </key>
@@ -143,6 +203,7 @@
       <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="controller.admin.Order" />
       <recent name="controller.admin.statistic" />
     </key>
   </component>
@@ -153,39 +214,13 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.CheckOrders">
-    <configuration name="AddOrderSuccess" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="controller.web.Order.AddOrderSuccess" />
+  <component name="RunManager" selected="Application.ProductService">
+    <configuration name="DBConnection" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dao.DBConnection" />
       <module name="happyhome.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="controller.web.Order.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CheckOrders" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="digitalsignature.CheckOrders" />
-      <module name="happyhome.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="digitalsignature.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GetFee" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="service.API_LOGISTIC.GetFee" />
-      <module name="happyhome.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="service.API_LOGISTIC.*" />
+          <option name="PATTERN" value="dao.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -206,8 +241,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ServiceStatistics" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="service.ServiceStatistics" />
+    <configuration name="ProductService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="service.ProductService" />
       <module name="happyhome.main" />
       <extension name="coverage">
         <pattern>
@@ -219,17 +254,43 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tomcat 8.5.34" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.34" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="RoleDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dao.RoleDAO" />
+      <module name="happyhome.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="service.UserService" />
+      <module name="happyhome.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 9.0.75" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.75" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="Gradle : org.example : happyhome-1.0-SNAPSHOT.war">
+        <artifact name="Gradle : org.example : happyhome-1.0-SNAPSHOT.war (exploded)">
           <settings>
             <option name="CONTEXT_PATH" value="/" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="b15096a5-6de0-45c8-a910-c5fed14a2ee0" />
+        <option name="BASE_DIRECTORY_NAME" value="72b456d5-db54-4db7-9ea0-6050c256c75f" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -237,7 +298,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="57494" />
+        <option name="DEBUG_PORT" value="53485" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -302,27 +363,34 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="Gradle : org.example : happyhome-1.0-SNAPSHOT.war" />
+          <artifact name="Gradle : org.example : happyhome-1.0-SNAPSHOT.war (exploded)" />
         </option>
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.DBConnection" />
       <item itemvalue="Application.OrderService" />
-      <item itemvalue="Application.CheckOrders" />
-      <item itemvalue="Application.GetFee" />
-      <item itemvalue="Application.ServiceStatistics" />
-      <item itemvalue="Application.AddOrderSuccess" />
-      <item itemvalue="Tomcat Server.Tomcat 8.5.34" />
+      <item itemvalue="Application.ProductService" />
+      <item itemvalue="Application.RoleDAO" />
+      <item itemvalue="Application.UserService" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.75" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CheckOrders" />
+        <item itemvalue="Application.ProductService" />
         <item itemvalue="Application.OrderService" />
-        <item itemvalue="Application.AddOrderSuccess" />
-        <item itemvalue="Application.GetFee" />
-        <item itemvalue="Application.ServiceStatistics" />
+        <item itemvalue="Application.DBConnection" />
+        <item itemvalue="Application.UserService" />
+        <item itemvalue="Application.RoleDAO" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-18.0.2-corretto-18.0.2-3183f394aec4-38982a12" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -470,7 +538,16 @@
       <workItem from="1699882832618" duration="89000" />
       <workItem from="1701673057299" duration="9770000" />
       <workItem from="1701692165784" duration="10663000" />
-      <workItem from="1701764322554" duration="4359000" />
+      <workItem from="1701764322554" duration="4661000" />
+      <workItem from="1701785596236" duration="9657000" />
+      <workItem from="1701873978274" duration="5907000" />
+      <workItem from="1701915165587" duration="18126000" />
+      <workItem from="1701942223575" duration="10167000" />
+      <workItem from="1702037289738" duration="185000" />
+      <workItem from="1702037736903" duration="3516000" />
+      <workItem from="1702041488167" duration="1239000" />
+      <workItem from="1702043150937" duration="360000" />
+      <workItem from="1702043552558" duration="1532000" />
     </task>
     <task id="LOCAL-00001" summary="fix tính giá vận chuyển">
       <created>1686505220241</created>
@@ -514,7 +591,23 @@
       <option name="project" value="LOCAL" />
       <updated>1686674062690</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="ký đơn hàng. check xem đơn hàng có bị thay đổi hay không v1.0">
+      <option name="closed" value="true" />
+      <created>1701769564844</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1701769564844</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fix những lỗi liên quan tới kiểu dl date + fix bỏ api vận chuyển do lỗi">
+      <option name="closed" value="true" />
+      <created>1701794883598</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1701794883598</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -550,7 +643,9 @@
     <MESSAGE value="fix @WebFilter(filterName = &quot;Utf8Filter&quot;, urlPatterns = {&quot;/*&quot;}) add urlPatterns = {&quot;/*&quot;} for all page" />
     <MESSAGE value="fix định dạng tiền đ + fix phân trang" />
     <MESSAGE value="commit lại và fix trang chi tiết sp" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit lại và fix trang chi tiết sp" />
+    <MESSAGE value="ký đơn hàng. check xem đơn hàng có bị thay đổi hay không v1.0" />
+    <MESSAGE value="fix những lỗi liên quan tới kiểu dl date + fix bỏ api vận chuyển do lỗi" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix những lỗi liên quan tới kiểu dl date + fix bỏ api vận chuyển do lỗi" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -580,23 +675,15 @@
           <line>48</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/digitalsignature/CheckOrders.java</url>
-          <line>305</line>
-          <properties class="digitalsignature.CheckOrders" method="main">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="29" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/service/OrderService.java</url>
+          <line>404</line>
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/controller/web/Order/AddOrderSuccess.java</url>
-          <line>240</line>
-          <properties class="controller.web.Order.AddOrderSuccess" method="main">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="30" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/service/OrderService.java</url>
+          <line>398</line>
+          <option name="timeStamp" value="36" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

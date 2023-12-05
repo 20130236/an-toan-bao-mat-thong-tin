@@ -4,6 +4,7 @@
 <%@ page import="model.Order_detail" %>
 <%@ page import="java.util.Collections" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="digitalsignature.CheckOrders" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -118,7 +119,7 @@
                         <div class="form-group">
                           <label>Ngày đặt hàng:</label>
                           <div class="input-group date" id="reservationdate2" data-target-input="nearest">
-                            <div class="form-control"><%=Order.convertDate(order.getDate_order().toString())%></div>
+                            <div class="form-control"><%=Order.convertDateTime(order.getDate_order().toString())%></div>
                             <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
                               <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                             </div>
@@ -213,6 +214,9 @@
                           <option value="3">Từ chối đơn hàng</option>
                           <option value="2">Đã giao</option>
                           <option value="4">Giao hàng thất bại</option>
+                          <option value="5">Huỷ đơn hàng</option>
+                          <option value="6">Huỷ đơn hàng - Đã hoàn tiền</option>
+
                         </select>
                       </div>
                     </div>
@@ -280,16 +284,48 @@
 <script>
   $(document).ready(function() {
     var orderStatus = "<%= order.getStatus() %>";
+    var orderCheck = <%=CheckOrders.checkOrderIsNotChange(order.getOder_id())%>
+    console.log(orderCheck);
     $('select[name="status"] option[value="' + orderStatus + '"]').prop('selected', true);
-    if (orderStatus == 1) {
+
+    if(!orderCheck){
+
+      $('select[name="status"] option[value="1"]').hide();
+      $('select[name="status"] option[value="2"]').hide();
+      $('select[name="status"] option[value="3"]').hide();
+      $('select[name="status"] option[value="4"]').hide();
+
+    } else if (orderStatus == 0 && orderCheck) {
+      $('select[name="status"] option[value="2"]').hide();
+      $('select[name="status"] option[value="5"]').hide();
+      $('select[name="status"] option[value="6"]').hide();
+
+    } else if (orderStatus == 1 && orderCheck) {
+
       $('select[name="status"] option[value="3"]').hide();
       $('select[name="status"] option[value="1"]').hide();
-    } else if (orderStatus == 2) {
+    }
+    else if (orderStatus == 2 && orderCheck) {
       $('select[name="status"] option[value="3"]').hide();
       $('select[name="status"] option[value="1"]').hide();
       $('select[name="status"] option[value="2"]').hide();
       $('select[name="status"] option[value="4"]').hide();
-    }
+    }  else if(orderStatus == 5){
+      $('select[name="status"] option[value="3"]').hide();
+      $('select[name="status"] option[value="1"]').hide();
+      $('select[name="status"] option[value="2"]').hide();
+      $('select[name="status"] option[value="4"]').hide();
+      $('select[name="status"] option[value="5"]').hide();
+      $('select[name="status"] option[value="6"]').hide();
+
+    } else if(orderStatus == 6 && orderCheck == true){
+      $('select[name="status"] option[value="3"]').hide();
+      $('select[name="status"] option[value="1"]').hide();
+      $('select[name="status"] option[value="2"]').hide();
+      $('select[name="status"] option[value="4"]').hide();
+      $('select[name="status"] option[value="5"]').hide();
+      $('select[name="status"] option[value="6"]').hide();
+   }
   });
 </script>
 </body>

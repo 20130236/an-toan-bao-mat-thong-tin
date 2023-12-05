@@ -3,10 +3,7 @@ package dao;
 import digitalsignature.API.KeyModel;
 import model.UserModel;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Timestamp;
+import java.sql.*;
 import java.util.*;
 
 public class UserDAO {
@@ -26,7 +23,7 @@ public class UserDAO {
                 user = new UserModel(rs.getInt("uid"), rs.getString("user_name"), rs.getString("password"), rs.getInt("role"), rs.getInt("enable"));
                 user.setEmail(rs.getString("email"));
             }
-            if(user != null){
+            if (user != null) {
                 user.setIdPms(RoleDAO.findById(user.getRole()).getIdPermissions());
             }
             return user;
@@ -68,7 +65,7 @@ public class UserDAO {
             pst.setInt(1, id);
             rs = pst.executeQuery();
             while (rs.next()) {
-                user = new UserModel(rs.getInt("uid"), rs.getString("user_name"),rs.getString("password"), rs.getInt("role"),
+                user = new UserModel(rs.getInt("uid"), rs.getString("user_name"), rs.getString("password"), rs.getInt("role"),
                         rs.getString("full_name"), rs.getString("phone_num"), rs.getString("email"), rs.getString("address"), rs.getInt("enable"), rs.getString("gender"));
                 user.setSignature(rs.getString("signature_text"));
             }
@@ -91,8 +88,8 @@ public class UserDAO {
             pst.setString(2, email);
             rs = pst.executeQuery();
             while (rs.next()) {
-                user = new UserModel(rs.getInt("uid"), rs.getString("user_name"),rs.getString("password"), rs.getInt("role"),
-                        rs.getString("full_name"), rs.getString("phone_num"), rs.getString("email"), rs.getString("address"), rs.getInt("enable"),rs.getString("gender"));
+                user = new UserModel(rs.getInt("uid"), rs.getString("user_name"), rs.getString("password"), rs.getInt("role"),
+                        rs.getString("full_name"), rs.getString("phone_num"), rs.getString("email"), rs.getString("address"), rs.getInt("enable"), rs.getString("gender"));
                 user.setSignature(rs.getString("signature"));
             }
             return user;
@@ -102,7 +99,7 @@ public class UserDAO {
         }
     }
 
-    public static void changePassword(int id, String newPassword){
+    public static void changePassword(int id, String newPassword) {
         PreparedStatement pst;
         String sql;
         try {
@@ -155,12 +152,12 @@ public class UserDAO {
         }
     }
 
-    public static boolean checkUserName(String user_name){
-        return check("user_name",user_name);
+    public static boolean checkUserName(String user_name) {
+        return check("user_name", user_name);
     }
 
-    public static boolean checkEmail(String email){
-        return check("user_name",email);
+    public static boolean checkEmail(String email) {
+        return check("user_name", email);
     }
 
     private static boolean check(String col, String value) {
@@ -172,7 +169,7 @@ public class UserDAO {
             pst = DBConnection.getConnection().prepareStatement(sql);
             pst.setString(1, value);
             rs = pst.executeQuery();
-            if(rs.next()) return true;
+            if (rs.next()) return true;
             return false;
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
@@ -191,7 +188,7 @@ public class UserDAO {
             pst = DBConnection.getConnection().prepareStatement(sql);
             rs = pst.executeQuery();
             while (rs.next()) {
-                users.add(new UserModel(rs.getInt("uid"), rs.getString("user_name"),rs.getString("password"), rs.getInt("role"),
+                users.add(new UserModel(rs.getInt("uid"), rs.getString("user_name"), rs.getString("password"), rs.getInt("role"),
                         rs.getString("full_name"), rs.getString("phone_num"), rs.getString("email"), rs.getString("address"), rs.getInt("enable"), rs.getString("gender")));
             }
             return users;
@@ -280,24 +277,24 @@ public class UserDAO {
         try {
             sql = "update forget_password set token = ? where user_id = ?";
             pst = DBConnection.getConnection().prepareStatement(sql);
-            pst.setString(1,token);
-            pst.setInt(2,id);
+            pst.setString(1, token);
+            pst.setInt(2, id);
             pst.executeUpdate();
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
     }
 
-    public static boolean checkToken(String token){
+    public static boolean checkToken(String token) {
         PreparedStatement pst;
         String sql;
         ResultSet rs;
         try {
             sql = "select * from forget_password where token = ?";
             pst = DBConnection.getConnection().prepareStatement(sql);
-            pst.setString(1,token);
+            pst.setString(1, token);
             rs = pst.executeQuery();
-            if(rs.next()) return true;
+            if (rs.next()) return true;
             return false;
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
@@ -311,10 +308,10 @@ public class UserDAO {
         try {
             sql = "insert  into forget_password (uid,token,token_expiry,created_date) values (?,?,?,?)";
             pst = DBConnection.getConnection().prepareStatement(sql);
-            pst.setInt(1,id);
-            pst.setString(2,token);
-            pst.setTimestamp(3,token_expiry);
-            pst.setTimestamp(4,create_date);
+            pst.setInt(1, id);
+            pst.setString(2, token);
+            pst.setTimestamp(3, token_expiry);
+            pst.setTimestamp(4, create_date);
             pst.executeUpdate();
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
@@ -328,10 +325,10 @@ public class UserDAO {
         try {
             sql = "SELECT * from forget_password where token_expiry >= now() and uid = ? and token = ? ";
             pst = DBConnection.getConnection().prepareStatement(sql);
-            pst.setInt(1,id);
-            pst.setString(2,token);
+            pst.setInt(1, id);
+            pst.setString(2, token);
             rs = pst.executeQuery();
-            if(rs.next()) return true;
+            if (rs.next()) return true;
             return false;
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
@@ -350,7 +347,7 @@ public class UserDAO {
             pst.setString(1, token);
             rs = pst.executeQuery();
             while (rs.next()) {
-                user = new UserModel(rs.getInt("uid"),"","",0,
+                user = new UserModel(rs.getInt("uid"), "", "", 0,
                         1);
             }
             return user;
@@ -366,8 +363,8 @@ public class UserDAO {
         try {
             sql = "delete from forget_password where  uid = ? and token = ? ";
             pst = DBConnection.getConnection().prepareStatement(sql);
-            pst.setInt(1,id);
-            pst.setString(2,token);
+            pst.setInt(1, id);
+            pst.setString(2, token);
             pst.executeUpdate();
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
@@ -380,7 +377,7 @@ public class UserDAO {
         try {
             sql = "delete from forget_password where  uid = ? ";
             pst = DBConnection.getConnection().prepareStatement(sql);
-            pst.setInt(1,id);
+            pst.setInt(1, id);
             pst.executeUpdate();
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
@@ -416,7 +413,7 @@ public class UserDAO {
         try {
             sql = "delete from verify where token = ? ";
             pst = DBConnection.getConnection().prepareStatement(sql);
-            pst.setString(1,rdData);
+            pst.setString(1, rdData);
             pst.executeUpdate();
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
@@ -429,10 +426,10 @@ public class UserDAO {
         try {
             sql = "insert into verify (uid,token,created_date,token_expiry) values (?,?,?,?)";
             pst = DBConnection.getConnection().prepareStatement(sql);
-            pst.setInt(1,user_id);
-            pst.setString(2,rdData);
-            pst.setTimestamp(3,create_date);
-            pst.setTimestamp(4,verify_expiry);
+            pst.setInt(1, user_id);
+            pst.setString(2, rdData);
+            pst.setTimestamp(3, create_date);
+            pst.setTimestamp(4, verify_expiry);
             pst.executeUpdate();
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
@@ -447,7 +444,7 @@ public class UserDAO {
         try {
             sql = "select u.enable,u.uid from verify v inner join users u on v.uid = u.uid where token_expiry >= now() and token = ?";
             pst = DBConnection.getConnection().prepareStatement(sql);
-            pst.setString(1,rdData);
+            pst.setString(1, rdData);
             rs = pst.executeQuery();
             while (rs.next()) {
                 user = new UserModel();
@@ -467,21 +464,21 @@ public class UserDAO {
         try {
             sql = "update users u inner join verify v on u.uid = v.uid  set enable = 1 where token = ?";
             pst = DBConnection.getConnection().prepareStatement(sql);
-            pst.setString(1,randomData);
+            pst.setString(1, randomData);
             pst.executeUpdate();
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
     }
 
-    public static void updateStatus(int status,String username) {
+    public static void updateStatus(int status, String username) {
         PreparedStatement pst;
         String sql;
         try {
             sql = "update users set enable = ? where user_name = ?";
             pst = DBConnection.getConnection().prepareStatement(sql);
-            pst.setInt(1,status);
-            pst.setString(2,username);
+            pst.setInt(1, status);
+            pst.setString(2, username);
             pst.executeUpdate();
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
@@ -496,9 +493,9 @@ public class UserDAO {
         try {
             sql = "select num_log_in from users where user_name =  ?";
             pst = DBConnection.getConnection().prepareStatement(sql);
-            pst.setString(1,username);
+            pst.setString(1, username);
             rs = pst.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 number = rs.getInt("num_log_in");
             }
             return number > 5;
@@ -514,22 +511,22 @@ public class UserDAO {
         try {
             sql = "update users set num_log_in = num_log_in + 1 where user_name = ?";
             pst = DBConnection.getConnection().prepareStatement(sql);
-            pst.setString(1,username);
+            pst.setString(1, username);
             pst.executeUpdate();
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
     }
 
-    public static void deletes( UserModel userModel) {
-        for(int i : userModel.getIds()){
+    public static void deletes(UserModel userModel) {
+        for (int i : userModel.getIds()) {
             detele(i);
         }
     }
 
     public static List<UserModel> getByIds(UserModel user) {
         List<UserModel> users = new ArrayList<>();
-        for(int i : user.getIds()){
+        for (int i : user.getIds()) {
             users.add(findById(i));
         }
         return users;
@@ -543,9 +540,9 @@ public class UserDAO {
         try {
             sql = "SELECT public_key from `key` where user_id = ? and `status` = 1";
             pst = DBConnection.getConnection().prepareStatement(sql);
-            pst.setInt(1,id);
+            pst.setInt(1, id);
             rs = pst.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 result = rs.getString("public_key");
             }
             return result;
@@ -555,14 +552,14 @@ public class UserDAO {
         }
     }
 
-    public static void saveSignature(String path, String username){
+    public static void saveSignature(String path, String username) {
         PreparedStatement pst;
         String sql;
         try {
             sql = "update users set signature = ? where user_name = ?";
             pst = DBConnection.getConnection().prepareStatement(sql);
-            pst.setString(1,path);
-            pst.setString(2,username);
+            pst.setString(1, path);
+            pst.setString(2, username);
             pst.executeUpdate();
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
@@ -577,9 +574,9 @@ public class UserDAO {
         try {
             sql = "select signature from users where uid =  ?";
             pst = DBConnection.getConnection().prepareStatement(sql);
-            pst.setInt(1,uid);
+            pst.setInt(1, uid);
             rs = pst.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 result = rs.getString("signature");
             }
             return result;
@@ -590,14 +587,14 @@ public class UserDAO {
     }
 
     public static void createKey(KeyModel keyModel, int id) {
-        if(selectKey(id) == null){
-            insertKey(keyModel,id);
-        } else{
-            updateKey(keyModel,id);
+        if (selectKey(id) == null) {
+            insertKey(keyModel, id);
+        } else {
+            updateKey(keyModel, id);
         }
     }
 
-    private static void insertKey(KeyModel keyModel,int id){
+    private static void insertKey(KeyModel keyModel, int id) {
         PreparedStatement pst;
         String sql;
         try {
@@ -605,28 +602,29 @@ public class UserDAO {
             pst = DBConnection.getConnection().prepareStatement(sql);
             pst.setInt(1, id);
             pst.setString(2, keyModel.getPublicKey());
-            pst.setInt(3, 1);;
+            pst.setInt(3, 1);
+            ;
             pst.executeUpdate();
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
     }
 
-    private static void updateKey(KeyModel keyModel,int id){
+    private static void updateKey(KeyModel keyModel, int id) {
         PreparedStatement pst;
         String sql;
         try {
             sql = "update `key` set public_key = ? where user_id = ?";
             pst = DBConnection.getConnection().prepareStatement(sql);
-            pst.setString(1,keyModel.getPublicKey());
-            pst.setInt(2,id);
+            pst.setString(1, keyModel.getPublicKey());
+            pst.setInt(2, id);
             pst.executeUpdate();
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
     }
 
-    private static String selectKey(int id){
+    private static String selectKey(int id) {
         PreparedStatement pst;
         String sql;
         ResultSet rs;
@@ -634,9 +632,9 @@ public class UserDAO {
         try {
             sql = "select public_key from `key` where user_id = ? and status = 1";
             pst = DBConnection.getConnection().prepareStatement(sql);
-            pst.setInt(1,id);
+            pst.setInt(1, id);
             rs = pst.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 result = rs.getString("public_key");
             }
             return result;
@@ -645,4 +643,25 @@ public class UserDAO {
             return null;
         }
     }
+
+    public static int findIDByUser(String username) {
+        int uid = 0;
+        ResultSet rs;
+        PreparedStatement pst;
+        String sql;
+        try {
+            sql = "select uid from users where user_name = ? ";
+            pst = DBConnection.getConnection().prepareStatement(sql);
+            pst.setString(1, username);
+            rs = pst.executeQuery();
+            while (rs.next()) {
+                uid = rs.getInt("uid");
+
+            }
+            return uid;
+        } catch (ClassNotFoundException | SQLException e) {
+            return 0;
+        }
+    }
+
 }

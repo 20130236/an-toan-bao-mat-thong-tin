@@ -28,7 +28,7 @@ public class RoleDAO {
             }
             return roles;
         }
-            catch (ClassNotFoundException | SQLException e) {
+        catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
             return null;
         }
@@ -132,13 +132,13 @@ public class RoleDAO {
     }
 
     public static void updateRole(RoleModel role){
-            int id = role.getId();
-            String name = role.getTitle();
-            updateName(id,name);
-            deleteRolePermiss(id);
-            for (int i : role.getIdPermissions()){
-                addPermission(id,i);
-            }
+        int id = role.getId();
+        String name = role.getTitle();
+        updateName(id,name);
+        deleteRolePermiss(id);
+        for (int i : role.getIdPermissions()){
+            addPermission(id,i);
+        }
     }
 
     private static void updateName(int id,String name){
@@ -201,7 +201,7 @@ public class RoleDAO {
             pst.setString(1,name);
             rs = pst.executeQuery();
             while (rs.next()) {
-              id = rs.getInt("id");
+                id = rs.getInt("id");
             }
             return id;
         }
@@ -269,7 +269,7 @@ public class RoleDAO {
     }
 
     public static void main(String[] args) {
-        System.out.println( findById(19));
+        System.out.println( findById(59));
     }
 
     public static void deletes(RoleModel roleModel) {

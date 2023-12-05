@@ -208,5 +208,9 @@ public class UserService {
 
         UserDAO.createKey(keyModel,id);
     }
+    public static int getIdByUserName(String username){
+        return UserDAO.findIDByUser(username);
+    }
+
 }
 

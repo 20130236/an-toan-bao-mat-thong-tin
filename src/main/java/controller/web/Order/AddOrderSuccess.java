@@ -26,11 +26,8 @@ import java.security.DigestInputStream;
 import java.security.MessageDigest;
 import java.security.PrivateKey;
 import java.security.PublicKey;
-import java.sql.Date;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
@@ -166,14 +163,14 @@ public class AddOrderSuccess extends HttpServlet {
             StringBuilder result = new StringBuilder();
             Order order;
             try {
-
-                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-                // Lấy thời gian hiện tại
-                LocalDateTime currentDateTime = LocalDateTime.now();
-                // Định dạng thời gian hiện tại thành chuỗi
+                // Lấy múi giờ của Việt Nam
+                ZoneId vietnamTimeZone = ZoneId.of("Asia/Ho_Chi_Minh");
+                // Định dạng thời gian với múi giờ của Việt Nam
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss").withZone(vietnamTimeZone);
+                // Lấy thời gian hiện tại trong múi giờ của Việt Nam và định dạng thành chuỗi
+                LocalDateTime currentDateTime = LocalDateTime.now(vietnamTimeZone);
                 String formattedDateTime = currentDateTime.format(formatter);
-
-                // Nếu bạn muốn chuyển đổi thành LocalDateTime lại
+                // Chuyển đổi chuỗi thời gian thành LocalDateTime
                 LocalDateTime parsedDateTime = LocalDateTime.parse(formattedDateTime, formatter);
                 order = new Order(orderid, user.getUserName(), totalAmount, fee, parsedDateTime, paymentMethod, valId, 0, valAdd, message, phone);
                 orderService.addOder(order);
@@ -193,9 +190,8 @@ public class AddOrderSuccess extends HttpServlet {
                 return;
             }
             //tao hoa don
-
             String data = result.toString();
-            String hash = CheckOrders.check(data);
+            String hash = checkOrders.check(data);
             String signature = checkOrders.signDocument2(privateKey, hash);
             orderService.addSignatureText(orderid, signature);
             System.out.println(data);
@@ -208,14 +204,11 @@ public class AddOrderSuccess extends HttpServlet {
             request.setAttribute("error", "Private key and public key do not match.");
             // Set the error message in the session to access it in the JavaScript
             session.setAttribute("errorMessage", "Private key and public key do not match.");
-
             response.sendRedirect(request.getContextPath() + "/lab/checkout");
         }
     }
 
     public boolean checkUser(String hashText, File signature) throws Exception {
-//        System.out.println("hashText:" + hashText);
-//        System.out.println("signature:" + signature);
         String hashSignature = getHashFromFile(signature);
         return hashSignature.equals(hashText);
     }
@@ -237,31 +230,4 @@ public class AddOrderSuccess extends HttpServlet {
         }
         return null;
     }
-
-    public static void main(String[] args) {
-//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-//        LocalDateTime dateTime = LocalDateTime.parse("2023-12-04 20:08:01", formatter);
-//
-//        // Sử dụng LocalDateTime
-//        System.out.println("LocalDateTime: " + dateTime);
-//
-//        // Nếu bạn cần chuyển thành chuỗi lại
-//        String formattedDateTime = dateTime.format(formatter);
-//        System.out.println("Formatted DateTime: " + formattedDateTime);
-        // Định dạng ngày giờ
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        // Lấy thời gian hiện tại
-        LocalDateTime currentDateTime = LocalDateTime.now();
-        // Định dạng thời gian hiện tại thành chuỗi
-        String formattedDateTime = currentDateTime.format(formatter);
-
-        // Nếu bạn muốn chuyển đổi thành LocalDateTime lại
-        LocalDateTime parsedDateTime = LocalDateTime.parse(formattedDateTime, formatter);
-        System.out.println("Parsed LocalDateTime: " + parsedDateTime);
-        String time = String.valueOf(parsedDateTime.getHour());
-        System.out.println("Giờ: "+time);
-        String time1 = String.valueOf(parsedDateTime.getMinute());
-        System.out.println("Phút: "+time1);
-    }
-
 }

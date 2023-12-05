@@ -1,8 +1,13 @@
 package service;
 
+import controller.admin.Access;
 import dao.DBConnection;
+import dao.RoleDAO;
+import dao.UserDAO;
 import model.Order;
 import model.Order_detail;
+import model.Role;
+import model.UserModel;
 import service.API_LOGISTIC.Transport;
 
 import java.sql.*;
@@ -10,6 +15,8 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+
+import static dao.RoleDAO.findIdPermissionByName;
 
 public class OrderService {
     public List<Order> getAllOder() {
@@ -191,13 +198,11 @@ public class OrderService {
             ps = DBConnection.getConnection().prepareStatement(sql);
             rs = ps.executeQuery();
             while (rs.next()) {
-                Timestamp timestamp = rs.getTimestamp("date_order");
+
 
                 // Chuyển đổi Timestamp thành LocalDateTime
                 LocalDateTime dateOrder = null;
-                if (timestamp != null) {
-                    dateOrder = timestamp.toLocalDateTime();
-                }
+
                 Order_detail orderDetail = new Order_detail(0, new Order(1, "u", 1, 1, dateOrder, "t", "1", 1, "grgr", "fg", "phone"), rs.getInt(1), rs.getLong(2), rs.getInt(3), rs.getInt(4), rs.getLong(5));
                 od.add(orderDetail);
             }
@@ -270,7 +275,8 @@ public class OrderService {
         }
         return result;
     }
-    public Transport getTransportId(int id){
+
+    public Transport getTransportId(int id) {
         ResultSet rs;
         Transport transport = null;
         PreparedStatement ps;
@@ -281,7 +287,7 @@ public class OrderService {
             while (rs.next()) {
                 Order order = new Order();
                 order.setOder_id(rs.getInt(2));
-               transport = new Transport(rs.getString(1), order,rs.getString(3), rs.getString(4));
+                transport = new Transport(rs.getString(1), order, rs.getString(3), rs.getString(4));
 
             }
         } catch (Exception e) {
@@ -289,6 +295,7 @@ public class OrderService {
         }
         return transport;
     }
+
     //
     public void updateOrderStatusByTransportLeadTime() {
         ResultSet rs;
@@ -302,6 +309,7 @@ public class OrderService {
             e.printStackTrace();
         }
     }
+
     public void addSignatureText(int orderId, String signatureText) {
         String sql = "UPDATE orders SET signature_text = ? WHERE order_id = ?";
         PreparedStatement ps = null;
@@ -315,30 +323,103 @@ public class OrderService {
             e.printStackTrace();
         }
     }
-    public String getSignatureText(int orderId) {
-        ResultSet rs;
-        String result = "";
-        PreparedStatement ps;
-        String sql = "SELECT signature_text FROM orders WHERE order_id = ?";
-        try {
-            ps = DBConnection.getConnection().prepareStatement(sql);
-            ps.setInt(1, orderId);
-            rs = ps.executeQuery();
+
+//        public String getSignatureText(int orderId) {
+//        ResultSet rs;
+//        String result = "";
+//        PreparedStatement ps;
+//        String sql = "SELECT signature_text FROM orders WHERE order_id = ?";
+//        DBConnection.resetConnection();
+//        try {
+//            ps = DBConnection.getConnection().prepareStatement(sql);
+//
+//            ps.setInt(1, orderId);
+//            rs = ps.executeQuery();
+//            while (rs.next()) {
+//                result = rs.getString(1);
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return result;
+//    }
+public String getSignatureText(int orderId) {
+    String result = "";
+    String sql = "SELECT signature_text FROM orders WHERE order_id = ?";
+    try (
+            Connection connection = DBConnection.getConnection();
+            PreparedStatement ps = connection.prepareStatement(sql);
+    ) {
+        ps.setInt(1, orderId);
+        try (ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
                 result = rs.getString(1);
             }
-        } catch (Exception e) {
-            e.printStackTrace();
         }
-        return result;
+    } catch (Exception e) {
+        e.printStackTrace();
     }
+    return result;
+}
+
+//    public String getSignatureText(int orderId) {
+//        String result = "";
+//        String sql = "SELECT signature_text FROM orders WHERE order_id = ?";
+//
+//        try {
+//            // Ensure that the connection is open when needed
+//            try (Connection connection = DBConnection.getConnection()) {
+//                try (PreparedStatement ps = connection.prepareStatement(sql)) {
+//                    ps.setInt(1, orderId);
+//
+//                    try (ResultSet rs = ps.executeQuery()) {
+//                        while (rs.next()) {
+//                            result = rs.getString("signature_text");
+//                        }
+//                    }
+//                }
+//            }
+//        } catch (SQLNonTransientConnectionException e) {
+//            // Handle the connection exception appropriately, e.g., reconnect or log the error.
+//            e.printStackTrace();
+//        } catch (SQLException e) {
+//            // Handle other SQL exceptions.
+//            e.printStackTrace();
+//        } catch (Exception e) {
+//            // Handle other exceptions.
+//            e.printStackTrace();
+//        }
+//
+//        return result;
+//    }
 
 
 
     public static void main(String[] args) {
-        OrderService os = new OrderService();
-        os.addSignatureText(29,"MCwCFDw0c3NDN/KJGqcr/U6dQkb+d6yNAhRdLp6wgVALUtRjI/3jF2dH11Bsmg==" );
-        System.out.println("Sign: "+os.getSignatureText(29));
+//        OrderService os = new OrderService();
+////        ArrayList<Order_detail> order_details = (ArrayList<Order_detail>) os.getOrderDById(30);
+////        for (Order_detail order_detail : order_details) {
+////            System.out.println(order_detail.toString());
+////        }
+//
+//        //       System.out.println(os.getOderById(30).toString());
+//        ArrayList<Order> orders = (ArrayList<Order>) os.getAllOder();
+//        for (Order order : orders) {
+//            System.out.println(order.toString());
+//        }
+//        UserModel currentUser = new UserModel();
+//        currentUser = UserDAO.findById(59);
+//        Role roleUser = new Role();
+//        roleUser = RoleDAO.findById(currentUser.getRole());
+//        System.out.println(roleUser.getPermission());
+//        boolean access = Access.checkAccess(roleUser.getPermission(), RoleDAO.findIdPermissionByName("cập nhật đơn hàng"));
+//        if (!access) {
+//            System.out.println("no");
+//        } else {
+//            System.out.println("yes");
+//        }
 
+
+        System.out.println(findIdPermissionByName("xoá user"));
     }
 }

@@ -88,7 +88,7 @@ public class MonthAnalysis extends HttpServlet {
             for (Order order : orders) {
                 JSONObject orderJson = new JSONObject();
                 String date = String.valueOf(order.getDate_order());
-                String convertDate = order.convertDate(date);
+                String convertDate = order.convertDateTime(date);
                 long totalMoney = order.getTotal_money();
                 int fee = order.getFee();
                 String formatTotalMoney = order.formatCurrency(totalMoney + fee);
