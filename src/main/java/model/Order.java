@@ -2,15 +2,13 @@ package model;
 
 
 import dao.DBConnection;
-import service.API_LOGISTIC.Login_API;
-import service.API_LOGISTIC.RegisterTransport;
-import service.API_LOGISTIC.Transport;
 import service.OrderService;
 
 import java.io.IOException;
 import java.sql.*;
 import java.text.NumberFormat;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
@@ -19,15 +17,16 @@ public class Order {
     public String user_name;
     public long total_money;
     public int fee;
-    public Date date_order;
+    public LocalDateTime date_order;
     public String payment;
     public String transport;
     public int status;
     public String address;
     public String note;
     public String phoneNum;
+    public String digitalSignature;
 
-    public Order(int oder_id, String user_name, long total_money, int fee, Date date_order, String payment, String transport, int status, String address, String note, String phoneNum) {
+    public Order(int oder_id, String user_name, long total_money, int fee, LocalDateTime date_order, String payment, String transport, int status, String address, String note, String phoneNum) {
         this.oder_id = oder_id;
         this.user_name = user_name;
         this.total_money = total_money;
@@ -73,11 +72,11 @@ public class Order {
         this.fee = fee;
     }
 
-    public Date getDate_order() {
+    public LocalDateTime getDate_order() {
         return date_order;
     }
 
-    public void setDate_order(Date date_order) {
+    public void setDate_order(LocalDateTime date_order) {
         this.date_order = date_order;
     }
 
@@ -132,6 +131,14 @@ public class Order {
     public Date getDateCurrent() {
         Date current = Date.valueOf(LocalDate.now());
         return current;
+    }
+
+    public String getDigitalSignature() {
+        return digitalSignature;
+    }
+
+    public void setDigitalSignature(String digitalSignature) {
+        this.digitalSignature = digitalSignature;
     }
 
     public Order() {
@@ -207,8 +214,9 @@ public class Order {
     public static void main(String[] args) throws IOException {
         Order o = new Order();
         OrderService orderService = new OrderService()  ;
-        o = orderService.getOderById(26);
+        o = orderService.getOderById(25);
         System.out.println(o.getUser_name());
+        System.out.println(o.toString());
         System.out.println(o.getFullName(o.getUser_name()));
     }
 }

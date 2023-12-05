@@ -1,17 +1,15 @@
 package controller.web.Order;
 
 import beans.Cart;
-import digitalsignature.RSA;
+import digitalsignature.CheckOrders;
 import digitalsignature.USERKEY.DSA;
 import model.*;
-import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
-import service.*;
 import service.API_LOGISTIC.Login_API;
 import service.API_LOGISTIC.Province;
 import service.API_LOGISTIC.Province_API;
+import service.*;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -19,27 +17,28 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
-import java.io.*;
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.math.BigInteger;
-import java.nio.charset.StandardCharsets;
 import java.security.DigestInputStream;
 import java.security.MessageDigest;
 import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Base64;
 import java.util.List;
-import java.util.Objects;
 
 @WebServlet(name = "AddOrderSuccess", value = "/add_order_success")
 @MultipartConfig
 public class AddOrderSuccess extends HttpServlet {
-
-    RSA rsa = new RSA();
     DSA dsa = new DSA();
+    CheckOrders checkOrders = new CheckOrders();
     private ServletFileUpload uploader = null;
 
     public void init() throws ServletException {
@@ -80,7 +79,7 @@ public class AddOrderSuccess extends HttpServlet {
         String address = request.getParameter("address");
         String message = request.getParameter("message");
         long totalAmount = cart.getTotal();
-        Date orderDate = Date.valueOf(LocalDate.now());
+
         OrderService orderService = new OrderService();
         /*String shippingFee = request.getParameter("shippingFee");
         int fee = Integer.parseInt(shippingFee);*/
@@ -94,12 +93,12 @@ public class AddOrderSuccess extends HttpServlet {
         String provinceValue = request.getParameter("province-value");
         String districtValue = request.getParameter("district-value");
         String wardValue = request.getParameter("ward-value");
-
+        String valAdd = wardValue + ", " + districtValue + ", " + provinceValue;
+        String valId = provinceId + ":" + districtId + ":" + wardId;
         //API LOGISTIC
         Login_API login_api = new Login_API();
         String API_KEY = login_api.login();
         session.setAttribute("parameterName", API_KEY);
-
 
 
         // Lấy tệp tin từ request
@@ -107,11 +106,9 @@ public class AddOrderSuccess extends HttpServlet {
 
         // Lấy tên tệp tin (nếu bạn muốn lấy)
         String fileName = dsa.getFileName(filePart);
-        System.out.println(fileName);
+
         // Đọc nội dung của tệp tin và chuyển đổi thành đối tượng PrivateKey
         PrivateKey privateKey = dsa.readPrivateKey(filePart);
-        // In thông tin về private key
-//        System.out.println("Private Key Algorithm: " + privateKey.getAlgorithm());
 
         // Có thể thực hiện các xử lý khác tại đây
         PublicKey publicKey = dsa.getPublicKeyFromDatabase(user.getId());
@@ -131,34 +128,16 @@ public class AddOrderSuccess extends HttpServlet {
             response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             return;
         }
-
-//        System.out.println("Keys match: " + keysMatch);
-
-        // Trả về kết quả trực tiếp cho trình duyệt
-        //response.getWriter().println("Keys match: " + keysMatch);
-
-
         if (keysMatch) {
             String hashText = request.getParameter("hashText");
-            String valAdd = wardValue + ", " + districtValue + ", " + provinceValue;
-            String valId = provinceId + ":" + districtId + ":" + wardId;
 
-            //String encryptText = null;
-            //rsa.setPrivateKey(privateKey);
-            //rsa.setPublicKey(publicKey);
-
-//            try {
-//                encryptText = rsa.encrypt(hashText);
-//            } catch (Exception e){
-//                e.printStackTrace();
-//            }
 
             String relativePath = UserService.getSignature(user.getId());
             ServletContext servletContext = getServletContext();
             String realPath = servletContext.getRealPath(relativePath);
             File file = new File(realPath);
             try {
-                if(!checkUser(hashText,file)){
+                if (!checkUser(hashText, file)) {
                     PostService service = new PostService();
                     ProductService productService = new ProductService();
                     List<Post_Category> list = service.getListPostCategory();
@@ -173,7 +152,7 @@ public class AddOrderSuccess extends HttpServlet {
 
                     UserModel userModel = UserService.findById(user.getId());
                     request.setAttribute("user", userModel);
-                    request.setAttribute("message","Chữ ký sai!");
+                    request.setAttribute("message", "Chữ ký sai!");
                     List<Province> provinces = Province_API.convert(API_KEY);
                     request.setAttribute("listProvinces", provinces);
 
@@ -184,16 +163,27 @@ public class AddOrderSuccess extends HttpServlet {
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
-
+            StringBuilder result = new StringBuilder();
+            Order order;
             try {
-                Order order = new Order(orderid, user.getUserName(), totalAmount, fee, orderDate, paymentMethod, valId, 0, valAdd, message, phone);
+
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+                // Lấy thời gian hiện tại
+                LocalDateTime currentDateTime = LocalDateTime.now();
+                // Định dạng thời gian hiện tại thành chuỗi
+                String formattedDateTime = currentDateTime.format(formatter);
+
+                // Nếu bạn muốn chuyển đổi thành LocalDateTime lại
+                LocalDateTime parsedDateTime = LocalDateTime.parse(formattedDateTime, formatter);
+                order = new Order(orderid, user.getUserName(), totalAmount, fee, parsedDateTime, paymentMethod, valId, 0, valAdd, message, phone);
                 orderService.addOder(order);
 
                 order.setOder_id(orderid);
-
+                result.append(order.toString());
                 for (ProductInCart product : cart.getListProductInCart()) {
                     Order_detail orderDetail = new Order_detail(0, order, product.getProduct().getProduct_id(), product.getProduct().getPrice_sell(), product.getQuantity(), 0, (product.getProduct().getPrice_sell() * product.getQuantity()));
                     orderService.addOrderDetail(orderDetail);
+                    result.append(orderDetail.toString());
                 }
 
                 session.removeAttribute("cart");
@@ -202,10 +192,17 @@ public class AddOrderSuccess extends HttpServlet {
                 response.sendRedirect(request.getContextPath() + "/home");
                 return;
             }
+            //tao hoa don
+
+            String data = result.toString();
+            String hash = CheckOrders.check(data);
+            String signature = checkOrders.signDocument2(privateKey, hash);
+            orderService.addSignatureText(orderid, signature);
+            System.out.println(data);
+            System.out.println(hash);
             // Nếu khớp nhau, chuyển hướng đến trang success
             response.sendRedirect(request.getContextPath() + "/lab/success");
-        }
-        else {
+        } else {
             // Nếu không khớp, in ra thông báo lỗi và forward lại trang hiện tại
             System.out.println("Keys do not match. Forwarding to the current page.");
             request.setAttribute("error", "Private key and public key do not match.");
@@ -217,10 +214,10 @@ public class AddOrderSuccess extends HttpServlet {
     }
 
     public boolean checkUser(String hashText, File signature) throws Exception {
-        System.out.println("hashText:" + hashText);
-        System.out.println("signature:" + signature);
+//        System.out.println("hashText:" + hashText);
+//        System.out.println("signature:" + signature);
         String hashSignature = getHashFromFile(signature);
-        return  hashSignature.equals(hashText);
+        return hashSignature.equals(hashText);
     }
 
 
@@ -241,10 +238,30 @@ public class AddOrderSuccess extends HttpServlet {
         return null;
     }
 
-
-    public static String getCurrentTimestamp() {
-        LocalDateTime currentDateTime = LocalDateTime.now();
+    public static void main(String[] args) {
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+//        LocalDateTime dateTime = LocalDateTime.parse("2023-12-04 20:08:01", formatter);
+//
+//        // Sử dụng LocalDateTime
+//        System.out.println("LocalDateTime: " + dateTime);
+//
+//        // Nếu bạn cần chuyển thành chuỗi lại
+//        String formattedDateTime = dateTime.format(formatter);
+//        System.out.println("Formatted DateTime: " + formattedDateTime);
+        // Định dạng ngày giờ
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        return currentDateTime.format(formatter);
+        // Lấy thời gian hiện tại
+        LocalDateTime currentDateTime = LocalDateTime.now();
+        // Định dạng thời gian hiện tại thành chuỗi
+        String formattedDateTime = currentDateTime.format(formatter);
+
+        // Nếu bạn muốn chuyển đổi thành LocalDateTime lại
+        LocalDateTime parsedDateTime = LocalDateTime.parse(formattedDateTime, formatter);
+        System.out.println("Parsed LocalDateTime: " + parsedDateTime);
+        String time = String.valueOf(parsedDateTime.getHour());
+        System.out.println("Giờ: "+time);
+        String time1 = String.valueOf(parsedDateTime.getMinute());
+        System.out.println("Phút: "+time1);
     }
+
 }

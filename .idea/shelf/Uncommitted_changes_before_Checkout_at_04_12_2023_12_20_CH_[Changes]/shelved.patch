@@ -24,11 +24,12 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 ===================================================================
 diff --git a/.idea/workspace.xml b/.idea/workspace.xml
 --- a/.idea/workspace.xml	(revision 246322e054b7b09463bd4ef90be8df19bfe0a3bc)
-+++ b/.idea/workspace.xml	(date 1700987998192)
-@@ -10,27 +10,7 @@
++++ b/.idea/workspace.xml	(date 1701667113486)
+@@ -9,29 +9,7 @@
+     <option name="autoReloadType" value="SELECTIVE" />
    </component>
    <component name="ChangeListManager">
-     <list default="true" id="6389381a-4df7-4693-b13c-4e92e2d4aded" name="Changes" comment="commit lại và fix trang chi tiết sp">
+-    <list default="true" id="6389381a-4df7-4693-b13c-4e92e2d4aded" name="Changes" comment="commit lại và fix trang chi tiết sp">
 -      <change afterPath="$PROJECT_DIR$/.idea/HappyHome.iml" afterDir="false" />
 -      <change beforePath="$PROJECT_DIR$/.gradle/8.0.2/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0.2/checksums/checksums.lock" afterDir="false" />
 -      <change beforePath="$PROJECT_DIR$/.gradle/8.0.2/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0.2/checksums/sha1-checksums.bin" afterDir="false" />
@@ -50,16 +51,12 @@ diff --git a/.idea/workspace.xml b/.idea/workspace.xml
 -      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
 -      <change beforePath="$PROJECT_DIR$/src/main/java/model/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Log.java" afterDir="false" />
 -      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/user-data.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/user-data.jsp" afterDir="false" />
-+      <change beforePath="$PROJECT_DIR$/.idea/do-an-cuoi-ky.iml" beforeDir="false" />
-     </list>
+-    </list>
++    <list default="true" id="6389381a-4df7-4693-b13c-4e92e2d4aded" name="Changes" comment="commit lại và fix trang chi tiết sp" />
      <option name="SHOW_DIALOG" value="false" />
      <option name="HIGHLIGHT_CONFLICTS" value="true" />
-@@ -109,28 +89,29 @@
-   &quot;associatedIndex&quot;: 2
- }</component>
-   <component name="ProjectId" id="2K8PPlScjwDkiL8rSid0tOCjWmb" />
-+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-   <component name="ProjectViewState">
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -113,24 +91,24 @@
      <option name="hideEmptyMiddlePackages" value="true" />
      <option name="showLibraryContents" value="true" />
    </component>
@@ -101,11 +98,11 @@ diff --git a/.idea/workspace.xml b/.idea/workspace.xml
    <component name="RecentsManager">
      <key name="CopyFile.RECENT_KEYS">
        <recent name="D:\HappyHome_fixapi\src\main\webapp\views\admin" />
-@@ -483,6 +464,7 @@
+@@ -483,6 +461,7 @@
        <workItem from="1693489965558" duration="968000" />
        <workItem from="1699881560388" duration="1264000" />
        <workItem from="1699882832618" duration="89000" />
-+      <workItem from="1700987962422" duration="35000" />
++      <workItem from="1701667073126" duration="41000" />
      </task>
      <task id="LOCAL-00001" summary="fix tính giá vận chuyển">
        <created>1686505220241</created>

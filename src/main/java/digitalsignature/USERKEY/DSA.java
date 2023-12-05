@@ -30,25 +30,76 @@ public class DSA {
         kpg.initialize(1024, sr);
         return kpg.generateKeyPair();
     }
+
+    //    public void savePublicKeyToDatabase(PublicKey publicKey, int uid) {
+//        Connection connection = null;
+//        PreparedStatement preparedStatement = null;
+//
+//        try {
+//            // Chuyển đổi khóa công khai thành mảng byte để lưu vào cơ sở dữ liệu
+//            byte[] publicKeyBytes = publicKey.getEncoded();
+//
+//            // Lấy thời gian hiện tại ở định dạng chuỗi (yyyy-MM-dd HH:mm:ss)
+//            String currentTimestamp = getCurrentTimestamp();
+//
+//            // SQL để chèn dữ liệu vào bảng
+//            String sql = "INSERT INTO `key` (user_id, public_key, time_create, status) VALUES (?, ?, ?, ?)";
+//            connection = DBConnection.getConnection();
+//            preparedStatement = connection.prepareStatement(sql);
+//
+//            // Thiết lập các tham số trong câu lệnh SQL
+//            preparedStatement.setInt(1, uid);
+//            preparedStatement.setBytes(2, publicKeyBytes);
+//            preparedStatement.setString(3, currentTimestamp);
+//            preparedStatement.setInt(4, 1); // Hoặc giá trị trạng thái mong muốn
+//
+//            // Thực hiện câu lệnh INSERT
+//            int rowsAffected = preparedStatement.executeUpdate();
+//
+//            if (rowsAffected > 0) {
+//                System.out.println("Dữ liệu đã được chèn vào cơ sở dữ liệu thành công.");
+//            } else {
+//                System.out.println("Không có dữ liệu nào được chèn vào cơ sở dữ liệu.");
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        } finally {
+//            // Đóng các tài nguyên
+//            try {
+//                if (preparedStatement != null) {
+//                    preparedStatement.close();
+//                }
+//                if (connection != null) {
+//                    connection.close();
+//                }
+//            } catch (SQLException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//    }
     public void savePublicKeyToDatabase(PublicKey publicKey, int uid) {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
+        PreparedStatement updateStatement = null;
 
         try {
-            // Chuyển đổi khóa công khai thành mảng byte để lưu vào cơ sở dữ liệu
-            byte[] publicKeyBytes = publicKey.getEncoded();
-
             // Lấy thời gian hiện tại ở định dạng chuỗi (yyyy-MM-dd HH:mm:ss)
             String currentTimestamp = getCurrentTimestamp();
 
-            // SQL để chèn dữ liệu vào bảng
-            String sql = "INSERT INTO `key` (user_id, public_key, time_create, status) VALUES (?, ?, ?, ?)";
+            // SQL để cập nhật trạng thái của các bản ghi trước đó thành 0
+            String updateSql = "UPDATE `key` SET status = 0 WHERE user_id = ?";
             connection = DBConnection.getConnection();
-            preparedStatement = connection.prepareStatement(sql);
+            updateStatement = connection.prepareStatement(updateSql);
+            updateStatement.setInt(1, uid);
+            updateStatement.executeUpdate();
+
+            // SQL để chèn dữ liệu vào bảng
+            String insertSql = "INSERT INTO `key` (user_id, public_key, time_create, status) VALUES (?, ?, ?, ?)";
+            preparedStatement = connection.prepareStatement(insertSql);
 
             // Thiết lập các tham số trong câu lệnh SQL
             preparedStatement.setInt(1, uid);
-            preparedStatement.setBytes(2, publicKeyBytes);
+            preparedStatement.setBytes(2, publicKey.getEncoded());
             preparedStatement.setString(3, currentTimestamp);
             preparedStatement.setInt(4, 1); // Hoặc giá trị trạng thái mong muốn
 
@@ -68,6 +119,9 @@ public class DSA {
                 if (preparedStatement != null) {
                     preparedStatement.close();
                 }
+                if (updateStatement != null) {
+                    updateStatement.close();
+                }
                 if (connection != null) {
                     connection.close();
                 }
@@ -76,6 +130,7 @@ public class DSA {
             }
         }
     }
+
     public PublicKey getPublicKeyFromDatabase(int uid) {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
@@ -186,16 +241,6 @@ public class DSA {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         return currentDateTime.format(formatter);
     }
-//    public static String getCurrentTimestamp() {
-//        LocalDateTime currentDateTime = LocalDateTime.now();
-//        return currentDateTime.toString();
-//    }
-
-//    public static String getCurrentTimestamp() {
-//        LocalDateTime currentDateTime = LocalDateTime.now();
-//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-//        return currentDateTime.format(formatter);
-//    }
 
     public static Date convertStringToDate(String timestampString) throws ParseException {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
