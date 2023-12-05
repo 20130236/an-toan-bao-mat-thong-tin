@@ -118,7 +118,7 @@
                         <div class="form-group">
                           <label>Ngày đặt hàng:</label>
                           <div class="input-group date" id="reservationdate2" data-target-input="nearest">
-                            <div class="form-control"><%=Order.convertDate(order.getDate_order().toString())%></div>
+                            <div class="form-control"><%=Order.convertDateTime(order.getDate_order().toString())%></div>
                             <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
                               <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                             </div>

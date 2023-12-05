@@ -31,52 +31,6 @@ public class DSA {
         return kpg.generateKeyPair();
     }
 
-    //    public void savePublicKeyToDatabase(PublicKey publicKey, int uid) {
-//        Connection connection = null;
-//        PreparedStatement preparedStatement = null;
-//
-//        try {
-//            // Chuyển đổi khóa công khai thành mảng byte để lưu vào cơ sở dữ liệu
-//            byte[] publicKeyBytes = publicKey.getEncoded();
-//
-//            // Lấy thời gian hiện tại ở định dạng chuỗi (yyyy-MM-dd HH:mm:ss)
-//            String currentTimestamp = getCurrentTimestamp();
-//
-//            // SQL để chèn dữ liệu vào bảng
-//            String sql = "INSERT INTO `key` (user_id, public_key, time_create, status) VALUES (?, ?, ?, ?)";
-//            connection = DBConnection.getConnection();
-//            preparedStatement = connection.prepareStatement(sql);
-//
-//            // Thiết lập các tham số trong câu lệnh SQL
-//            preparedStatement.setInt(1, uid);
-//            preparedStatement.setBytes(2, publicKeyBytes);
-//            preparedStatement.setString(3, currentTimestamp);
-//            preparedStatement.setInt(4, 1); // Hoặc giá trị trạng thái mong muốn
-//
-//            // Thực hiện câu lệnh INSERT
-//            int rowsAffected = preparedStatement.executeUpdate();
-//
-//            if (rowsAffected > 0) {
-//                System.out.println("Dữ liệu đã được chèn vào cơ sở dữ liệu thành công.");
-//            } else {
-//                System.out.println("Không có dữ liệu nào được chèn vào cơ sở dữ liệu.");
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        } finally {
-//            // Đóng các tài nguyên
-//            try {
-//                if (preparedStatement != null) {
-//                    preparedStatement.close();
-//                }
-//                if (connection != null) {
-//                    connection.close();
-//                }
-//            } catch (SQLException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//    }
     public void savePublicKeyToDatabase(PublicKey publicKey, int uid) {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
@@ -237,11 +191,18 @@ public class DSA {
     }
 
     public static String getCurrentTimestamp() {
-        LocalDateTime currentDateTime = LocalDateTime.now();
+        // Lấy múi giờ của Việt Nam
+        ZoneId vietnamTimeZone = ZoneId.of("Asia/Ho_Chi_Minh");
+
+        // Lấy thời điểm hiện tại trong múi giờ của Việt Nam
+        LocalDateTime currentDateTime = LocalDateTime.now(vietnamTimeZone);
+
+        // Định dạng thời gian
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
+        // Chuyển đổi và trả về chuỗi thời gian
         return currentDateTime.format(formatter);
     }
-
     public static Date convertStringToDate(String timestampString) throws ParseException {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date date = dateFormat.parse(timestampString);
@@ -250,16 +211,6 @@ public class DSA {
 
     public static void main(String[] args) {
         String currentTimestamp = getCurrentTimestamp();
-        System.out.println("Current Timestamp: " + currentTimestamp);
-
-        // Chuyển đổi từ chuỗi sang Date
-        try {
-            Date date = convertStringToDate(currentTimestamp);
-            System.out.println("Converted Date: " + date);
-
-            // Sau đó bạn có thể sử dụng date trong phần khác của mã của bạn
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        System.out.println(currentTimestamp);
     }
 }

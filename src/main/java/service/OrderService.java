@@ -191,13 +191,11 @@ public class OrderService {
             ps = DBConnection.getConnection().prepareStatement(sql);
             rs = ps.executeQuery();
             while (rs.next()) {
-                Timestamp timestamp = rs.getTimestamp("date_order");
+
 
                 // Chuyển đổi Timestamp thành LocalDateTime
                 LocalDateTime dateOrder = null;
-                if (timestamp != null) {
-                    dateOrder = timestamp.toLocalDateTime();
-                }
+
                 Order_detail orderDetail = new Order_detail(0, new Order(1, "u", 1, 1, dateOrder, "t", "1", 1, "grgr", "fg", "phone"), rs.getInt(1), rs.getLong(2), rs.getInt(3), rs.getInt(4), rs.getLong(5));
                 od.add(orderDetail);
             }
@@ -337,8 +335,15 @@ public class OrderService {
 
     public static void main(String[] args) {
         OrderService os = new OrderService();
-        os.addSignatureText(29,"MCwCFDw0c3NDN/KJGqcr/U6dQkb+d6yNAhRdLp6wgVALUtRjI/3jF2dH11Bsmg==" );
-        System.out.println("Sign: "+os.getSignatureText(29));
+//        ArrayList<Order_detail> order_details = (ArrayList<Order_detail>) os.getOrderDById(30);
+//        for (Order_detail order_detail : order_details) {
+//            System.out.println(order_detail.toString());
+//        }
 
+ //       System.out.println(os.getOderById(30).toString());
+        ArrayList<Order> orders = (ArrayList<Order>) os.getAllOder();
+        for (Order order : orders) {
+            System.out.println(order.toString());
+        }
     }
 }

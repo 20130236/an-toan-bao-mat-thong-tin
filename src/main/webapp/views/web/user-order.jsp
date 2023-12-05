@@ -103,7 +103,7 @@
                             %>
                             <tr>
                                 <td><%=o.getOder_id()%></td>
-                                <td><%=Order.convertDate(o.getDate_order().toString())%></td>
+                                <td><%=Order.convertDateTime(o.getDate_order().toString())%></td>
                                 <td><%=o.formatCurrency(o.getTotal_money() + o.getFee())%></td>
                                 <td><%=o.statusOrder(o.getStatus())%></td>
                                 <td>

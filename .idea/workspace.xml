@@ -9,28 +9,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6389381a-4df7-4693-b13c-4e92e2d4aded" name="Changes" comment="commit lại và fix trang chi tiết sp">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_6_2023_11_49_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_6_2023_11_49_AM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_11_2023_3_40_CH_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_11_2023_3_40_CH__Changes_.xml" beforeDir="false" />
+    <list default="true" id="6389381a-4df7-4693-b13c-4e92e2d4aded" name="Changes" comment="ký đơn hàng. check xem đơn hàng có bị thay đổi hay không v1.0">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/controller/admin/statistic/DayAnalysis.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/admin/statistic/DayAnalysis.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/controller/admin/statistic/MonthAnalysis.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/admin/statistic/MonthAnalysis.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/controller/web/Order/AddOrderSuccess.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/web/Order/AddOrderSuccess.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/digitalsignature/CheckOrders.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/digitalsignature/CheckOrders.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/digitalsignature/USERKEY/DSA.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/digitalsignature/USERKEY/DSA.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/model/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/model/Order.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/service/OrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/service/OrderService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/service/ServiceStatistics.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/service/ServiceStatistics.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/service/ServiceStatisticsDay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/service/ServiceStatisticsDay.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/db.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/Order/CheckSuccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/admin/Order/CheckSuccess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/statistic/DayAnalysis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/admin/statistic/DayAnalysis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/statistic/MonthAnalysis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/admin/statistic/MonthAnalysis.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/web/Order/AddOrderSuccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/web/Order/AddOrderSuccess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/digitalsignature/CheckOrders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/digitalsignature/CheckOrders.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/digitalsignature/USERKEY/DSA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/digitalsignature/USERKEY/DSA.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/API_LOGISTIC/RegisterTransport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/API_LOGISTIC/RegisterTransport.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/ServiceStatistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/ServiceStatistics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/ServiceStatisticsDay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/ServiceStatisticsDay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/product-checkout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/product-checkout.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/check-invoice.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/check-invoice.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/checkorder-data.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/checkorder-data.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/invoice-data.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/invoice-data.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/user-order-detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/user-order-detail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/user-order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/user-order.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,20 +154,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.CheckOrders">
-    <configuration name="AddOrderSuccess" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="controller.web.Order.AddOrderSuccess" />
-      <module name="happyhome.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="controller.web.Order.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.34">
     <configuration name="CheckOrders" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="digitalsignature.CheckOrders" />
       <module name="happyhome.main" />
@@ -180,12 +168,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GetFee" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="service.API_LOGISTIC.GetFee" />
+    <configuration name="Login_API" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="service.API_LOGISTIC.Login_API" />
       <module name="happyhome.main" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="service.API_LOGISTIC.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Order" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="model.Order" />
+      <module name="happyhome.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -206,12 +207,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ServiceStatistics" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="service.ServiceStatistics" />
+    <configuration name="RegisterTransport" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="service.API_LOGISTIC.RegisterTransport" />
       <module name="happyhome.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="service.*" />
+          <option name="PATTERN" value="service.API_LOGISTIC.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -307,20 +308,20 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Login_API" />
+      <item itemvalue="Application.Order" />
+      <item itemvalue="Application.RegisterTransport" />
       <item itemvalue="Application.OrderService" />
       <item itemvalue="Application.CheckOrders" />
-      <item itemvalue="Application.GetFee" />
-      <item itemvalue="Application.ServiceStatistics" />
-      <item itemvalue="Application.AddOrderSuccess" />
       <item itemvalue="Tomcat Server.Tomcat 8.5.34" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CheckOrders" />
+        <item itemvalue="Application.Login_API" />
+        <item itemvalue="Application.RegisterTransport" />
+        <item itemvalue="Application.Order" />
         <item itemvalue="Application.OrderService" />
-        <item itemvalue="Application.AddOrderSuccess" />
-        <item itemvalue="Application.GetFee" />
-        <item itemvalue="Application.ServiceStatistics" />
+        <item itemvalue="Application.CheckOrders" />
       </list>
     </recent_temporary>
   </component>
@@ -470,7 +471,8 @@
       <workItem from="1699882832618" duration="89000" />
       <workItem from="1701673057299" duration="9770000" />
       <workItem from="1701692165784" duration="10663000" />
-      <workItem from="1701764322554" duration="4359000" />
+      <workItem from="1701764322554" duration="4661000" />
+      <workItem from="1701785596236" duration="8760000" />
     </task>
     <task id="LOCAL-00001" summary="fix tính giá vận chuyển">
       <created>1686505220241</created>
@@ -514,7 +516,15 @@
       <option name="project" value="LOCAL" />
       <updated>1686674062690</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="ký đơn hàng. check xem đơn hàng có bị thay đổi hay không v1.0">
+      <option name="closed" value="true" />
+      <created>1701769564844</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1701769564844</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -550,7 +560,8 @@
     <MESSAGE value="fix @WebFilter(filterName = &quot;Utf8Filter&quot;, urlPatterns = {&quot;/*&quot;}) add urlPatterns = {&quot;/*&quot;} for all page" />
     <MESSAGE value="fix định dạng tiền đ + fix phân trang" />
     <MESSAGE value="commit lại và fix trang chi tiết sp" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit lại và fix trang chi tiết sp" />
+    <MESSAGE value="ký đơn hàng. check xem đơn hàng có bị thay đổi hay không v1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="ký đơn hàng. check xem đơn hàng có bị thay đổi hay không v1.0" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -580,23 +591,19 @@
           <line>48</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/digitalsignature/CheckOrders.java</url>
-          <line>305</line>
-          <properties class="digitalsignature.CheckOrders" method="main">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="29" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/service/OrderService.java</url>
+          <line>342</line>
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/controller/web/Order/AddOrderSuccess.java</url>
-          <line>240</line>
-          <properties class="controller.web.Order.AddOrderSuccess" method="main">
+          <url>file://$PROJECT_DIR$/src/main/java/service/OrderService.java</url>
+          <line>335</line>
+          <properties class="service.OrderService" method="main">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="30" />
+          <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

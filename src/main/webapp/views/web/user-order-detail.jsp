@@ -116,7 +116,7 @@
                                 </div>
                                 <div class="col-sm-4 invoice-col">
                                     <b>ID hoá đơn : </b> <%=order.getOder_id()%><br>
-                                    <b>Ngày lập hoá đơn : </b> <span id="ngay-hoa-don"><%=order.getDate_order()%></span><br>
+                                    <b>Ngày lập hoá đơn : </b> <span id="ngay-hoa-don"><%=order.convertDateTime(order.getDate_order().toString())%></span><br>
                                     <script>
                                         var ngayHienTai = document.getElementById("ngay-hoa-don").innerHTML;
                                         var ngayMoi = ngayHienTai.split("-").reverse().join("/");

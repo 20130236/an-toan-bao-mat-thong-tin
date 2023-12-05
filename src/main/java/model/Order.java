@@ -162,6 +162,7 @@ public class Order {
 
 
     }
+
     public String getFullName(String userName) {
         String sql = "SELECT full_name FROM users WHERE user_name = ?";
         try (Connection connection = DBConnection.getConnection();
@@ -185,9 +186,10 @@ public class Order {
         NumberFormat currencyVN = NumberFormat.getCurrencyInstance(localeVN);
         return currencyVN.format(amount);
     }
-    public String statusOrder(int id){
+
+    public String statusOrder(int id) {
         String nameStatus = "Lỗi";
-        switch (id){
+        switch (id) {
             case 0:
                 nameStatus = "Chờ xác nhận";
                 break;
@@ -206,17 +208,29 @@ public class Order {
         }
         return nameStatus;
     }
+
     public static String convertDate(String dateString) {
         LocalDate date = LocalDate.parse(dateString);
         return date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
     }
 
+    public static String convertDateTime(String dateTimeString) {
+        // Chuyển đổi chuỗi thành LocalDateTime
+        LocalDateTime dateTime = LocalDateTime.parse(dateTimeString, DateTimeFormatter.ISO_LOCAL_DATE_TIME);
+
+        // Định dạng lại LocalDateTime theo định dạng mong muốn
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss dd/MM/yyyy");
+        return dateTime.format(formatter);
+    }
+
     public static void main(String[] args) throws IOException {
         Order o = new Order();
-        OrderService orderService = new OrderService()  ;
-        o = orderService.getOderById(25);
+        OrderService orderService = new OrderService();
+        o = orderService.getOderById(31);
         System.out.println(o.getUser_name());
         System.out.println(o.toString());
         System.out.println(o.getFullName(o.getUser_name()));
+        System.out.println(o.getDate_order());
+        System.out.println(convertDateTime("2023-12-05T21:52:28"));
     }
 }
