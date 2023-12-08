@@ -205,6 +205,12 @@ public class Order {
             case 4:
                 nameStatus = "Giao hàng thất bại";
                 break;
+            case 5:
+                nameStatus = "Đơn hàng bị huỷ";
+                break;
+            case 6:
+                nameStatus = "Đơn hàng bị huỷ - và hoàn tiền";
+                break;
         }
         return nameStatus;
     }

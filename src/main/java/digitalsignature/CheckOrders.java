@@ -1,10 +1,10 @@
 package digitalsignature;
 
 import dao.DBConnection;
-import digitalsignature.USERKEY.DSA;
 import model.Order;
 import model.Order_detail;
 import service.OrderService;
+import service.UserService;
 
 import java.io.FileOutputStream;
 import java.math.BigInteger;
@@ -13,21 +13,17 @@ import java.nio.file.Paths;
 import java.security.*;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
-import java.sql.*;
 import java.sql.Timestamp;
+import java.sql.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class CheckOrders {
-    Order order = null;
+    static Order order = null;
 
-    public String check(String data) {
+    public static String check(String data) {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-512");
             byte[] output = md.digest(data.getBytes());
@@ -38,7 +34,7 @@ public class CheckOrders {
         }
     }
 
-    public Order getOderById(int id) {
+    public static Order getOderById(int id) {
 
 
         ResultSet rs;
@@ -61,13 +57,13 @@ public class CheckOrders {
             }
 
         } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
+            return null;
 
         }
         return order;
     }
 
-    public List<Order_detail> getOrderDById(int id) {
+    public static List<Order_detail> getOrderDById(int id) {
         List<Order_detail> od = new ArrayList<>();
         ResultSet rs;
         PreparedStatement ps;
@@ -80,20 +76,25 @@ public class CheckOrders {
                 od.add(orderDetail);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            return null;
         }
         return od;
     }
 
-    public String getListOrder(int id) {
+    public static String getListOrder(int id) {
         StringBuilder stringBuilder = new StringBuilder();
-        Order order = getOderById(id);
-        order.statusOrder(0);
-        List<Order_detail> order_details = getOrderDById(id);
-        stringBuilder.append(order.toString());
-        for (Order_detail order_detail : order_details) {
-            stringBuilder.append(order_detail.toString());
+        try {
+            Order order = getOderById(id);
+            order.setStatus(0);
+            List<Order_detail> order_details = getOrderDById(id);
+            stringBuilder.append(order.toString());
+            for (Order_detail order_detail : order_details) {
+                stringBuilder.append(order_detail.toString());
+            }
+        } catch (Exception e) {
+            return null;
         }
+
         return stringBuilder.toString();
     }
 
@@ -118,7 +119,7 @@ public class CheckOrders {
             fos.close();
             System.out.println("Keys generated and saved");
         } catch (Exception e) {
-            e.printStackTrace();
+            return;
         }
     }
 
@@ -146,9 +147,8 @@ public class CheckOrders {
                 signatureOutputStream.write(signature);
             }
 
-            System.out.println("Sign document successfully");
         } catch (Exception e) {
-            e.printStackTrace();
+            return;
         }
     }
 
@@ -173,39 +173,12 @@ public class CheckOrders {
 
             return encodedSignature;
         } catch (Exception e) {
-            e.printStackTrace();
+            return null;
         }
 
-        return null;
     }
 
-//    public static boolean verifySignature(String publicKeyPath, String document, byte[] signature) {
-//        try {
-//            // Nạp public key từ file
-//            byte[] keyBytes = Files.readAllBytes(Paths.get(publicKeyPath));
-//            X509EncodedKeySpec spec = new X509EncodedKeySpec(keyBytes);
-//            KeyFactory factory = KeyFactory.getInstance("DSA");
-//            PublicKey pubKey = factory.generatePublic(spec);
-//
-//            // Tạo đối tượng kiểm tra chữ ký
-//            Signature verifier = Signature.getInstance("DSA");
-//            verifier.initVerify(pubKey);
-//
-//            // Chuyển chuỗi thành byte array
-//            byte[] documentBytes = document.getBytes();
-//
-//            // Chèn dữ liệu vào đối tượng verifier
-//            verifier.update(documentBytes);
-//
-//            // Kiểm tra chữ ký
-//            return verifier.verify(signature);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//
-//        return false;
-//    }
-    public static boolean verifySignature1(PublicKey pubKey, String document, String encodedSignature) {
+    public static boolean verifySignature(PublicKey pubKey, String document, String encodedSignature) {
         try {
             // Tạo đối tượng kiểm tra chữ ký
             Signature verifier = Signature.getInstance("DSA");
@@ -223,12 +196,13 @@ public class CheckOrders {
             // Kiểm tra chữ ký
             return verifier.verify(signature);
         } catch (Exception e) {
-            e.printStackTrace();
+            return false;
         }
 
-        return false;
+
     }
-    public List<PublicKey> getPublicKeysFromDatabase(int uid) {
+
+    public static List<PublicKey> getPublicKeysFromDatabase(int uid) {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
@@ -257,7 +231,7 @@ public class CheckOrders {
                 publicKeys.add(publicKey);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            return null;
         } finally {
             // Close resources in the reverse order of their creation to avoid resource leaks
             try {
@@ -277,23 +251,26 @@ public class CheckOrders {
 
         return publicKeys; // Return the list of public keys
     }
+
     // Phương thức kiểm tra chữ ký với danh sách public keys
-    public static void printSignatureValidationResult(ArrayList<PublicKey> publicKeys, String document, String encodedSignature) {
+    public static boolean printSignatureValidationResult(ArrayList<PublicKey> publicKeys, String document, String encodedSignature) {
         boolean isAnySignatureValid = false;
 
         for (PublicKey publicKey : publicKeys) {
-            if (verifySignature1(publicKey, document, encodedSignature)) {
+            if (verifySignature(publicKey, document, encodedSignature)) {
                 isAnySignatureValid = true;
                 break; // Nếu có ít nhất một chữ ký hợp lệ, thoát khỏi vòng lặp
             }
         }
 
-        if (isAnySignatureValid) {
-            System.out.println("Có ít nhất một chữ ký hợp lệ.");
-        } else {
-            System.out.println("Không có chữ ký hợp lệ.");
-        }
+//        if (isAnySignatureValid) {
+//            System.out.println("Có ít nhất một chữ ký hợp lệ.");
+//        } else {
+//            System.out.println("Không có chữ ký hợp lệ.");
+//        }
+        return isAnySignatureValid;
     }
+
     // Phương thức lấy danh sách public keys từ cơ sở dữ liệu và kiểm tra chữ ký
     public static boolean verifyAndPrintSignature(int uid, String document, String encodedSignature) {
         Connection connection = null;
@@ -321,7 +298,7 @@ public class CheckOrders {
                 PublicKey publicKey = keyFactory.generatePublic(keySpec);
 
                 // Verify the signature with the current public key
-                if (verifySignature1(publicKey, document, encodedSignature)) {
+                if (verifySignature(publicKey, document, encodedSignature)) {
                     isAnySignatureValid = true;
                     break; // Nếu có ít nhất một chữ ký hợp lệ, thoát khỏi vòng lặp
                 }
@@ -334,7 +311,7 @@ public class CheckOrders {
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+            return false;
         } finally {
             // Close resources in the reverse order of their creation to avoid resource leaks
             try {
@@ -353,101 +330,39 @@ public class CheckOrders {
         }
         return isAnySignatureValid;
     }
-    private static final ExecutorService executorService = Executors.newCachedThreadPool();
 
-    public static boolean verifyAndPrintSignature1(int uid, String document, String encodedSignature) {
-        try (Connection connection = DBConnection.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("SELECT public_key FROM `key` WHERE user_id = ?");
-        ) {
-            preparedStatement.setInt(1, uid);
-
-            try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                List<CompletableFuture<Boolean>> futures = new ArrayList<>();
-
-                while (resultSet.next()) {
-                    byte[] publicKeyBytes = resultSet.getBytes("public_key");
-                    X509EncodedKeySpec keySpec = new X509EncodedKeySpec(publicKeyBytes);
-                    java.security.KeyFactory keyFactory = java.security.KeyFactory.getInstance("DSA");
-                    PublicKey publicKey = keyFactory.generatePublic(keySpec);
-
-                    CompletableFuture<Boolean> future = CompletableFuture.supplyAsync(() ->
-                            verifySignature2(publicKey, document, encodedSignature), executorService);
-
-                    futures.add(future);
-                }
-
-                CompletableFuture<Void> allOf = CompletableFuture.allOf(futures.toArray(new CompletableFuture[0]));
-
-                try {
-                    allOf.get(); // Đợi tất cả các CompletableFuture hoàn thành
-                } catch (InterruptedException | ExecutionException e) {
-                    e.printStackTrace();
-                }
-
-                boolean isAnySignatureValid = futures.stream()
-                        .map(CompletableFuture::join)
-                        .anyMatch(Boolean::booleanValue);
-
-                if (isAnySignatureValid) {
-                    System.out.println("Có ít nhất một chữ ký hợp lệ.");
-                } else {
-                    System.out.println("Không có chữ ký hợp lệ.");
-                }
-
-                return isAnySignatureValid;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return false;
-    }
-
-    public static boolean verifySignature2(PublicKey pubKey, String document, String encodedSignature) {
+    //dựa vào id đơn hàng kiểm tra xem đơn hàng có hợp lệ hay không
+    public static boolean checkOrderIsNotChange(int id) {
         try {
-            Signature verifier = Signature.getInstance("DSA");
-            verifier.initVerify(pubKey);
+            OrderService orderService = new OrderService();
+            String data = orderService.getSignatureText(id);
+            Order order = getOderById(id);
+            int uid = UserService.getIdByUserName(order.getUser_name());
+            String getListOrder = getListOrder(id);
+            String hash = check(getListOrder);
 
-            byte[] documentBytes = document.getBytes();
-            byte[] signature = java.util.Base64.getDecoder().decode(encodedSignature);
+            ArrayList<PublicKey> publicKeys = (ArrayList<PublicKey>) getPublicKeysFromDatabase(uid);
 
-            verifier.update(documentBytes);
 
-            return verifier.verify(signature);
+            return printSignatureValidationResult(publicKeys, hash, data);
         } catch (Exception e) {
-            e.printStackTrace();
+            return false;
         }
 
-        return false;
     }
 
 
     public static void main(String[] args) {
         CheckOrders checkOrders = new CheckOrders();
-        DSA dsa = new DSA();
- //       PublicKey publicKey = dsa.getPublicKeyFromDatabase(59);
 
-        OrderService orderService = new OrderService();
-        String data = orderService.getSignatureText(30);
-        String getListOrder = checkOrders.getListOrder(30);
-        String hash = checkOrders.check(getListOrder);
-//
-        System.out.println(checkOrders.verifyAndPrintSignature(59, hash, data));
-
-        System.out.println(checkOrders.verifyAndPrintSignature1(59, hash, data));
         long startTime1 = System.currentTimeMillis();
-        boolean result1 = checkOrders.verifyAndPrintSignature(59, hash, data);
+        boolean result1 = checkOrders.checkOrderIsNotChange(31);
         long endTime1 = System.currentTimeMillis();
 
         System.out.println("Result 1: " + result1);
         System.out.println("Time taken by verifyAndPrintSignature: " + (endTime1 - startTime1) + " milliseconds");
 
-        long startTime2 = System.currentTimeMillis();
-        boolean result2 = checkOrders.verifyAndPrintSignature1(59, hash, data);
-        long endTime2 = System.currentTimeMillis();
 
-        System.out.println("Result 2: " + result2);
-        System.out.println("Time taken by verifyAndPrintSignature1: " + (endTime2 - startTime2) + " milliseconds");
     }
 }
 

@@ -9,29 +9,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6389381a-4df7-4693-b13c-4e92e2d4aded" name="Changes" comment="ký đơn hàng. check xem đơn hàng có bị thay đổi hay không v1.0">
+    <list default="true" id="6389381a-4df7-4693-b13c-4e92e2d4aded" name="Changes" comment="commit lại và fix trang chi tiết sp">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_12_2023_12_20_CH__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_12_2023_12_20_CH__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_6_2023_11_49_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_6_2023_11_49_AM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/admin/statistic/DayAnalysis.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/admin/statistic/DayAnalysis.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/admin/statistic/MonthAnalysis.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/admin/statistic/MonthAnalysis.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/admin/Order/CheckSuccess.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/admin/Order/CheckSuccess.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/controller/web/Order/AddOrderSuccess.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/web/Order/AddOrderSuccess.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/dao/RoleDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/dao/RoleDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/dao/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/dao/UserDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/digitalsignature/CheckOrders.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/digitalsignature/CheckOrders.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/digitalsignature/USERKEY/DSA.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/digitalsignature/USERKEY/DSA.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/model/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/model/Order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/service/API_LOGISTIC/RegisterTransport.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/service/API_LOGISTIC/RegisterTransport.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/service/OrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/service/OrderService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/Order/CheckSuccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/admin/Order/CheckSuccess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/statistic/DayAnalysis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/admin/statistic/DayAnalysis.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/statistic/MonthAnalysis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/admin/statistic/MonthAnalysis.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/web/Order/AddOrderSuccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/web/Order/AddOrderSuccess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/RoleDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/RoleDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/digitalsignature/CheckOrders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/digitalsignature/CheckOrders.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/digitalsignature/USERKEY/DSA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/digitalsignature/USERKEY/DSA.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/API_LOGISTIC/RegisterTransport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/API_LOGISTIC/RegisterTransport.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/check-invoice.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/check-invoice.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/checkorder-data.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/checkorder-data.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/invoice-data.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/invoice-data.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/user-order-detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/user-order-detail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/user-order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/user-order.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +51,17 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="happyhome" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="happyhome" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -74,7 +84,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dung_dat_clone" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -93,9 +103,6 @@
       </UrlAndAccount>
     </option>
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/digitalsignature/CheckOrders.java" root0="FORCE_HIGHLIGHTING" />
-  </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -113,30 +120,38 @@
   &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="2K8PPlScjwDkiL8rSid0tOCjWmb" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dat__checkorders&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Lesson/an toan bao mat/cuoi-ky&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.DBConnection.executor": "Run",
+    "Application.DSA.executor": "Run",
+    "Application.Order.executor": "Run",
+    "Application.OrderService.executor": "Run",
+    "Application.RoleDAO.executor": "Run",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Tomcat Server.Tomcat 9.0.75.executor": "Run",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "fix__clone__datcheckorders",
+    "last_opened_file_path": "D:/antoan/fix1_loi/src/main/webapp/views/admin",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\antoan\fix1_loi\src\main\webapp\views\admin" />
       <recent name="D:\HappyHome_fixapi\src\main\webapp\views\admin" />
       <recent name="E:\LapTrinhWeb\cuoi ky\HappyHome\src\main\webapp\Template\web\libs\jquery" />
     </key>
@@ -154,13 +169,13 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.34">
-    <configuration name="CheckOrders" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="digitalsignature.CheckOrders" />
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.75">
+    <configuration name="DBConnection" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dao.DBConnection" />
       <module name="happyhome.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="digitalsignature.*" />
+          <option name="PATTERN" value="dao.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -168,12 +183,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Login_API" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="service.API_LOGISTIC.Login_API" />
+    <configuration name="DSA" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="digitalsignature.USERKEY.DSA" />
       <module name="happyhome.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="service.API_LOGISTIC.*" />
+          <option name="PATTERN" value="digitalsignature.USERKEY.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -207,12 +222,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RegisterTransport" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="service.API_LOGISTIC.RegisterTransport" />
+    <configuration name="RoleDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dao.RoleDAO" />
       <module name="happyhome.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="service.API_LOGISTIC.*" />
+          <option name="PATTERN" value="dao.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -220,7 +235,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tomcat 8.5.34" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.34" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="Tomcat 9.0.75" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.75" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="Gradle : org.example : happyhome-1.0-SNAPSHOT.war">
@@ -230,7 +245,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="b15096a5-6de0-45c8-a910-c5fed14a2ee0" />
+        <option name="BASE_DIRECTORY_NAME" value="bd092b4c-9ccf-4f52-ba11-a12a4e5e2f02" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -238,7 +253,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="57494" />
+        <option name="DEBUG_PORT" value="50404" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -308,20 +323,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Login_API" />
+      <item itemvalue="Application.DSA" />
       <item itemvalue="Application.Order" />
-      <item itemvalue="Application.RegisterTransport" />
       <item itemvalue="Application.OrderService" />
-      <item itemvalue="Application.CheckOrders" />
-      <item itemvalue="Tomcat Server.Tomcat 8.5.34" />
+      <item itemvalue="Application.DBConnection" />
+      <item itemvalue="Application.RoleDAO" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.75" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Login_API" />
-        <item itemvalue="Application.RegisterTransport" />
-        <item itemvalue="Application.Order" />
         <item itemvalue="Application.OrderService" />
-        <item itemvalue="Application.CheckOrders" />
+        <item itemvalue="Application.Order" />
+        <item itemvalue="Application.DSA" />
+        <item itemvalue="Application.RoleDAO" />
+        <item itemvalue="Application.DBConnection" />
       </list>
     </recent_temporary>
   </component>
@@ -469,10 +484,6 @@
       <workItem from="1693489965558" duration="968000" />
       <workItem from="1699881560388" duration="1264000" />
       <workItem from="1699882832618" duration="89000" />
-      <workItem from="1701673057299" duration="9770000" />
-      <workItem from="1701692165784" duration="10663000" />
-      <workItem from="1701764322554" duration="4661000" />
-      <workItem from="1701785596236" duration="8760000" />
     </task>
     <task id="LOCAL-00001" summary="fix tính giá vận chuyển">
       <created>1686505220241</created>
@@ -516,15 +527,7 @@
       <option name="project" value="LOCAL" />
       <updated>1686674062690</updated>
     </task>
-    <task id="LOCAL-00007" summary="ký đơn hàng. check xem đơn hàng có bị thay đổi hay không v1.0">
-      <option name="closed" value="true" />
-      <created>1701769564844</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1701769564844</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -560,8 +563,7 @@
     <MESSAGE value="fix @WebFilter(filterName = &quot;Utf8Filter&quot;, urlPatterns = {&quot;/*&quot;}) add urlPatterns = {&quot;/*&quot;} for all page" />
     <MESSAGE value="fix định dạng tiền đ + fix phân trang" />
     <MESSAGE value="commit lại và fix trang chi tiết sp" />
-    <MESSAGE value="ký đơn hàng. check xem đơn hàng có bị thay đổi hay không v1.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="ký đơn hàng. check xem đơn hàng có bị thay đổi hay không v1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit lại và fix trang chi tiết sp" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -590,20 +592,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/controller/admin/ImportProductController.java</url>
           <line>48</line>
           <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/service/OrderService.java</url>
-          <line>342</line>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/service/OrderService.java</url>
-          <line>335</line>
-          <properties class="service.OrderService" method="main">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

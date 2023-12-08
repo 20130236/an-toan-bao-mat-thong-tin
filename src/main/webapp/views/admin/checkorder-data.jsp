@@ -1,5 +1,6 @@
 <%@ page import="model.Order" %>
 <%@ page import="java.util.List" %>
+<%@ page import="digitalsignature.CheckOrders" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -50,9 +51,12 @@
                                     <thead>
                                     <tr>
                                         <th>Mã đơn hàng</th>
-                                        <th>Username</th>
-                                        <th>Ngày lập</th>
-                                        <th>Tình trạng</th>
+                                        <th>Khách hàng</th>
+                                        <th>Ngày tạo đơn hàng</th>
+                                        <th>Tổng tiền</th>
+                                        <th>Hình thức thanh toán</th>
+                                        <th>Đơn hàng hợp lệ</th>
+                                        <th>Trạng thái đơn hàng</th>
                                         <th>Tác vụ</th>
                                     </tr>
                                     </thead>
@@ -66,6 +70,16 @@
                                         <td><%=o.getUser_name()%>
                                         </td>
                                         <td><%=Order.convertDateTime(o.getDate_order().toString())%>
+                                        </td>
+                                        <td><%=o.formatCurrency(o.getTotal_money())%></td>
+                                        <td><%=o.getPayment()%></td>
+                                        <td>
+                                            <% if (CheckOrders.checkOrderIsNotChange(o.getOder_id())) { %>
+                                            <span class="badge badge-primary">Đơn hàng không bị chỉnh sửa</span>
+                                            <% } else{ %>
+
+                                            <span class="badge badge-warning">Đơn hàng bị chỉnh sửa</span>
+                                            <% } %>
                                         </td>
                                         <td><%=o.statusOrder(o.getStatus())%>
                                         </td>
