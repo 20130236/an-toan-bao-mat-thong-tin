@@ -10,6 +10,7 @@ import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Base64;
 import java.util.Locale;
 
 public class Order {
@@ -134,7 +135,20 @@ public class Order {
     }
 
     public String getDigitalSignature() {
-        return digitalSignature;
+        OrderService orderService = new OrderService();
+        String data = orderService.getSignatureText(oder_id);
+        String result = "Đơn hàng chưa được ký";
+        // Kiểm tra xem chuỗi có phải là Base64 hay không
+        if (isBase64(data)) {
+            byte[] decodedData = Base64.getDecoder().decode(data);
+            String decodedDataString = new String(decodedData);
+            if(decodedDataString.isEmpty()){
+                return result;
+            }
+            return result = "Đơn hàng đã được ký";
+        } else {
+            return result ;
+        }
     }
 
     public void setDigitalSignature(String digitalSignature) {
@@ -205,6 +219,12 @@ public class Order {
             case 4:
                 nameStatus = "Giao hàng thất bại";
                 break;
+            case 5:
+                nameStatus = "Đơn hàng bị huỷ";
+                break;
+            case 6:
+                nameStatus = "Đơn hàng bị huỷ - và hoàn tiền";
+                break;
         }
         return nameStatus;
     }
@@ -222,15 +242,25 @@ public class Order {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss dd/MM/yyyy");
         return dateTime.format(formatter);
     }
+    // Hàm kiểm tra xem chuỗi có phải là Base64 hay không
+    private static boolean isBase64(String str) {
+        try {
+            Base64.getDecoder().decode(str);
+            return true;
+        } catch (IllegalArgumentException e) {
+            return false;
+        }
+    }
 
     public static void main(String[] args) throws IOException {
         Order o = new Order();
         OrderService orderService = new OrderService();
-        o = orderService.getOderById(31);
-        System.out.println(o.getUser_name());
-        System.out.println(o.toString());
-        System.out.println(o.getFullName(o.getUser_name()));
-        System.out.println(o.getDate_order());
-        System.out.println(convertDateTime("2023-12-05T21:52:28"));
+        o = orderService.getOderById(30);
+//        System.out.println(o.getUser_name());
+//        System.out.println(o.toString());
+//        System.out.println(o.getFullName(o.getUser_name()));
+//        System.out.println(o.getDate_order());
+//        System.out.println(convertDateTime("2023-12-05T21:52:28"));
+        //System.out.println(o.getDigitalSignature());
     }
 }

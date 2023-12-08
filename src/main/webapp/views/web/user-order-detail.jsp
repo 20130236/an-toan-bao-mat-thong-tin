@@ -206,6 +206,18 @@
                                             </tr>
                                         </table>
                                     </div>
+                                    <p class="lead">Chữ ký hoá đơn</p>
+
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <tr>
+                                                <th style="width:50%">Chữ ký xác nhận :</th>
+                                                <td>
+                                                    <%=order.getDigitalSignature()%>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
 

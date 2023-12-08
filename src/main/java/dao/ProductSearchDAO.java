@@ -142,7 +142,7 @@ public class ProductSearchDAO {
     }
 
     public static void main(String[] args) {
-        System.out.println(searchByName("ghế",1,2));
+        //System.out.println(searchByName("ghế",1,2));
     }
 
     public static void deletes(Product product) {

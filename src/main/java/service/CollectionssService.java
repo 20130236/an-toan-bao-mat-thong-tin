@@ -77,6 +77,6 @@ public class CollectionssService {
 
     public static void main(String[] args) {
     CollectionssService service = new CollectionssService();
-        System.out.println(service.getNameCol(1));
+        //System.out.println(service.getNameCol(1));
     }
 }

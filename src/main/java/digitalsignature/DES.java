@@ -70,7 +70,7 @@ public class DES {
             fos.flush();
             fos.close();
         } else {
-            System.out.println("wrong path");
+         //   System.out.println("wrong path");
         }
     }
 
@@ -114,7 +114,7 @@ public class DES {
             fos.flush();
             fos.close();
         }  else {
-            System.out.println("wrong path");
+        //    System.out.println("wrong path");
         }
     }
 

@@ -645,4 +645,23 @@ public class UserDAO {
             return null;
         }
     }
+    public static int findIDByUser(String username) {
+        int uid = 0;
+        ResultSet rs;
+        PreparedStatement pst;
+        String sql;
+        try {
+            sql = "select uid from users where user_name = ? ";
+            pst = DBConnection.getConnection().prepareStatement(sql);
+            pst.setString(1, username);
+            rs = pst.executeQuery();
+            while (rs.next()) {
+                uid = rs.getInt("uid");
+
+            }
+            return uid;
+        } catch (ClassNotFoundException | SQLException e) {
+            return 0;
+        }
+    }
 }

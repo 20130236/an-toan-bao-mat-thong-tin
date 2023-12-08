@@ -116,7 +116,7 @@ public class LogDAO {
 
 
     public static void main(String[] args) {
-        System.out.println(countByIpAddress());
+        //System.out.println(countByIpAddress());
     }
 
 

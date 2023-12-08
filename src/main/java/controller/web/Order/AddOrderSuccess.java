@@ -194,13 +194,13 @@ public class AddOrderSuccess extends HttpServlet {
             String hash = checkOrders.check(data);
             String signature = checkOrders.signDocument2(privateKey, hash);
             orderService.addSignatureText(orderid, signature);
-            System.out.println(data);
-            System.out.println(hash);
+            //System.out.println(data);
+            //System.out.println(hash);
             // Nếu khớp nhau, chuyển hướng đến trang success
             response.sendRedirect(request.getContextPath() + "/lab/success");
         } else {
             // Nếu không khớp, in ra thông báo lỗi và forward lại trang hiện tại
-            System.out.println("Keys do not match. Forwarding to the current page.");
+           // System.out.println("Keys do not match. Forwarding to the current page.");
             request.setAttribute("error", "Private key and public key do not match.");
             // Set the error message in the session to access it in the JavaScript
             session.setAttribute("errorMessage", "Private key and public key do not match.");

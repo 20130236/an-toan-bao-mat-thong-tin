@@ -1,5 +1,6 @@
 <%@ page import="model.Order" %>
 <%@ page import="java.util.List" %>
+<%@ page import="digitalsignature.CheckOrders" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -23,12 +24,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Danh sách đơn hàng</h1>
+                        <h1>Kiểm tra đơn hàng hợp lệ</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active"><a href="<c:url value="/admin-order_controller"/>">Danh sách đơn hàng</a></li>
+                            <li class="breadcrumb-item active">Kiểm tra đơn hàng hợp lệ</li>
                         </ol>
                     </div>
                 </div>
@@ -42,8 +43,6 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <button class="btn btn-primary" style="float: right;"><a style="color: white">Thêm mới</a></button>
-                                <button id="check-btn" class="btn btn-success" style="float: right; margin-right: 10px" onclick="redirectToServlet()">Kiểm tra đơn hàng</button>
                                 <button id="duyet-btn" class="btn btn-info" style="float: right; margin-right: 10px" onclick="redirectToServlet1()">Duyệt đơn hàng</button>
                             </div>
 
@@ -79,7 +78,12 @@
                                         <td><%=o.formatCurrency(o.getTotal_money())%></td>
                                         <td><%=o.getPayment()%></td>
                                         <td>
-                                            <span class="badge badge-primary">...</span>
+                                            <% if (CheckOrders.checkOrderIsNotChange(o.getOder_id())) { %>
+                                            <span class="badge badge-primary">Đơn hàng không bị chỉnh sửa</span>
+                                            <% } else{ %>
+
+                                            <span class="badge badge-warning">Đơn hàng bị chỉnh sửa</span>
+                                            <% } %>
                                         </td>
                                         <td><%=o.statusOrder(o.getStatus())%></td>
                                         <td>
@@ -135,15 +139,6 @@
             e.preventDefault();
         }
     })
-</script>
-<script>
-    function redirectToServlet() {
-        // Lấy URL được tạo bởi JSTL
-        var servletUrl = '<c:url value="/admin-order-controller-check"/>';
-
-        // Chuyển hướng đến servlet khi nút được nhấn
-        window.location.href = servletUrl;
-    }
 </script>
 <script>
     function redirectToServlet1() {

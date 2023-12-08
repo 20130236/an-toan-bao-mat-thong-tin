@@ -85,6 +85,7 @@ public class DSA {
         }
     }
 
+    // lấy public key từ db
     public PublicKey getPublicKeyFromDatabase(int uid) {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
@@ -130,6 +131,7 @@ public class DSA {
         return null; // Return null if the public key is not found or an error occurs
     }
 
+    // lấy file name
     public String getFileName(final Part part) {
         final String partHeader = part.getHeader("content-disposition");
         for (String content : partHeader.split(";")) {
@@ -203,6 +205,7 @@ public class DSA {
         // Chuyển đổi và trả về chuỗi thời gian
         return currentDateTime.format(formatter);
     }
+
     public static Date convertStringToDate(String timestampString) throws ParseException {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date date = dateFormat.parse(timestampString);
