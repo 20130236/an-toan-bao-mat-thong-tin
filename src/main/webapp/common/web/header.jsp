@@ -199,6 +199,20 @@
                                 </div>
 
                                 <div class="link_wishlist">
+                                    <a href="<c:url value="/user_report"/>" title="Report">
+                                        <i class="fa fa-wrench"></i>
+                                        <span>Report</span>
+                                    </a>
+                                </div>
+
+<%--                                <div class="link_wishlist">--%>
+<%--                                    <a href="<c:url value="/user_reportlist"/>" title="Report">--%>
+<%--                                        <i class="fa fa-wrench"></i>--%>
+<%--                                        <span>Danh sách Report</span>--%>
+<%--                                    </a>--%>
+<%--                                </div>--%>
+
+                                <div class="link_wishlist">
                                     <a href="<c:url value="/logout"></c:url>" title="Logout">
                                         <i class="fa fa-sign-out"></i>
                                         <span>Đăng xuất</span>
