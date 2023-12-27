@@ -112,11 +112,6 @@
         <div id="wrapper-site">
             <div class="container">
                 <div class="row">
-                    <% if (message != null) {%>
-                    <div style="position: absolute; left: 50%; transform: translateX(-50%); color: #dc3545; font-size: 18px; font-weight: bold;">
-                        <a><%=message%></a>
-                    </div>
-                    <%}%>
                     <div id="content-wrapper" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 onecol">
                         <form action="<c:url value="/add_order_success"/>" method="POST" name="order" id="form_order"
                               enctype="multipart/form-data"

@@ -9,13 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6389381a-4df7-4693-b13c-4e92e2d4aded" name="Changes" comment="commit lại và fix trang chi tiết sp">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_12_2023_12_20_CH_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_12_2023_12_20_CH__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_08_12_2023_10_28_CH_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_08_12_2023_10_28_CH__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_6_2023_11_49_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_6_2023_11_49_AM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="6389381a-4df7-4693-b13c-4e92e2d4aded" name="Changes" comment="chuc nang lo private key">
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/product-checkout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/product-checkout.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,8 +67,8 @@
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
-        <option name="accountId" value="da729147-8e56-4d3f-bdb8-39b0273c9bd6" />
-        <option name="url" value="https://github.com/20130236/HappyHome.git" />
+        <option name="accountId" value="60ad1a25-6b1f-4a18-9454-976d88c955e6" />
+        <option name="url" value="https://github.com/20130236/an-toan-bao-mat-thong-tin.git" />
       </UrlAndAccount>
     </option>
   </component>
@@ -470,7 +465,7 @@
       <workItem from="1702869680048" duration="11532000" />
       <workItem from="1703044771921" duration="369000" />
       <workItem from="1703487198422" duration="7364000" />
-      <workItem from="1703660281675" duration="17624000" />
+      <workItem from="1703660281675" duration="18032000" />
     </task>
     <task id="LOCAL-00001" summary="fix tính giá vận chuyển">
       <created>1686505220241</created>
@@ -522,7 +517,23 @@
       <option name="project" value="LOCAL" />
       <updated>1703676281928</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="chuc nang lo private key">
+      <option name="closed" value="true" />
+      <created>1703679310364</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1703679310364</updated>
+    </task>
+    <task id="LOCAL-00009" summary="chuc nang lo private key">
+      <option name="closed" value="true" />
+      <created>1703679442713</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1703679442713</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -539,7 +550,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/dung" />
+                        <option value="chi_privatekey" />
                       </list>
                     </value>
                   </entry>
@@ -558,7 +569,8 @@
     <MESSAGE value="fix @WebFilter(filterName = &quot;Utf8Filter&quot;, urlPatterns = {&quot;/*&quot;}) add urlPatterns = {&quot;/*&quot;} for all page" />
     <MESSAGE value="fix định dạng tiền đ + fix phân trang" />
     <MESSAGE value="commit lại và fix trang chi tiết sp" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit lại và fix trang chi tiết sp" />
+    <MESSAGE value="chuc nang lo private key" />
+    <option name="LAST_COMMIT_MESSAGE" value="chuc nang lo private key" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
