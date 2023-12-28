@@ -41,7 +41,7 @@ public class UserReport extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         UserModel currentUser = (UserModel) request.getSession().getAttribute("user");
-        Log log = new Log(Log.INFO,currentUser.getId(),this.name,"",0, IpAddress.getClientIpAddr(request));
+        Log log = new Log(Log.INFO, currentUser.getId(), this.name, "", 0, IpAddress.getClientIpAddr(request));
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
 
@@ -49,7 +49,8 @@ public class UserReport extends HttpServlet {
             response.sendRedirect(request.getContextPath() + "/login");
             return;
         }
-        //cai nay la lay du lieu tu form gui len
+
+        // Lấy dữ liệu từ form gửi lên
         String user_name = request.getParameter("user_name");
         String email = request.getParameter("email");
         String phoneNum = request.getParameter("phone_num");
@@ -58,9 +59,13 @@ public class UserReport extends HttpServlet {
         // Tạo đối tượng Report
         Report r = new Report(user_name, phoneNum, email, LocalDateTime.now(), detail, 0);
 
-        // Thêm bản ghi vào cơ sở dữ liệu
         ReportService rser = new ReportService();
-        rser.addReport(r);
+
+        // Lấy user_id từ người dùng đang đăng nhập
+        int user_id = currentUser.getId();
+        rser.addReport(r, user_id);
+
+        // Thêm bản ghi vào cơ sở dữ liệu
 
         request.setAttribute("success", "Gửi yêu cầu thành công");
         // Log the action
@@ -68,7 +73,7 @@ public class UserReport extends HttpServlet {
         log.setLevel(Log.ALERT);
         LogService.addLog(log);
 
-        // Display success message and redirect
+        // Hiển thị thông báo thành công và chuyển hướng
         response.sendRedirect(request.getContextPath() + "/user_report?success=1");
     }
 }

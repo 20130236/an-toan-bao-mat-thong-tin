@@ -9,8 +9,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6389381a-4df7-4693-b13c-4e92e2d4aded" name="Changes" comment="chuc nang lo private key">
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/product-checkout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/product-checkout.jsp" afterDir="false" />
+    <list default="true" id="6389381a-4df7-4693-b13c-4e92e2d4aded" name="Changes" comment="sua thong bao loi">
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/web/ListReport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/web/user_listreport.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/web/UserReport.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/web/UserReport.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/model/Report.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/model/Report.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/service/ReportService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/service/ReportService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/web/UserReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/web/UserReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Report.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/ReportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/ReportService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/common/web/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/common/web/header.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,8 +51,8 @@
       <list>
         <option value="HTML File" />
         <option value="Interface" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -465,7 +474,8 @@
       <workItem from="1702869680048" duration="11532000" />
       <workItem from="1703044771921" duration="369000" />
       <workItem from="1703487198422" duration="7364000" />
-      <workItem from="1703660281675" duration="18032000" />
+      <workItem from="1703660281675" duration="18567000" />
+      <workItem from="1703746374103" duration="7959000" />
     </task>
     <task id="LOCAL-00001" summary="fix tính giá vận chuyển">
       <created>1686505220241</created>
@@ -533,7 +543,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703679442713</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="sua thong bao loi">
+      <option name="closed" value="true" />
+      <created>1703679804764</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1703679804764</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -570,7 +588,8 @@
     <MESSAGE value="fix định dạng tiền đ + fix phân trang" />
     <MESSAGE value="commit lại và fix trang chi tiết sp" />
     <MESSAGE value="chuc nang lo private key" />
-    <option name="LAST_COMMIT_MESSAGE" value="chuc nang lo private key" />
+    <MESSAGE value="sua thong bao loi" />
+    <option name="LAST_COMMIT_MESSAGE" value="sua thong bao loi" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

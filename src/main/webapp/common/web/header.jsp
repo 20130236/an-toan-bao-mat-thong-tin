@@ -186,6 +186,12 @@
                                     </a>
                                 </div>
                                 <div class="link_wishlist">
+                                    <a href="<c:url value="/user_listreport"/>" title="Report">
+                                        <i class="fa fa-wrench"></i>
+                                        <span> Danh sách Report</span>
+                                    </a>
+                                </div>
+                                <div class="link_wishlist">
                                     <a href="<c:url value="/favorite"/>" title="My Wishlists">
                                         <i class="fa fa-heart"></i>
                                         <span>Danh sách yêu thích</span>

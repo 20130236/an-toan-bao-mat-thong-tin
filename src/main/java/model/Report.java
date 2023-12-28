@@ -14,6 +14,7 @@ import java.util.Locale;
 
 public class Report {
     public int report_id;
+    public int user_id;
     public String user_name;
     public String phoneNum;
     public String email;
@@ -33,6 +34,29 @@ public class Report {
 
     public Report() {
 
+    }
+
+    public Report(int reportId, LocalDateTime dateReport, String detail, int status) {
+        this.report_id = reportId;
+        this.date_report = dateReport;
+        this.detail = detail;
+        this.status = status;
+    }
+
+    public int getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
+    }
+
+    public int getReport_id() {
+        return report_id;
+    }
+
+    public void setReport_id(int report_id) {
+        this.report_id = report_id;
     }
 
     public String getUser_name() {
@@ -90,6 +114,7 @@ public class Report {
 
     public String toString() {
         return "Report{" +
+                "user_id=" + user_id +
                 "report_id=" + report_id +
                 "user_name=" + user_name +
                 "phoneNum=" + phoneNum +
