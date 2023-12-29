@@ -1,10 +1,11 @@
 package model;
 
+import dao.DBConnection;
 import service.OrderService;
 import service.ReportService;
 
 import java.io.IOException;
-import java.sql.Date;
+import java.sql.*;
 import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -39,6 +40,16 @@ public class Report {
     public Report(int reportId, LocalDateTime dateReport, String detail, int status) {
         this.report_id = reportId;
         this.date_report = dateReport;
+        this.detail = detail;
+        this.status = status;
+    }
+
+    public Report(int report_id, String user_name, String email, String phoneNum, LocalDateTime date_report, String detail, int status) {
+        this.report_id = report_id;
+        this.user_name = user_name;
+        this.email = email;
+        this.phoneNum = phoneNum;
+        this.date_report  = date_report;
         this.detail = detail;
         this.status = status;
     }
@@ -132,13 +143,13 @@ public class Report {
                 nameStatus = "Chờ phê duyệt";
                 break;
             case 1:
-                nameStatus = "Đã phê duyệt";
+                nameStatus = "Duyệt yêu cầu";
                 break;
             case 2:
-                nameStatus = "Không phê duyệt";
+                nameStatus = "Từ chối yêu cầu";
                 break;
             case 3:
-                nameStatus = " Đang xử lý";
+                nameStatus = "Đang xử lý";
                 break;
             case 4:
                 nameStatus = "Đã xử lý";
@@ -174,5 +185,23 @@ public class Report {
         Report r = new Report();
 //        ReportService reportService = new ReportService();
 //        r = reportService.getReportById(30);
+    }
+
+    public String getFullName(String userName) {
+        String sql = "SELECT full_name FROM users WHERE user_name = ?";
+        try (Connection connection = DBConnection.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setString(1, userName);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    return resultSet.getString("full_name");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return null;
     }
 }
