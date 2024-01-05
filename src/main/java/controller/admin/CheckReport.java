@@ -31,7 +31,6 @@ public class CheckReport extends HttpServlet {
         Log log = new Log(Log.INFO,currentUser.getId(),this.name,"",0, IpAddress.getClientIpAddr(request));
         boolean checkPm = Access.checkAccess(roleUser.getPermission(),RoleDAO.findIdPermissionByName(checkAccess1));
         ReportService reportService = new ReportService();
-        reportService.updateReportStatusByTransportLeadTime();
         List<Report> listReports = reportService.getAllReportNotCheck();
         log.setContent(listReports.toString());
         LogDAO.addLog(log);

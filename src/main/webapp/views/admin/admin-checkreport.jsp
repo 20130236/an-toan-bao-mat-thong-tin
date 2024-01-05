@@ -55,6 +55,7 @@
                                         <th>Mã report</th>
                                         <th>Ngày gửi report</th>
                                         <th>Nội dung</th>
+                                        <th>Ngày gặp vấn đề</th>
                                         <th>Trạng thái report</th>
                                         <th>Tác vụ</th>
                                     </tr>
@@ -72,6 +73,7 @@
                                         <td><%=r.getReport_id()%></td>
                                         <td><%=Report.convertDateTime(r.getDate_report().toString())%></td>
                                         <td><%=r.getDetail()%></td>
+                                        <td><%=Report.convertDateTime(r.getDate_report().toString())%></td>
                                         <td><%=r.statusReport(r.getStatus())%></td>
                                         <td>
                                             <button class="btn btn-info"><a class="check_detail" href="<c:url value="/check_reportdetail?id="></c:url><%=r.getReport_id()%>"

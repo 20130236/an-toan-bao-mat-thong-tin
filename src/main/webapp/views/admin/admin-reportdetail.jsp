@@ -87,6 +87,12 @@
 
                                     <b>Trạng thái report:</b> <%=report.statusReport(report.getStatus())%><br>
                                     <b>Yêu cầu:</b> <%=report.getDetail()%><br>
+                                    <b>Ngày gặp vấn đề : </b> <span id="ngay-key"><%=Report.convertDateTime(report.getDate_key().toString())%></span><br>
+                                    <script>
+                                        var ngayHienTai = document.getElementById("ngay-key").innerHTML;
+                                        var ngayMoi = ngayHienTai.split("-").reverse().join("/");
+                                        document.getElementById("ngay-key").innerHTML = ngayMoi;
+                                    </script>
                                 </div>
                                 <!-- /.col -->
                             </div>

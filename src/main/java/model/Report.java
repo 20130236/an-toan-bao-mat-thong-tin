@@ -21,15 +21,17 @@ public class Report {
     public String email;
     public LocalDateTime date_report;
     public String detail;
+    public LocalDateTime date_key;
     public int status;
 
-    public Report(String user_name, String phoneNum, String email, LocalDateTime date_report, String detail, int status) {
+    public Report(String user_name, String phoneNum, String email, LocalDateTime date_report, String detail, LocalDateTime date_key, int status) {
 
         this.user_name = user_name;
         this.phoneNum = phoneNum;
         this.email = email;
         this.date_report  = date_report;
         this.detail = detail;
+        this.date_key = date_key;
         this.status = status;
     }
 
@@ -37,20 +39,32 @@ public class Report {
 
     }
 
-    public Report(int reportId, LocalDateTime dateReport, String detail, int status) {
+    public Report(int reportId, String user_name, String email, int user_id, String detail, int status) {
         this.report_id = reportId;
-        this.date_report = dateReport;
+        this.user_name = user_name;
+        this.email = email;
+        this.user_id = user_id;
         this.detail = detail;
         this.status = status;
     }
 
-    public Report(int report_id, String user_name, String email, String phoneNum, LocalDateTime date_report, String detail, int status) {
+    public Report(int report_id, String user_name, String email, String phoneNum, int user_id, LocalDateTime date_report, String detail, LocalDateTime date_key, int status) {
         this.report_id = report_id;
         this.user_name = user_name;
         this.email = email;
         this.phoneNum = phoneNum;
+        this.user_id = user_id;
         this.date_report  = date_report;
         this.detail = detail;
+        this.date_key = date_key;
+        this.status = status;
+    }
+
+    public Report(int report_id, LocalDateTime date_report, String detail, LocalDateTime date_key, int status) {
+        this.report_id = report_id;
+        this.date_report  = date_report;
+        this.detail = detail;
+        this.date_key = date_key;
         this.status = status;
     }
 
@@ -123,6 +137,14 @@ public class Report {
         this.detail = detail;
     }
 
+    public LocalDateTime getDate_key() {
+        return date_key;
+    }
+
+    public void setDate_key(LocalDateTime date_key) {
+        this.date_key = date_key;
+    }
+
     public String toString() {
         return "Report{" +
                 "user_id=" + user_id +
@@ -132,6 +154,7 @@ public class Report {
                 "email=" + email +
                 ", date_report=" + date_report +
                 "detail=" + detail +
+                "date_key=" + date_key +
                 ", status=" + status +
                 '}';
     }
@@ -171,6 +194,15 @@ public class Report {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss dd/MM/yyyy");
         return dateTime.format(formatter);
     }
+
+    public static String convertDateTime1(LocalDateTime dateTime) {
+        if (dateTime != null) {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+            return dateTime.format(formatter);
+        }
+        return "";
+    }
+
     // Hàm kiểm tra xem chuỗi có phải là Base64 hay không
     private static boolean isBase64(String str) {
         try {

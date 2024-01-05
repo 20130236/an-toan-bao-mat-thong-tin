@@ -1,4 +1,3 @@
-<%@ page import="model.UserModel" %>
 <%@ page import="java.util.List" %>
 <%@ page import="model.Report" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -85,6 +84,7 @@
                                 <th>Mã report</th>
                                 <th>Ngày report</th>
                                 <th>Nội dung report</th>
+                                <th>Ngày gặp vấn đề</th>
                                 <th>Trạng thái report</th>
 <%--                                <th>Tác vụ</th>--%>
                             </tr>
@@ -97,6 +97,7 @@
                                 <td><%=r.getReport_id()%></td>
                                 <td><%=Report.convertDateTime(r.getDate_report().toString())%></td>
                                 <td><%=r.getDetail()%></td>
+                                <td><%=Report.convertDateTime(r.getDate_key().toString())%></td>
                                 <td><%=r.statusReport(r.getStatus())%></td>
 <%--                                <td>--%>
 <%--                                    <button class="btn btn-info"><a href="user_order?id=<%=r.getReport_id()%>"--%>

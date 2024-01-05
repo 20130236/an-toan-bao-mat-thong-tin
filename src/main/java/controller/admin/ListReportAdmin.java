@@ -32,7 +32,6 @@ public class ListReportAdmin extends HttpServlet {
         boolean detailPm = Access.checkAccess(roleUser.getPermission(),RoleDAO.findIdPermissionByName(DetailAccess1));
         Log log = new Log(Log.INFO,currentUser.getId(),this.name,"",0, IpAddress.getClientIpAddr(request));
         ReportService reportService = new ReportService();
-        reportService.updateReportStatusByTransportLeadTime();
         List<Report> listReports = reportService.getAllReport();
         log.setContent(listReports.toString());
         LogDAO.addLog(log);

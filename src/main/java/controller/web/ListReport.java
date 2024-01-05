@@ -29,7 +29,6 @@ public class ListReport extends HttpServlet {
         request.setAttribute("info", intro);
 
         ReportService reportService = new ReportService();
-        reportService.updateReportStatusByTransportLeadTime();
 
         UserModel oldUser = (UserModel) request.getSession().getAttribute("user");
 

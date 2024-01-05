@@ -69,6 +69,7 @@
                 </div>
             </div><!-- /.container-fluid -->
         </section>
+<%--        action="<c:url value="/check_reportdetail"/>"--%>
         <form action="<c:url value="/check_reportdetail"/>" method="POST" name="check" id="form_check">
             <!-- Main content -->
             <section class="content">
@@ -86,7 +87,6 @@
                                     </div>
                                 </div>
                                 <div class="card-body" style="display: block; padding:0px ;">
-                                    <form>
                                         <div class="card-body">
                                             <div style="display: flex" class="row">
                                                 <div class="form-group col-md-6 ">
@@ -94,43 +94,45 @@
                                                         <label>ID </label>
                                                         <div class="input-group date" id="ido"
                                                              data-target-input="nearest">
-                                                            <div class="form-control"><%=report.getReport_id()%>
+                                                            <div class="form-control" name ="report_id"><%=report.getReport_id()%>
                                                             </div>
-                                                            <input type="hidden" name="order_id"
+                                                            <input type="hidden" name="report_id"
                                                                    value="<%=report.getReport_id()%>">
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="form-group col-md-6 ">
                                                     <label>Tên khách hàng</label>
-                                                    <div class="form-control"><%=report.getFullName(report.getUser_name())%>
+                                                    <div class="form-control" name ="user_name"><%=report.getUser_name()%>
                                                     </div>
                                                 </div>
                                             </div>
+
                                             <div style="display: flex" class="row">
                                                 <div class="form-group col-md-6 ">
                                                     <div class="form-group">
-                                                        <label>Số điện thoại</label>
+                                                        <label>Mã khách hàng</label>
                                                         <div class="input-group date" id="reservationdate1"
                                                              data-target-input="nearest">
-                                                            <div class="form-control"><%=report.getPhoneNum()%>
+                                                            <div class="form-control" name="user_id"><%=report.getUser_id()%>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="form-group col-md-6 ">
                                                     <label>Email:</label>
-                                                    <div class="form-control"><%=report.getEmail()%>
+                                                    <div class="form-control" name ="email"><%=report.getEmail()%>
                                                     </div>
                                                 </div>
                                             </div>
+
                                             <div style="display: flex" class="row">
                                                 <div class="form-group col-md-12 ">
                                                     <div class="form-group">
                                                         <label>Ngày gửi report:</label>
                                                         <div class="input-group date" id="reservationdate2"
                                                              data-target-input="nearest">
-                                                            <div class="form-control"><%=Report.convertDateTime(report.getDate_report().toString())%>
+                                                            <div class="form-control" name = "date"><%=Report.convertDateTime(report.getDate_report().toString())%>
                                                             </div>
                                                             <div class="input-group-append"
                                                                  data-target="#reservationdate"
@@ -141,24 +143,41 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
                                             </div>
+
                                             <div style="display: flex" class="row">
                                                 <div class="form-group col-md-12 ">
                                                     <div class="form-group">
                                                         <label>Nội dung:</label>
                                                         <div class="input-group date" id="reservationdate"
                                                              data-target-input="nearest">
-                                                            <div class="form-control"><%=report.getDetail()%>
+                                                            <div class="form-control" name="detail"><%=report.getDetail()%>
                                                             </div>
-                                                        </div>s
+                                                        </div>
                                                     </div>
                                                 </div>
+                                            </div>
 
+                                            <div style="display: flex" class="row">
+                                                <div class="form-group col-md-12 ">
+                                                    <div class="form-group">
+                                                        <label>Ngày gặp vấn đề:</label>
+                                                        <div class="input-group date" id="reservationdate20"
+                                                             data-target-input="nearest">
+                                                            <div class="form-control" name="date_key"><%=Report.convertDateTime(report.getDate_key().toString())%>
+                                                            </div>
+                                                            <div class="input-group-append"
+                                                                 data-target="#reservationdate"
+                                                                 data-toggle="datetimepicker">
+                                                                <div class="input-group-text"><i
+                                                                        class="fa fa-calendar"></i></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <!-- /.card-body -->
-                                    </form>
                                 </div>
                                 <!-- /.card-body -->
                             </div>
@@ -179,7 +198,7 @@
                                                 <div class="input-group date" id="reservationdate12"
                                                      data-target-input="nearest">
                                                     <select class="form-control" name="status">
-                                                        <option value="" selected>Chọn trạng thái</option>
+                                                        <option value="0" selected>Chờ phê duyệt</option>
                                                         <option value="1">Duyệt yêu cầu</option>
                                                         <option value="2">Từ chối yêu cầu</option>
                                                         <option value="4">Đã xử lý</option>
@@ -193,7 +212,7 @@
                                                 <label>&nbsp</label>
                                                 <div class="input-group date" id="reservationdate13"
                                                      data-target-input="nearest">
-                                                    <button type="submit" class="btn btn-primary">Xác nhận</button>
+                                                    <button type="submit" class="btn btn-primary" id="confirmButton">Xác nhận</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -253,6 +272,48 @@
             $('select[name="status"] option[value="4"]').hide();
         }
     });
+</script>
+<script>
+    // Khi trang được tải xong
+    <%--$(document).ready(function() {--%>
+    <%--    // Bắt sự kiện khi nút Xác nhận được nhấn--%>
+    <%--    $("#confirmButton").click(function() {--%>
+    <%--        // Lấy giá trị của dropdown--%>
+    <%--        var reportStatus = "<%= report.getStatus() %>";--%>
+    <%--        $('select[name="status"] option[value="' + reportStatus + '"]').prop('selected', true);--%>
+
+    <%--        // Kiểm tra nếu status là 1 (Duyệt yêu cầu)--%>
+    <%--        if (reportStatus === "1") {--%>
+    <%--            // Gọi hàm xử lý update trạng thái--%>
+    <%--            window.location.href = "/admin-access-order";--%>
+    <%--        } else {--%>
+    <%--            // Nếu status không phải 1, chuyển hướng đến servlet /check_reportdetail--%>
+    <%--            window.location.href = "/check_reportdetail";--%>
+    <%--        }--%>
+    <%--    });--%>
+
+        // Hàm xử lý cập nhật trạng thái
+        // function updateLeakKey() {
+        //     // Thực hiện AJAX request hoặc gửi dữ liệu đến server theo cách bạn muốn
+        //     // Ví dụ: Gửi request đến servlet thông qua AJAX
+        //     $.ajax({
+        //         type: "POST",
+        //         url: "UpdateLeakKeyServlet", // Thay thế bằng URL của servlet của bạn
+        //         data: {
+        //             user_id: 123,  // Thay thế bằng giá trị thực tế
+        //             date_key: "2022-01-01"  // Thay thế bằng giá trị thực tế
+        //         },
+        //         success: function(response) {
+        //             // Xử lý kết quả nếu cần
+        //             console.log(response);
+        //         },
+        //         error: function(error) {
+        //             // Xử lý lỗi nếu có
+        //             console.error(error);
+        //         }
+        //     });
+        // }
+    // });
 </script>
 </body>
 </html>

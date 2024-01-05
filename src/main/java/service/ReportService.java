@@ -12,7 +12,7 @@ import java.util.List;
 public class ReportService {
 
     public void addReport(Report r, int user_id) {
-        String sql = "INSERT INTO reports (user_id, user_name, phoneNum, email, date_report, detail, status) VALUES (?,?,?,?,?, ?, 0)";
+        String sql = "INSERT INTO reports (user_id, user_name, phoneNum, email, date_report, detail, date_key, status) VALUES (?,?,?,?,?,?,?,0)";
         PreparedStatement ps = null;
 
         try {
@@ -24,22 +24,11 @@ public class ReportService {
             // Chuyển đổi LocalDateTime thành Timestamp
             ps.setTimestamp(5, Timestamp.valueOf(r.getDate_report()));
             ps.setString(6, r.getDetail());
+            ps.setTimestamp(7, Timestamp.valueOf(r.getDate_key()));
 
             int rowsAffected = ps.executeUpdate();
             System.out.println("Rows affected: " + rowsAffected);
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void updateReportStatusByTransportLeadTime() {
-        ResultSet rs;
-        PreparedStatement ps;
-        String sql = "UPDATE reports SET status = ? WHERE date_report <= NOW() AND status = 0";
-        try {
-            ps = DBConnection.getConnection().prepareStatement(sql);
-            ps.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -50,26 +39,30 @@ public class ReportService {
         PreparedStatement pst;
         String sql;
         try {
-            sql = "SELECT report_id, date_report, detail, status FROM `reports` WHERE user_id = ?";
+            sql = "SELECT report_id, date_report, detail, date_key, status FROM `reports` WHERE user_id = ?";
             pst = DBConnection.getConnection().prepareStatement(sql);
             pst.setInt(1, user_id);
             ResultSet rs = pst.executeQuery();
             while (rs.next()) {
-                Timestamp timestamp = rs.getTimestamp("date_report");
-
-                // Chuyển đổi Timestamp thành LocalDateTime
-                LocalDateTime dateReport = null;
-                if (timestamp != null) {
-                    dateReport = timestamp.toLocalDateTime();
-                }
+//                Timestamp timestamp = rs.getTimestamp("date_report");
+//                Timestamp timestamp1 = rs.getTimestamp("date_key");
+//
+//                // Chuyển đổi Timestamp thành LocalDateTime
+//                LocalDateTime dateReport = null;
+//                LocalDateTime dateKey = null;
+//                if (timestamp != null & timestamp1 != null) {
+//                    dateReport = timestamp.toLocalDateTime();
+//                    dateKey = timestamp1.toLocalDateTime();
+//                }
 
                 // Tạo đối tượng Report và thêm vào danh sách
-                Report report = new Report();
-                report.setReport_id(rs.getInt("report_id"));
-                report.setDate_report(dateReport);
-                report.setDetail(rs.getString("detail"));
-                report.setStatus(rs.getInt("status"));
+                int report_id = rs.getInt("report_id");
+                LocalDateTime date_report = rs.getTimestamp("date_report").toLocalDateTime();
+                String detail = rs.getString("detail");
+                LocalDateTime date_key = rs.getTimestamp("date_key").toLocalDateTime();
+                int status = rs.getInt("status");
 
+                Report report = new Report(report_id, date_report, detail, date_key, status);
                 reports.add(report);
             }
         } catch (ClassNotFoundException | SQLException e) {
@@ -83,17 +76,22 @@ public class ReportService {
         List<Report> re = new ArrayList<>();
         ResultSet rs;
         PreparedStatement ps;
-        String sql = "SELECT  user_id,  user_name,  email,  report_id,  date_report,  detail,  status FROM `reports`";
+        String sql = "SELECT  user_id,  user_name,  email,  report_id,  date_report,  detail, date_key,  status FROM `reports`";
         try {
             ps = DBConnection.getConnection().prepareStatement(sql);
             rs = ps.executeQuery();
             while (rs.next()) {
                 Timestamp timestamp = rs.getTimestamp("date_report");
+                Timestamp timestamp1 = rs.getTimestamp("date_key");
 
                 // Chuyển đổi Timestamp thành LocalDateTime
                 LocalDateTime dateReport = null;
+                LocalDateTime dateKey = null;
                 if (timestamp != null) {
                     dateReport = timestamp.toLocalDateTime();
+                }
+                if (timestamp1 != null) {
+                    dateKey = timestamp1.toLocalDateTime();
                 }
 
                 Report report = new Report();
@@ -103,6 +101,7 @@ public class ReportService {
                 report.setReport_id(rs.getInt("report_id"));
                 report.setDate_report(dateReport);
                 report.setDetail(rs.getString("detail"));
+                report.setDate_key(dateKey);
                 report.setStatus(rs.getInt("status"));
 
                 re.add(report);
@@ -119,18 +118,23 @@ public class ReportService {
         PreparedStatement pst;
         String sql;
         try {
-            sql = "SELECT report_id, user_name, email, phoneNum, date_report, detail, status FROM `reports` WHERE report_id = " + id;
+            sql = "SELECT report_id, user_name, email, phoneNum, user_id, date_report, detail, date_key, status FROM `reports` WHERE report_id = " + id;
             pst = DBConnection.getConnection().prepareStatement(sql);
             rs = pst.executeQuery();
             while (rs.next()) {
                 Timestamp timestamp = rs.getTimestamp("date_report");
+                Timestamp timestamp1 = rs.getTimestamp("date_key");
 
                 // Chuyển đổi Timestamp thành LocalDateTime
                 LocalDateTime dateReport = null;
+                LocalDateTime dateKey = null;
                 if (timestamp != null) {
                     dateReport = timestamp.toLocalDateTime();
                 }
-                reports = new Report(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), dateReport, rs.getString(6), rs.getInt(7));
+                if (timestamp1 != null) {
+                    dateKey = timestamp1.toLocalDateTime();
+                }
+                reports = new Report(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5), dateReport, rs.getString(7), dateKey, rs.getInt(9));
             }
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
@@ -143,17 +147,22 @@ public class ReportService {
         List<Report> re = new ArrayList<>();
         ResultSet rs;
         PreparedStatement ps;
-        String sql = "SELECT  user_id,  user_name,  email,  report_id,  date_report,  detail,  status FROM `reports` where status = 0 ";
+        String sql = "SELECT  user_id,  user_name,  email,  report_id,  date_report,  detail, date_key,  status FROM `reports` where status = 0 ";
         try {
             ps = DBConnection.getConnection().prepareStatement(sql);
             rs = ps.executeQuery();
             while (rs.next()) {
                 Timestamp timestamp = rs.getTimestamp("date_report");
+                Timestamp timestamp1 = rs.getTimestamp("date_key");
 
                 // Chuyển đổi Timestamp thành LocalDateTime
                 LocalDateTime dateReport = null;
+                LocalDateTime dateKey = null;
                 if (timestamp != null) {
                     dateReport = timestamp.toLocalDateTime();
+                }
+                if (timestamp1 != null) {
+                    dateKey = timestamp1.toLocalDateTime();
                 }
 
                 Report report = new Report();
@@ -163,6 +172,7 @@ public class ReportService {
                 report.setReport_id(rs.getInt("report_id"));
                 report.setDate_report(dateReport);
                 report.setDetail(rs.getString("detail"));
+                report.setDate_key(dateKey);
                 report.setStatus(rs.getInt("status"));
 
                 re.add(report);
@@ -175,30 +185,17 @@ public class ReportService {
 
 
     public void updateStatus(int report_id, int status) {
-        String sql = "UPDATE `reports` SET `status` = ? WHERE `report_id` = ?";
-        PreparedStatement ps = null;
+        String sql = "UPDATE `reports` SET status = ? WHERE report_id = ?";
+        PreparedStatement pst = null;
         int rs = 0;
         try {
-            ps = DBConnection.getConnection().prepareStatement(sql);
-            ps.setInt(1, status);
-            ps.setInt(2, report_id);
-            rs = ps.executeUpdate();
+            pst = DBConnection.getConnection().prepareStatement(sql);
+            pst.setInt(1, status);
+            pst.setInt(2, report_id);
+            rs = pst.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public void updateReport(Report report) {
-        String sql = "UPDATE `reports` SET `status` = ? WHERE `report_id` = ?";
-        PreparedStatement ps = null;
-        int rs = 0;
-        try {
-            ps = DBConnection.getConnection().prepareStatement(sql);
-            ps.setInt(1, report.getStatus());
-            ps.setInt(2, report.getReport_id());
-            rs = ps.executeUpdate();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 }

@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @WebServlet(name = "UserReport", value = "/user_report")
@@ -33,9 +34,15 @@ public class UserReport extends HttpServlet {
         Introduce intro = intr.getIntro();
         request.setAttribute("info", intro);
 
-
+        UserModel oldUser = (UserModel) request.getSession().getAttribute("user");
+        if (oldUser == null) {
+            response.sendRedirect(request.getContextPath() + "/lab/login");
+        } else {
+            UserModel user = UserService.findById(oldUser.getId());
+            request.setAttribute("user", user);
             RequestDispatcher rd = request.getRequestDispatcher("views/web/user-report.jsp");
-            rd.forward(request,response);
+            rd.forward(request, response);
+        }
 
     }
 
@@ -55,9 +62,12 @@ public class UserReport extends HttpServlet {
         String email = request.getParameter("email");
         String phoneNum = request.getParameter("phone_num");
         String detail = request.getParameter("message");
+        String date_key = request.getParameter("date_key");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        LocalDateTime parsedDate = LocalDateTime.parse(date_key, formatter);
 
         // Tạo đối tượng Report
-        Report r = new Report(user_name, phoneNum, email, LocalDateTime.now(), detail, 0);
+        Report r = new Report(user_name, phoneNum, email, LocalDateTime.now(), detail, parsedDate, 0);
 
         ReportService rser = new ReportService();
 
