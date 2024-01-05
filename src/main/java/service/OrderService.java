@@ -171,6 +171,21 @@ public class OrderService {
         }
     }
 
+    public void updateLeakKey(String user_name, String date_key) {
+        ResultSet rs;
+        PreparedStatement ps;
+        String sql = "UPDATE orders SET status = 5 WHERE user_name = ? " +
+                "AND date_order <= ? AND (status = 0 OR status = 1)";
+        try {
+            ps = DBConnection.getConnection().prepareStatement(sql);
+            ps.setString(1, user_name);
+            ps.setString(2, date_key);
+            ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public void addOrderDetail(Order_detail detail) {
         String sql = "INSERT INTO order_detail (id_oder, id_product, price, amount, fee, total) VALUES (?, ?, ?, ?, ?, ?)";
         PreparedStatement ps = null;

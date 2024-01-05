@@ -195,12 +195,12 @@ public class Report {
         return dateTime.format(formatter);
     }
 
-    public static String convertDateTime1(LocalDateTime dateTime) {
-        if (dateTime != null) {
+    public static String convertDateTime1(String dateTime) {
+        // Chuyển đổi chuỗi thành LocalDateTime
+        LocalDateTime date = LocalDateTime.parse(dateTime, DateTimeFormatter.ISO_LOCAL_DATE_TIME);
+
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-            return dateTime.format(formatter);
-        }
-        return "";
+            return date.format(formatter);
     }
 
     // Hàm kiểm tra xem chuỗi có phải là Base64 hay không

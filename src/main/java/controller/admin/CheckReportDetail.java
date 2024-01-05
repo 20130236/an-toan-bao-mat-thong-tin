@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Date;
 import java.util.List;
 import java.util.logging.Logger;
@@ -26,7 +27,6 @@ import static digitalsignature.USERKEY.DSA.getCurrentTimestamp;
 @WebServlet(name = "CheckReportDetail", value = "/check_reportdetail")
 public class CheckReportDetail extends HttpServlet {
     String name = "Check-Detail";
-
     String checkAccess1 = "duyệt yêu cầu report";
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         UserModel currentUser = (UserModel) request.getSession().getAttribute("auth");
@@ -46,9 +46,7 @@ public class CheckReportDetail extends HttpServlet {
             response.sendRedirect(request.getContextPath() + "/error-page");
             return;
         }
-
         int id;
-
         try {
             id = Integer.parseInt(idParameter);
         } catch (NumberFormatException e) {
@@ -75,7 +73,6 @@ public class CheckReportDetail extends HttpServlet {
         LogDAO.addLog(log);
         request.getRequestDispatcher("/views/admin/admin-checkreportdetail.jsp").forward(request, response);
     }
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         UserModel currentUser = (UserModel) request.getSession().getAttribute("auth");
         Log log = new Log(Log.INFO, currentUser.getId(), this.name, "", 0, IpAddress.getClientIpAddr(request));
@@ -85,12 +82,22 @@ public class CheckReportDetail extends HttpServlet {
 
         int pid = Integer.parseInt(request.getParameter("report_id"));
         String pstatus = request.getParameter("status");
-//        String user_name = request.getParameter("user_name");
-//        String date_key = request.getParameter("date_key");
-//        System.out.println(date_key);
-//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-//        LocalDateTime parsedDate = LocalDateTime.parse(date_key, formatter);
-//        String dateKey = parsedDate.format(formatter);
+
+        String user_name = request.getParameter("user_name");
+        String date_key = request.getParameter("date_key");
+
+        Logger logger = Logger.getLogger(CheckReportDetail.class.getName());
+        String dateKey;
+        try {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+            LocalDateTime parsedDate = LocalDateTime.parse(date_key, formatter);
+            dateKey = parsedDate.format(formatter);
+        } catch (NumberFormatException e) {
+            // Handle the case where 'id' parameter cannot be parsed as an integer
+            logger.warning("Unable to convert data type");
+            response.sendRedirect(request.getContextPath() + "/error-page");
+            return;
+        }
 
         Report p = new Report();
         log.setContent(p.toString());
@@ -98,14 +105,12 @@ public class CheckReportDetail extends HttpServlet {
         ReportService ser = new ReportService();
         ser.updateStatus(pid, Integer.parseInt(pstatus));
 
-//        if (Integer.parseInt(pstatus) == 1) {
-//            response.sendRedirect(request.getContextPath() + "/keyGenerationServlet");
-//            OrderService os = new OrderService();
-//            os.updateLeakKey(user_name, dateKey); // date_key ở đây là kiểu String
-//            return;
-//        }
-
         if (Integer.parseInt(pstatus) == 1) {
+            // cập nhật lại trạng thái đn hàng
+            OrderService os = new OrderService();
+            os.updateLeakKey(user_name, dateKey);
+
+            // thu hổi key và tạo mới
             response.sendRedirect(request.getContextPath() + "/keyPrivate");
             return;
         }

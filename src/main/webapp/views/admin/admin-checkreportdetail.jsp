@@ -103,6 +103,7 @@
                                                 </div>
                                                 <div class="form-group col-md-6 ">
                                                     <label>Tên khách hàng</label>
+                                                    <input type="hidden" name="user_name" value="<%=report.getUser_name()%>">
                                                     <div class="form-control" name ="user_name"><%=report.getUser_name()%>
                                                     </div>
                                                 </div>
@@ -112,6 +113,7 @@
                                                 <div class="form-group col-md-6 ">
                                                     <div class="form-group">
                                                         <label>Mã khách hàng</label>
+                                                        <input type="hidden" name="user_id" value="<%=report.getUser_id()%>">
                                                         <div class="input-group date" id="reservationdate1"
                                                              data-target-input="nearest">
                                                             <div class="form-control" name="user_id"><%=report.getUser_id()%>
@@ -121,6 +123,7 @@
                                                 </div>
                                                 <div class="form-group col-md-6 ">
                                                     <label>Email:</label>
+                                                    <input type="hidden" name="email" value="<%=report.getEmail()%>">
                                                     <div class="form-control" name ="email"><%=report.getEmail()%>
                                                     </div>
                                                 </div>
@@ -130,9 +133,10 @@
                                                 <div class="form-group col-md-12 ">
                                                     <div class="form-group">
                                                         <label>Ngày gửi report:</label>
+                                                        <input type="hidden" name="date" value="<%=Report.convertDateTime1(report.getDate_report().toString())%>">
                                                         <div class="input-group date" id="reservationdate2"
                                                              data-target-input="nearest">
-                                                            <div class="form-control" name = "date"><%=Report.convertDateTime(report.getDate_report().toString())%>
+                                                            <div class="form-control" name = "date"><%=Report.convertDateTime1(report.getDate_report().toString())%>
                                                             </div>
                                                             <div class="input-group-append"
                                                                  data-target="#reservationdate"
@@ -149,6 +153,7 @@
                                                 <div class="form-group col-md-12 ">
                                                     <div class="form-group">
                                                         <label>Nội dung:</label>
+                                                        <input type="hidden" name="detail" value="<%=report.getDetail()%>">
                                                         <div class="input-group date" id="reservationdate"
                                                              data-target-input="nearest">
                                                             <div class="form-control" name="detail"><%=report.getDetail()%>
@@ -162,9 +167,10 @@
                                                 <div class="form-group col-md-12 ">
                                                     <div class="form-group">
                                                         <label>Ngày gặp vấn đề:</label>
+                                                        <input type="hidden" name="date_key" value="<%=Report.convertDateTime1(report.getDate_key().toString())%>">
                                                         <div class="input-group date" id="reservationdate20"
                                                              data-target-input="nearest">
-                                                            <div class="form-control" name="date_key"><%=Report.convertDateTime(report.getDate_key().toString())%>
+                                                            <div class="form-control" name="date_key"><%=Report.convertDateTime1(report.getDate_key().toString())%>
                                                             </div>
                                                             <div class="input-group-append"
                                                                  data-target="#reservationdate"
