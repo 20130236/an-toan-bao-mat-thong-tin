@@ -25,8 +25,7 @@ import java.util.Base64;
 @WebServlet(name = "KeyPrivate", value = "/keyPrivate")
 public class KeyPrivate extends HttpServlet {
     DSA dsa = new DSA();
-
-
+    
     //Tạo key và lưu public key vào database,tải private key về máy người dùng
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

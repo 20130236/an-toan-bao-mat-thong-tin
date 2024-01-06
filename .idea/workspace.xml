@@ -9,22 +9,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6389381a-4df7-4693-b13c-4e92e2d4aded" name="Changes" comment="user theo doi qua trình xu ly">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/admin/CheckReport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/admin/CheckReportDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/admin/ListReportAdmin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/admin/ReportDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/admin-checkreport.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/admin-checkreportdetail.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/admin-listreport.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/admin-reportdetail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+    <list default="true" id="6389381a-4df7-4693-b13c-4e92e2d4aded" name="Changes" comment="update lại trạng thái đơn hàng">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/web/user-hasKey.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_6_2023_11_49_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_6_2023_11_49_AM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/web/KeyUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/web/KeyUser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/web/ListReport.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/web/ListReport.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/web/UserReport.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/web/UserReport.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/model/Report.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/model/Report.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/service/OrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/service/OrderService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/service/ReportService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/service/ReportService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Report.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/ReportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/ReportService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/common/admin/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/common/admin/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/util/EmailUtil$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/util/EmailUtil$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/util/EmailUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/util/EmailUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/KeyPrivate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/admin/KeyPrivate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/web/KeyUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/web/KeyUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/common/web/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/common/web/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/add-invoice.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/add-invoice.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/user-key.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/user-key.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/user-report.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/user-report.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,8 +59,8 @@
       <list>
         <option value="HTML File" />
         <option value="Interface" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -81,8 +84,8 @@
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
-        <option name="accountId" value="60ad1a25-6b1f-4a18-9454-976d88c955e6" />
-        <option name="url" value="https://github.com/20130236/an-toan-bao-mat-thong-tin.git" />
+        <option name="accountId" value="da729147-8e56-4d3f-bdb8-39b0273c9bd6" />
+        <option name="url" value="https://github.com/20130236/HappyHome.git" />
       </UrlAndAccount>
     </option>
   </component>
@@ -103,7 +106,6 @@
   &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="2K8PPlScjwDkiL8rSid0tOCjWmb" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -146,19 +148,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.71">
-    <configuration name="DBConnection" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="dao.DBConnection" />
-      <module name="happyhome.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="DataTable" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="controller.admin.datatable.DataTable" />
       <module name="happyhome" />
@@ -172,12 +161,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GetFee" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="service.API_LOGISTIC.GetFee" />
+      <module name="happyhome" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.API_LOGISTIC.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RemainingProService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="service.RemainingProService" />
+      <module name="happyhome" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HappyHomevps [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -216,14 +231,6 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="All in happyhome" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="happyhome" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Tomcat 9.0.71" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.71" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -234,7 +241,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="365343f3-4e08-4b62-b48e-2262fb4955a2" />
+        <option name="BASE_DIRECTORY_NAME" value="0af0e474-f643-4367-ab57-c764cf677257" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -242,7 +249,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="50111" />
+        <option name="DEBUG_PORT" value="63680" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -312,20 +319,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.DBConnection" />
       <item itemvalue="Application.DataTable" />
+      <item itemvalue="Application.GetFee" />
+      <item itemvalue="Application.RemainingProService" />
       <item itemvalue="Gradle.HappyHomevps [build]" />
       <item itemvalue="Gradle.HappyHomevps [docker_deploy]" />
-      <item itemvalue="JUnit.All in happyhome" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.71" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DBConnection" />
-        <item itemvalue="JUnit.All in happyhome" />
         <item itemvalue="Gradle.HappyHomevps [build]" />
         <item itemvalue="Gradle.HappyHomevps [docker_deploy]" />
         <item itemvalue="Application.DataTable" />
+        <item itemvalue="Application.GetFee" />
+        <item itemvalue="Application.RemainingProService" />
       </list>
     </recent_temporary>
   </component>
@@ -473,16 +480,10 @@
       <workItem from="1693489965558" duration="968000" />
       <workItem from="1699881560388" duration="1264000" />
       <workItem from="1699882832618" duration="89000" />
-      <workItem from="1702525030475" duration="917000" />
-      <workItem from="1702525957272" duration="12218000" />
-      <workItem from="1702716546476" duration="8619000" />
-      <workItem from="1702869680048" duration="11532000" />
-      <workItem from="1703044771921" duration="369000" />
-      <workItem from="1703487198422" duration="7364000" />
-      <workItem from="1703660281675" duration="18567000" />
-      <workItem from="1703746374103" duration="11121000" />
-      <workItem from="1703771898994" duration="7659000" />
-      <workItem from="1703838615662" duration="23684000" />
+      <workItem from="1704379227177" duration="6367000" />
+      <workItem from="1704425780772" duration="23673000" />
+      <workItem from="1704459256401" duration="9869000" />
+      <workItem from="1704521569012" duration="8440000" />
     </task>
     <task id="LOCAL-00001" summary="fix tính giá vận chuyển">
       <created>1686505220241</created>
@@ -526,55 +527,23 @@
       <option name="project" value="LOCAL" />
       <updated>1686674062690</updated>
     </task>
-    <task id="LOCAL-00007" summary="commit lại và fix trang chi tiết sp">
+    <task id="LOCAL-00007" summary="thu hồi public key và tạo cặp key mới">
       <option name="closed" value="true" />
-      <created>1703676281928</created>
+      <created>1704461702300</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1703676281928</updated>
+      <updated>1704461702300</updated>
     </task>
-    <task id="LOCAL-00008" summary="chuc nang lo private key">
+    <task id="LOCAL-00008" summary="update lại trạng thái đơn hàng">
       <option name="closed" value="true" />
-      <created>1703679310364</created>
+      <created>1704470792019</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1703679310364</updated>
+      <updated>1704470792019</updated>
     </task>
-    <task id="LOCAL-00009" summary="chuc nang lo private key">
-      <option name="closed" value="true" />
-      <created>1703679442713</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1703679442713</updated>
-    </task>
-    <task id="LOCAL-00010" summary="sua thong bao loi">
-      <option name="closed" value="true" />
-      <created>1703679804764</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1703679804764</updated>
-    </task>
-    <task id="LOCAL-00011" summary="user theo doi qua trình xu ly">
-      <option name="closed" value="true" />
-      <created>1703754516100</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1703754516100</updated>
-    </task>
-    <task id="LOCAL-00012" summary="user theo doi qua trình xu ly">
-      <option name="closed" value="true" />
-      <created>1703774225303</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1703774225303</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -591,7 +560,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="chi_privatekey" />
+                        <option value="origin/chi_privatekey" />
                       </list>
                     </value>
                   </entry>
@@ -610,10 +579,9 @@
     <MESSAGE value="fix @WebFilter(filterName = &quot;Utf8Filter&quot;, urlPatterns = {&quot;/*&quot;}) add urlPatterns = {&quot;/*&quot;} for all page" />
     <MESSAGE value="fix định dạng tiền đ + fix phân trang" />
     <MESSAGE value="commit lại và fix trang chi tiết sp" />
-    <MESSAGE value="chuc nang lo private key" />
-    <MESSAGE value="sua thong bao loi" />
-    <MESSAGE value="user theo doi qua trình xu ly" />
-    <option name="LAST_COMMIT_MESSAGE" value="user theo doi qua trình xu ly" />
+    <MESSAGE value="thu hồi public key và tạo cặp key mới" />
+    <MESSAGE value="update lại trạng thái đơn hàng" />
+    <option name="LAST_COMMIT_MESSAGE" value="update lại trạng thái đơn hàng" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -624,19 +592,14 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controller/web/ProductDetail.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/controller/web/API/LogisticAPI.java</url>
           <line>45</line>
           <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/util/HttpUtil.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controller/admin/ImportProductController.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -654,8 +617,5 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/HappyHome$Tomcat_8_5_34.ic" NAME="Tomcat 8.5.34 Coverage Results" MODIFIED="1681999962053" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/happyhome$DBConnection.ic" NAME="DBConnection Coverage Results" MODIFIED="1702525677642" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>dao.*</FILTER>
-    </SUITE>
   </component>
 </project>

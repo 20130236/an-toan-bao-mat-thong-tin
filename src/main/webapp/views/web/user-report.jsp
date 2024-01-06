@@ -24,6 +24,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <jsp:include page="/common/web/css.jsp"></jsp:include>
+
+    <style>
+        .error{
+            float: left !important;
+            color:#dc3545 !important;
+        }
+        input[type="radio"]{
+            opacity: 0;
+            left: 28px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        input[type="radio"]:checked~.design {
+            background: #434343;
+        }
+        .design {
+            width: 29px;
+            height: 11px;
+            border-radius: 50%;
+            outline-offset: 3px;
+            outline: 2px solid #888888;
+            margin-right: 10px;
+            margin-top: 5px;
+        }
+    </style>
 </head>
 <body class="user-acount">
 <jsp:include page="/common/web/header.jsp"></jsp:include>
@@ -101,12 +127,14 @@
                                     <th class="first-item">Yêu cầu :</th>
                                     <td>
                                         <div class="form-group">
-                                            <input class="form-control" id="message" name="message" type="text"  required>
+                                            <select class="form-control" id="message" name="message" required>
+                                                <option value="mat-key">Mất key</option>
+                                                <option value="lo-key">Lộ key</option>
+                                                <option value="cap-lai-key">Cấp lại key</option>
+                                            </select>
                                             <label id="message-error" class="error" for="message" style="display: inline;"></label>
                                         </div>
                                     </td>
-                                </tr>
-
 
                                 <tr>
                                     <th class="first-item">Ngày gặp vấn đề :</th>

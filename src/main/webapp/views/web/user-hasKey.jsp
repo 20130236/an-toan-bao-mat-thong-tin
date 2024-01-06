@@ -1,18 +1,7 @@
-<%@ page import="model.UserModel" %>
-<%@ page import="model.Order" %>
-<%@ page import="java.util.List" %>
-<%@ page import="java.text.NumberFormat" %>
-<%@ page import="java.util.Locale" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%
-    UserModel user = (UserModel) request.getAttribute("user");
-    String success = (String) request.getAttribute("success");
-%>
 <html>
-<!-- user-acount11:10-->
 <head>
-    <!-- Basic Page Needs -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Tạo Khóa</title>
@@ -58,11 +47,9 @@
         }
     </style>
 </head>
-
 <body class="user-acount">
 <jsp:include page="/common/web/header.jsp"></jsp:include>
 
-<!-- main content -->
 <div class="main-content">
     <div class="wrap-banner">
 
@@ -91,54 +78,22 @@
                 <div id="main">
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-group">
-                                    <label class="form">Tạo khoá (Public key và Private key)</label>
-                                </div>
-                            <form action="keyGenerationServlet" method="get">
-                                <button type="submit">Tạo key</button>
-                            </form>
+                            <div class="form-group">
+                                <label class="form">Bạn đã có key rồi!!!</label>
+                            </div>
+<%--                            <form action="keyGenerationServlet" method="get">--%>
+<%--                                <button type="submit">Tạo khoá công khai và tải khoá bí mật</button>--%>
+<%--                            </form>--%>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 </div>
-<!-- footer -->
+
 <jsp:include page="/common/web/footer.jsp"></jsp:include>
 <jsp:include page="/common/web/js.jsp"></jsp:include>
 
-<%--<script>--%>
-
-<%--    $("#btn-generateKey").on("click",function (e){--%>
-<%--        e.preventDefault();--%>
-<%--        let data = {--%>
-<%--            keySize :  $("#keySize").val()--%>
-<%--        }--%>
-<%--        console.log(data);--%>
-<%--        getFilePrivateKey(data);--%>
-<%--    });--%>
-
-<%--    function getFilePrivateKey(data) {--%>
-<%--        $.ajax({--%>
-<%--            type: "POST",--%>
-<%--            url: 'http://localhost:8080/api/user/key',--%>
-<%--            data: JSON.stringify(data),--%>
-<%--            dataType: 'json',--%>
-<%--            contentType: "application/json",--%>
-<%--            success: function(data) {--%>
-<%--                console.log(data);--%>
-<%--                $("#download-privateKey").attr("href",data.path);--%>
-<%--                alert("Tạo key thành công bạn có thể tải về");--%>
-<%--            },--%>
-<%--            error: function (error){--%>
-<%--                alert("lỗi khi tạo key");--%>
-<%--                console.log(error);--%>
-<%--            }--%>
-<%--        })--%>
-<%--    }--%>
-
-<%--</script>--%>
 </body>
 </html>
