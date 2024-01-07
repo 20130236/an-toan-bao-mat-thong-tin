@@ -36,6 +36,25 @@ public class UserDAO {
         }
     }
 
+    public static String findFullnameById(int id) {
+        ResultSet rs;
+        PreparedStatement pst;
+        String sql;
+        String fullname = null;
+        try {
+            sql = "select full_name from users where uid = ?";
+            pst = DBConnection.getConnection().prepareStatement(sql);
+            pst.setInt(1, id);
+            rs = pst.executeQuery();
+            while (rs.next()) {
+                fullname = rs.getString("full_name");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return fullname;
+    }
+
     public static UserModel findByUser(String username) {
         UserModel user = null;
         ResultSet rs;

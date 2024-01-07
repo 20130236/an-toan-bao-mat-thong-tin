@@ -49,10 +49,10 @@
                                 <table id="example1" class="table table-bordered table-striped">
                                     <thead>
                                     <tr>
+                                        <th>Mã report</th>
                                         <th>Mã khách hàng</th>
                                         <th>Khách hàng</th>
                                         <th>Email</th>
-                                        <th>Mã report</th>
                                         <th>Ngày gửi report</th>
                                         <th>Nội dung</th>
                                         <th>Ngày gặp vấn đề</th>
@@ -65,12 +65,12 @@
                                         for (Report r : list) {
                                     %>
                                     <tr>
+                                        <td><%=r.getReport_id()%></td>
                                         <td><%=r.getUser_id()%>
                                         </td>
                                         <td><%=r.getUser_name()%>
                                         </td>
                                         <td><%=r.getEmail()%></td>
-                                        <td><%=r.getReport_id()%></td>
                                         <td><%=Report.convertDateTime(r.getDate_report().toString())%></td>
                                         <td><%=r.getDetail()%></td>
                                         <td><%=Report.convertDateTime(r.getDate_key().toString())%></td>

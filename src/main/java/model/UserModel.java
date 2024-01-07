@@ -50,6 +50,10 @@ public class UserModel extends Item {
 
     }
 
+    public UserModel(String fullName) {
+        this.fullName = fullName;
+    }
+
     public int getId() {
         return id;
     }

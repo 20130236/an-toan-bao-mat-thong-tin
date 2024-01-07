@@ -9,24 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6389381a-4df7-4693-b13c-4e92e2d4aded" name="Changes" comment="update lại trạng thái đơn hàng">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/web/user-hasKey.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_6_2023_11_49_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_6_2023_11_49_AM__Changes_.xml" afterDir="false" />
+    <list default="true" id="6389381a-4df7-4693-b13c-4e92e2d4aded" name="Changes" comment="fix lung tung">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/web/KeyUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/web/KeyUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/web/ListReport.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/web/ListReport.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/web/UserReport.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/web/UserReport.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/model/Report.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/model/Report.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/service/OrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/service/OrderService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/service/ReportService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/service/ReportService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/util/EmailUtil$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/util/EmailUtil$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/util/EmailUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/util/EmailUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/KeyPrivate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/admin/KeyPrivate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/web/KeyUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/web/KeyUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/common/web/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/common/web/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/add-invoice.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/add-invoice.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/user-key.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/user-key.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/CheckReportDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/admin/CheckReportDetail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/KeyPrivate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/UserModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/admin-checkreport.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/admin-checkreport.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/admin-listreport.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/admin-listreport.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/user-report.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/user-report.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -483,7 +473,8 @@
       <workItem from="1704379227177" duration="6367000" />
       <workItem from="1704425780772" duration="23673000" />
       <workItem from="1704459256401" duration="9869000" />
-      <workItem from="1704521569012" duration="8440000" />
+      <workItem from="1704521569012" duration="8889000" />
+      <workItem from="1704629714849" duration="3438000" />
     </task>
     <task id="LOCAL-00001" summary="fix tính giá vận chuyển">
       <created>1686505220241</created>
@@ -543,7 +534,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704470792019</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="fix lung tung">
+      <option name="closed" value="true" />
+      <created>1704534094411</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1704534094411</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -581,7 +580,8 @@
     <MESSAGE value="commit lại và fix trang chi tiết sp" />
     <MESSAGE value="thu hồi public key và tạo cặp key mới" />
     <MESSAGE value="update lại trạng thái đơn hàng" />
-    <option name="LAST_COMMIT_MESSAGE" value="update lại trạng thái đơn hàng" />
+    <MESSAGE value="fix lung tung" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix lung tung" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -128,9 +128,9 @@
                                     <td>
                                         <div class="form-group">
                                             <select class="form-control" id="message" name="message" required>
-                                                <option value="mat-key">Mất key</option>
-                                                <option value="lo-key">Lộ key</option>
-                                                <option value="cap-lai-key">Cấp lại key</option>
+                                                <option value="mất key">Mất key</option>
+                                                <option value="lộ key">Lộ key</option>
+                                                <option value="cấp lại key">Cấp lại key</option>
                                             </select>
                                             <label id="message-error" class="error" for="message" style="display: inline;"></label>
                                         </div>
