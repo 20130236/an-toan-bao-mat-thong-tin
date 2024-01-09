@@ -225,6 +225,9 @@ public class Order {
             case 6:
                 nameStatus = "Đơn hàng bị huỷ - và hoàn tiền";
                 break;
+            case 7:
+                nameStatus = "Đơn hàng bị huỷ do lộ Private Key";
+                break;
         }
         return nameStatus;
     }

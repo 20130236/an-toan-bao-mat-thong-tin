@@ -174,8 +174,8 @@ public class OrderService {
     public void updateLeakKey(String user_name, String date_key) {
         ResultSet rs;
         PreparedStatement ps;
-        String sql = "UPDATE orders SET status = 5 WHERE user_name = ? " +
-                "AND date_order <= ? AND (status = 0 OR status = 1)";
+        String sql = "UPDATE orders SET status = 7 WHERE user_name = ? " +
+                "AND date_order >= ? AND (status = 0 OR status = 1)";
         try {
             ps = DBConnection.getConnection().prepareStatement(sql);
             ps.setString(1, user_name);

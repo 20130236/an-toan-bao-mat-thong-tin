@@ -162,6 +162,7 @@
 <jsp:include page="/common/web/footer.jsp"></jsp:include>
 <jsp:include page="/common/web/js.jsp"></jsp:include>
 
+<script src="<c:url value="/Template/web/libs/jquery/jquery.validate.js"/>"></script>
 <script src="/Template/web/libs/jquery/jquery.min.js"></script><%--jQuery v3.3.1--%>
 <script src="/Template/web/libs/popper/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script><%-- Bootstrap v4.3.1 --%>
@@ -169,6 +170,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
 
 <script>
+    +(function ($) {
+        $.validator.setDefaults({
+            submitHandler: function () {
+                alert("Gửi yêu cầu thành công");
+            }
+        });
+    })(jQuery);
+
     $(document).ready(function(){
         var datetimepickerElement = $('.datetimepicker');
         if (datetimepickerElement.length > 0) {

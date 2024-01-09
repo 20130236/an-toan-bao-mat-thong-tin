@@ -9,14 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6389381a-4df7-4693-b13c-4e92e2d4aded" name="Changes" comment="fix lung tung">
+    <list default="true" id="6389381a-4df7-4693-b13c-4e92e2d4aded" name="Changes" comment="fix lỗi gửi private key cho user">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/CheckReportDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/admin/CheckReportDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/KeyPrivate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/UserModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/admin-checkreport.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/admin-checkreport.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/admin-listreport.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/admin-listreport.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/web/UserReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/web/UserReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/check-invoice.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/check-invoice.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/user-report.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/user-report.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -474,7 +473,8 @@
       <workItem from="1704425780772" duration="23673000" />
       <workItem from="1704459256401" duration="9869000" />
       <workItem from="1704521569012" duration="8889000" />
-      <workItem from="1704629714849" duration="3438000" />
+      <workItem from="1704629714849" duration="4399000" />
+      <workItem from="1704779780398" duration="3771000" />
     </task>
     <task id="LOCAL-00001" summary="fix tính giá vận chuyển">
       <created>1686505220241</created>
@@ -542,7 +542,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704534094411</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="fix lỗi gửi private key cho user">
+      <option name="closed" value="true" />
+      <created>1704633338979</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1704633338979</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -581,7 +589,8 @@
     <MESSAGE value="thu hồi public key và tạo cặp key mới" />
     <MESSAGE value="update lại trạng thái đơn hàng" />
     <MESSAGE value="fix lung tung" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix lung tung" />
+    <MESSAGE value="fix lỗi gửi private key cho user" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix lỗi gửi private key cho user" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

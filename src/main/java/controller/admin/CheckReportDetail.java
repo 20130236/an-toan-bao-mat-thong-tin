@@ -111,78 +111,74 @@ public class CheckReportDetail extends HttpServlet {
             return;
         }
 
-        DSA dsa = new DSA();
-        UserDAO usd = new UserDAO();
+//        DSA dsa = new DSA();
+//        UserDAO usd = new UserDAO();
         Report p = new Report();
         log.setContent(p.toString());
         LogService.addLog(log);
         ReportService ser = new ReportService();
         ser.updateStatus(pid, Integer.parseInt(pstatus));
 
-        if (Integer.parseInt(pstatus) == 1) {
-            // cập nhật lại trạng thái đn hàng
-            OrderService os = new OrderService();
-            os.updateLeakKey(user_name, dateKey);
+//        if (Integer.parseInt(pstatus) == 1) {
+//            // cập nhật lại trạng thái đn hàng
+//            OrderService os = new OrderService();
+//            os.updateLeakKey(user_name, dateKey);
 
-            // thu hổi key và tạo mới
-//            response.sendRedirect(request.getContextPath() + "/keyPrivate");
-//            return;
-
-            try {
-                // Tạo cặp khóa
-                KeyPair keyPair = dsa.generateKeyPair();
-
-                // Lưu private key vào file
-                byte[] privateKeyBytes = keyPair.getPrivate().getEncoded();
-                String fileName = "private_key.bin";
-                try (FileOutputStream fos = new FileOutputStream(fileName)) {
-                    fos.write(privateKeyBytes);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-                // Gửi private key qua email người dùng
-                Email1 email1 = new Email1();
-                email1.setFrom("happyhomenoithat@gmail.com");
-                email1.setTo(email);
-                email1.setFromPassword("smckqxzmhsecmqld");
-                email1.setSubject("HappyHome - Private Key");
-
-                // Nội dung email
-                StringBuilder sb = new StringBuilder();
-                sb.append("<div style=\"font-size:16px;color:black;\">");
-                sb.append("<p style=\"font-size:24px;\">Tải private key</p>");
-                sb.append("<span>Xin chào </span>").append(usd.findFullnameById(uid)).append("<br><br>");
-                sb.append("<span>Đây là private key của bạn: </span>").append("<br>");
-
-                // Đính kèm private key vào email
-                MimeBodyPart attachmentPart = new MimeBodyPart();
-                attachmentPart.setDataHandler(new DataHandler(new FileDataSource(fileName)));
-                attachmentPart.setFileName(fileName);
-
-                // Tạo đối tượng MimeMultipart để kết hợp văn bản và file đính kèm
-                Multipart multipart = new MimeMultipart();
-                multipart.addBodyPart(attachmentPart);
-
-                // Thêm nội dung văn bản vào email
-                MimeBodyPart textPart = new MimeBodyPart();
-                textPart.setText(sb.toString(), "UTF-8", "html");
-
-                multipart.addBodyPart(textPart);
-
-                // Đặt nội dung email
-                email1.setContent(multipart);
-
-                // Gửi email
-                EmailUtil.send(email1);
-
-                // Lưu public key vào database
-                //     userDAO.createKey();
-                dsa.savePublicKeyToDatabase(keyPair.getPublic(), uid);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
+//            try {
+//                // Tạo cặp khóa
+//                KeyPair keyPair = dsa.generateKeyPair();
+//
+//                // Lưu private key vào file
+//                byte[] privateKeyBytes = keyPair.getPrivate().getEncoded();
+//                String fileName = "private_key.bin";
+//                try (FileOutputStream fos = new FileOutputStream(fileName)) {
+//                    fos.write(privateKeyBytes);
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//
+//                // Gửi private key qua email người dùng
+//                Email1 email1 = new Email1();
+//                email1.setFrom("happyhomenoithat@gmail.com");
+//                email1.setTo(email);
+//                email1.setFromPassword("smckqxzmhsecmqld");
+//                email1.setSubject("HappyHome - Private Key");
+//
+//                // Nội dung email
+//                StringBuilder sb = new StringBuilder();
+//                sb.append("<div style=\"font-size:16px;color:black;\">");
+//                sb.append("<p style=\"font-size:24px;\">Tải private key</p>");
+//                sb.append("<span>Xin chào </span>").append(usd.findFullnameById(uid)).append("<br><br>");
+//                sb.append("<span>Đây là private key của bạn: </span>").append("<br>");
+//
+//                // Đính kèm private key vào email
+//                MimeBodyPart attachmentPart = new MimeBodyPart();
+//                attachmentPart.setDataHandler(new DataHandler(new FileDataSource(fileName)));
+//                attachmentPart.setFileName(fileName);
+//
+//                // Tạo đối tượng MimeMultipart để kết hợp văn bản và file đính kèm
+//                Multipart multipart = new MimeMultipart();
+//                multipart.addBodyPart(attachmentPart);
+//
+//                // Thêm nội dung văn bản vào email
+//                MimeBodyPart textPart = new MimeBodyPart();
+//                textPart.setText(sb.toString(), "UTF-8", "html");
+//
+//                multipart.addBodyPart(textPart);
+//
+//                // Đặt nội dung email
+//                email1.setContent(multipart);
+//
+//                // Gửi email
+//                EmailUtil.send(email1);
+//
+//                // Lưu public key vào database
+//                //     userDAO.createKey();
+//                dsa.savePublicKeyToDatabase(keyPair.getPublic(), uid);
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//        }
         response.sendRedirect(request.getContextPath() + "/admin-check_report");
 
     }

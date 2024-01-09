@@ -243,6 +243,7 @@
                                                         <option value="4">Giao hàng thất bại</option>
                                                         <option value="5">Huỷ đơn hàng</option>
                                                         <option value="6">Huỷ đơn hàng - Đã hoàn tiền</option>
+                                                        <option value="7">Đơn hàng bị huỷ do lộ Private Key</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -327,6 +328,7 @@
             $('select[name="status"] option[value="3"]').hide();
             $('select[name="status"] option[value="4"]').hide();
             $('select[name="status"] option[value="6"]').hide();
+            $('select[name="status"] option[value="7"]').hide();
         }
         if (!orderCheck && orderPays == "Thanh toán qua ngân hàng") {
 
@@ -335,6 +337,7 @@
             $('select[name="status"] option[value="3"]').hide();
             $('select[name="status"] option[value="4"]').hide();
             $('select[name="status"] option[value="5"]').hide();
+            $('select[name="status"] option[value="7"]').hide();
 
         } else if (!orderCheck && orderStatus == 5 || orderStatus == 6) {
             $('select[name="status"] option[value="3"]').hide();
@@ -343,20 +346,24 @@
             $('select[name="status"] option[value="4"]').hide();
             $('select[name="status"] option[value="5"]').hide();
             $('select[name="status"] option[value="6"]').hide();
+            $('select[name="status"] option[value="7"]').hide();
         } else if (orderStatus == 0 && orderCheck) {
             $('select[name="status"] option[value="2"]').hide();
             $('select[name="status"] option[value="5"]').hide();
             $('select[name="status"] option[value="6"]').hide();
+            $('select[name="status"] option[value="7"]').hide();
 
         } else if (orderStatus == 1 && orderCheck) {
 
             $('select[name="status"] option[value="3"]').hide();
             $('select[name="status"] option[value="1"]').hide();
+            $('select[name="status"] option[value="7"]').hide();
         } else if (orderStatus == 2 && orderCheck) {
             $('select[name="status"] option[value="3"]').hide();
             $('select[name="status"] option[value="1"]').hide();
             $('select[name="status"] option[value="2"]').hide();
             $('select[name="status"] option[value="4"]').hide();
+            $('select[name="status"] option[value="7"]').hide();
         } else if (orderStatus == 5) {
             $('select[name="status"] option[value="3"]').hide();
             $('select[name="status"] option[value="1"]').hide();
@@ -364,7 +371,7 @@
             $('select[name="status"] option[value="4"]').hide();
             $('select[name="status"] option[value="5"]').hide();
             $('select[name="status"] option[value="6"]').hide();
-
+            $('select[name="status"] option[value="7"]').hide();
         } else if (orderStatus == 6 && orderCheck) {
             $('select[name="status"] option[value="3"]').hide();
             $('select[name="status"] option[value="1"]').hide();
@@ -372,6 +379,15 @@
             $('select[name="status"] option[value="4"]').hide();
             $('select[name="status"] option[value="5"]').hide();
             $('select[name="status"] option[value="6"]').hide();
+            $('select[name="status"] option[value="7"]').hide();
+        } else if(orderStatus == 7 && orderCheck){
+            $('select[name="status"] option[value="3"]').hide();
+            $('select[name="status"] option[value="1"]').hide();
+            $('select[name="status"] option[value="2"]').hide();
+            $('select[name="status"] option[value="4"]').hide();
+            $('select[name="status"] option[value="5"]').hide();
+            $('select[name="status"] option[value="6"]').hide();
+
         }
     });
 </script>
