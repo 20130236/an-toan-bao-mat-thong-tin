@@ -82,7 +82,7 @@ public class RegisterController extends HttpServlet {
                     sb.append("<p style=\"font-size:24px;\">Chào mừng quý khách hàng đến với Nội Thất HappyHome!</p>");
                     sb.append("<span>Xin chào ").append(full_name).append("</span><br>");
                     sb.append("<span>Quý khách hàng vui lòng xác thực email bằng cách click vào link bên dưới khách hàng thành công. Lần mua hàng tiếp theo, hãy đăng nhập để tích lũy điểm nhận ưu đãi và việc thanh toán sẽ thuận tiện hơn.</span>").append("<br><br>");
-                    sb.append("<button style=\"padding:20px 15px;color:#fff;font-size:16px;background-color:#343a40;border-radius:4px\"><a style=\"color:#fff;text-decoration: none;\" href=https://datng.name.vn/lab").append("/verified?id=" + user.getId() + "&"+ "randomData="+ randomData + ">").append("Xác thực email</a></button>").append("<br><br>");
+                    sb.append("<button style=\"padding:20px 15px;color:#fff;font-size:16px;background-color:#343a40;border-radius:4px\"><a style=\"color:#fff;text-decoration: none;\" href=https://shop.datng.name.vn:8443/lab/").append("/verified?id=" + user.getId() + "&"+ "randomData="+ randomData + ">").append("Xác thực email</a></button>").append("<br><br>");
                     sb.append("<span>Trân trọng!</span>").append("<br>");
                     sb.append("</div>");
                     email.setContent(sb.toString());

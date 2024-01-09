@@ -97,7 +97,7 @@ public class AccountController extends HttpServlet {
         sb.append("<p style=\"font-size:24px;\">Tải chữ ký điện tử <p>");
         sb.append("<span>Xin chào </span>").append(full_name).append("<br><br>");
         sb.append("<span>Click vào đường dẫn dưới đây để tải chữ ký của bạn!").append("<strong> Nội Thất HappyHome</strong></span>").append("<br>");
-        sb.append("<button style=\"padding:20px 15px;color:#fff;background-color:#343a40;border-radius:4px;\"><a href=http://localhost:8080").append("/signature?uid=").append(id).append(" style=\"font-size:16px;text-decoration: none;color:#fff\">Link tải</a></button>").append("<br><br>");
+        sb.append("<button style=\"padding:20px 15px;color:#fff;background-color:#343a40;border-radius:4px;\"><a href=https://shop.datng.name.vn:8443/lab/").append("/signature?uid=").append(id).append(" style=\"font-size:16px;text-decoration: none;color:#fff\">Link tải</a></button>").append("<br><br>");
         sb.append("<span>Trân trọng!</span>").append("<br>");
         sb.append("<span>Cảm ơn</span>");
         email.setContent(sb.toString());

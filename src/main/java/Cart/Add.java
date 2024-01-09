@@ -27,7 +27,7 @@ public class Add extends HttpServlet {
         }
         cart.put(p);
         request.getSession().setAttribute("cart",cart);
-        response.sendRedirect("/lab/cart_detail");
+        response.sendRedirect(request.getContextPath() + "/lab/cart_detail");
     }
 
     @Override

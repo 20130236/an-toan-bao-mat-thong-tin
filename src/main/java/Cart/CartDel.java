@@ -25,7 +25,7 @@ public class CartDel extends HttpServlet {
         cart.remove(p.getKey());
 
         request.getSession().setAttribute("cart",cart);
-        response.sendRedirect("/lab/cart_detail");
+        response.sendRedirect(request.getContextPath() + "/lab/cart_detail");
     }
 
     @Override

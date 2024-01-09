@@ -9,14 +9,312 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6389381a-4df7-4693-b13c-4e92e2d4aded" name="Changes" comment="fix lỗi gửi private key cho user">
+    <list default="true" id="6389381a-4df7-4693-b13c-4e92e2d4aded" name="Changes" comment="commit lại và fix trang chi tiết sp">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_6_2023_11_49_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_6_2023_11_49_AM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/CheckReportDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/admin/CheckReportDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/web/UserReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/web/UserReport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Cart/Add.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Cart/Add.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Cart/AddWithNum.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Cart/AddWithNum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Cart/CartDel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Cart/CartDel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Cart/CartSub.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Cart/CartSub.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/web/AccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/web/AccountController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/web/RegisterController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/web/RegisterController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/controller/web/UserReport.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/controller/web/UserReport.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/model/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/model/Order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/service/OrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/service/OrderService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/db.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/priKey.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/pubKey.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cart/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cart/Add.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cart/AddWithNum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cart/AddWithNum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cart/CartDel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cart/CartDel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cart/CartSub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cart/CartSub.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/web/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/web/AccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/web/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/web/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/priKey.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pubKey.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/config/.eslintrc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/config/postcss.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/config/rollup.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/js/AdminLTE.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/js/CardRefresh.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/js/CardWidget.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/js/ControlSidebar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/js/DirectChat.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/js/Dropdown.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/js/ExpandableTable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/js/Fullscreen.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/js/IFrame.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/js/Layout.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/js/NavbarSearch.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/js/PushMenu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/js/SidebarSearch.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/js/Toasts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/js/TodoList.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/js/Treeview.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/npm/.eslintrc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/npm/DocsPlugins.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/npm/DocsPublish.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/npm/Plugins.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/npm/Publish.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/npm/vnu-jar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_adminlte.raw.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_alerts.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_animation-effects.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_bootstrap-variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_brand.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_buttons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_callout.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_cards.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_carousel.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_close.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_colors.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_control-sidebar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_direct-chat.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_dropdown.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_elevation.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_forms.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_info-box.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_layout.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_main-header.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_main-sidebar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_miscellaneous.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_modals.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_navs.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_pagination.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_preloader.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_print.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_products.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_progress-bars.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_root.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_sidebar-mini.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_small-box.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_social-widgets.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_table.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_text.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_timeline.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_toasts.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_users-list.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_variables-alt.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/adminlte.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/mixins/_accent.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/mixins/_animations.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/mixins/_backgrounds.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/mixins/_cards.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/mixins/_custom-forms.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/mixins/_dark-mode.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/mixins/_direct-chat.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/mixins/_miscellaneous.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/mixins/_navbar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/mixins/_scrollbar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/mixins/_sidebar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/mixins/_toasts.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/mixins/_touch-support.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/pages/_404_500_errors.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/pages/_e-commerce.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/pages/_iframe.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/pages/_invoice.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/pages/_kanban.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/pages/_lockscreen.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/pages/_login_and_register.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/pages/_mailbox.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/pages/_profile.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/pages/_projects.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/parts/_components.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/parts/_core.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/parts/_extra-components.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/parts/_miscellaneous.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/parts/_pages.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/parts/_plugins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/parts/adminlte.components.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/parts/adminlte.core.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/parts/adminlte.extra-components.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/parts/adminlte.light.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/parts/adminlte.pages.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/parts/adminlte.plugins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/plugins/_bootstrap-slider.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/plugins/_bootstrap-switch.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/plugins/_daterangepicker.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/plugins/_fullcalendar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/plugins/_icheck-bootstrap.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/plugins/_jqvmap.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/plugins/_mapael.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/plugins/_miscellaneous.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/plugins/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/plugins/_pace.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/plugins/_select2.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/plugins/_sweetalert2.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/build/scss/plugins/_toastr.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/404.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/Gemfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/Gemfile.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/_config.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/_includes/foot.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/_includes/footer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/_includes/head.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/_includes/navbar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/_includes/preloader.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/_includes/sidebar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/_layouts/default.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/_layouts/page.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/additional-styles.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/css/adminlte.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/css/adminlte.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/css/adminlte.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/css/adminlte.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/css/alt/adminlte.components.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/css/alt/adminlte.components.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/css/alt/adminlte.components.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/css/alt/adminlte.components.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/css/alt/adminlte.core.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/css/alt/adminlte.core.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/css/alt/adminlte.core.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/css/alt/adminlte.core.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/css/alt/adminlte.extra-components.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/css/alt/adminlte.extra-components.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/css/alt/adminlte.extra-components.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/css/alt/adminlte.extra-components.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/css/alt/adminlte.light.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/css/alt/adminlte.light.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/css/alt/adminlte.light.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/css/alt/adminlte.light.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/css/alt/adminlte.pages.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/css/alt/adminlte.pages.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/css/alt/adminlte.pages.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/css/alt/adminlte.pages.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/css/alt/adminlte.plugins.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/css/alt/adminlte.plugins.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/css/alt/adminlte.plugins.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/css/alt/adminlte.plugins.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/css/docs.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/css/highlighter.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/img/AdminLTELogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/img/logo-xl.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/img/logo-xs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/img/user1-128x128.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/img/user3-128x128.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/img/user4-128x128.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/img/user5-128x128.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/img/user6-128x128.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/img/user7-128x128.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/img/user8-128x128.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/js/adminlte.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/js/adminlte.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/js/adminlte.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/js/adminlte.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/js/demo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/js/pages/dashboard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/js/pages/dashboard2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/js/pages/dashboard3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/bootstrap/js/bootstrap.bundle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/bootstrap/js/bootstrap.bundle.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/bootstrap/js/bootstrap.bundle.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/bootstrap/js/bootstrap.bundle.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/bootstrap/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/bootstrap/js/bootstrap.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/bootstrap/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/bootstrap/js/bootstrap.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/fontawesome-free/css/all.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/fontawesome-free/css/all.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/fontawesome-free/css/brands.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/fontawesome-free/css/brands.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/fontawesome-free/css/fontawesome.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/fontawesome-free/css/fontawesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/fontawesome-free/css/regular.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/fontawesome-free/css/regular.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/fontawesome-free/css/solid.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/fontawesome-free/css/solid.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/fontawesome-free/css/svg-with-js.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/fontawesome-free/css/svg-with-js.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/fontawesome-free/css/v4-shims.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/fontawesome-free/css/v4-shims.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/fontawesome-free/webfonts/fa-brands-400.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/fontawesome-free/webfonts/fa-brands-400.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/fontawesome-free/webfonts/fa-brands-400.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/fontawesome-free/webfonts/fa-brands-400.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/fontawesome-free/webfonts/fa-brands-400.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/fontawesome-free/webfonts/fa-regular-400.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/fontawesome-free/webfonts/fa-regular-400.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/fontawesome-free/webfonts/fa-regular-400.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/fontawesome-free/webfonts/fa-regular-400.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/fontawesome-free/webfonts/fa-regular-400.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/fontawesome-free/webfonts/fa-solid-900.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/fontawesome-free/webfonts/fa-solid-900.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/fontawesome-free/webfonts/fa-solid-900.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/fontawesome-free/webfonts/fa-solid-900.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/fontawesome-free/webfonts/fa-solid-900.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/jquery/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/jquery/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/jquery/jquery.min.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/jquery/jquery.slim.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/jquery/jquery.slim.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/jquery/jquery.slim.min.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/overlayScrollbars/css/OverlayScrollbars.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/overlayScrollbars/js/OverlayScrollbars.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/overlayScrollbars/js/OverlayScrollbars.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/popper/esm/popper-utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/popper/esm/popper-utils.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/popper/esm/popper-utils.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/popper/esm/popper-utils.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/popper/esm/popper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/popper/esm/popper.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/popper/esm/popper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/popper/esm/popper.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/popper/popper-utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/popper/popper-utils.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/popper/popper-utils.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/popper/popper-utils.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/popper/popper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/popper/popper.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/popper/popper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/popper/popper.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/popper/umd/popper-utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/popper/umd/popper-utils.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/popper/umd/popper-utils.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/popper/umd/popper-utils.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/popper/umd/popper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/popper/umd/popper.js.flow" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/popper/umd/popper.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/popper/umd/popper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/assets/plugins/popper/umd/popper.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/browser-support.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/components/boxes.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/components/cards.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/components/control-sidebar.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/components/direct-chat.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/components/main-header.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/components/main-sidebar.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/components/miscellaneous.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/components/plugins.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/components/ribbons.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/components/timeline.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/dependencies.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/faq.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/how-to-contribute.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/implementations.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/javascript/card-refresh.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/javascript/card-widget.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/javascript/control-sidebar.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/javascript/direct-chat.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/javascript/expandable-tables.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/javascript/iframe.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/javascript/layout.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/javascript/navbar-search.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/javascript/push-menu.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/javascript/sidebar-search.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/javascript/toasts.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/javascript/todo-list.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/javascript/treeview.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/layout.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/license.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Template/admin/docs/upgrade-guide.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/check-invoice.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/check-invoice.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/user-report.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/user-report.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,8 +346,8 @@
       <list>
         <option value="HTML File" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -59,7 +357,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="chi_privatekey" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -95,28 +393,30 @@
   &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="2K8PPlScjwDkiL8rSid0tOCjWmb" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;chi__privatekey&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Lesson/an toan bao mat/cuoi-ky&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Tomcat Server.Tomcat 9.0.75.executor": "Run",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "deployvps",
+    "last_opened_file_path": "E:/Lesson/an toan bao mat/cuoi-ky",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\HappyHome_fixapi\src\main\webapp\views\admin" />
@@ -136,7 +436,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.71">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.75">
     <configuration name="DataTable" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="controller.admin.datatable.DataTable" />
       <module name="happyhome" />
@@ -181,7 +481,7 @@
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
+        <option name="scriptParameters" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -220,7 +520,7 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Tomcat 9.0.71" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.71" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="Tomcat 9.0.75" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.75" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="Gradle : org.example : happyhome-1.0-SNAPSHOT.war">
@@ -230,7 +530,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="0af0e474-f643-4367-ab57-c764cf677257" />
+        <option name="BASE_DIRECTORY_NAME" value="c69ae202-8868-4d19-a25c-4ed32dadc902" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -238,7 +538,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="63680" />
+        <option name="DEBUG_PORT" value="54412" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -313,7 +613,7 @@
       <item itemvalue="Application.RemainingProService" />
       <item itemvalue="Gradle.HappyHomevps [build]" />
       <item itemvalue="Gradle.HappyHomevps [docker_deploy]" />
-      <item itemvalue="Tomcat Server.Tomcat 9.0.71" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.75" />
     </list>
     <recent_temporary>
       <list>
@@ -324,6 +624,13 @@
         <item itemvalue="Application.RemainingProService" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-18.0.2-corretto-18.0.2-3183f394aec4-38982a12" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -469,12 +776,6 @@
       <workItem from="1693489965558" duration="968000" />
       <workItem from="1699881560388" duration="1264000" />
       <workItem from="1699882832618" duration="89000" />
-      <workItem from="1704379227177" duration="6367000" />
-      <workItem from="1704425780772" duration="23673000" />
-      <workItem from="1704459256401" duration="9869000" />
-      <workItem from="1704521569012" duration="8889000" />
-      <workItem from="1704629714849" duration="4399000" />
-      <workItem from="1704779780398" duration="3771000" />
     </task>
     <task id="LOCAL-00001" summary="fix tính giá vận chuyển">
       <created>1686505220241</created>
@@ -518,39 +819,7 @@
       <option name="project" value="LOCAL" />
       <updated>1686674062690</updated>
     </task>
-    <task id="LOCAL-00007" summary="thu hồi public key và tạo cặp key mới">
-      <option name="closed" value="true" />
-      <created>1704461702300</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1704461702300</updated>
-    </task>
-    <task id="LOCAL-00008" summary="update lại trạng thái đơn hàng">
-      <option name="closed" value="true" />
-      <created>1704470792019</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1704470792019</updated>
-    </task>
-    <task id="LOCAL-00009" summary="fix lung tung">
-      <option name="closed" value="true" />
-      <created>1704534094411</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1704534094411</updated>
-    </task>
-    <task id="LOCAL-00010" summary="fix lỗi gửi private key cho user">
-      <option name="closed" value="true" />
-      <created>1704633338979</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1704633338979</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -567,7 +836,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/chi_privatekey" />
+                        <option value="origin/dung" />
                       </list>
                     </value>
                   </entry>
@@ -586,11 +855,7 @@
     <MESSAGE value="fix @WebFilter(filterName = &quot;Utf8Filter&quot;, urlPatterns = {&quot;/*&quot;}) add urlPatterns = {&quot;/*&quot;} for all page" />
     <MESSAGE value="fix định dạng tiền đ + fix phân trang" />
     <MESSAGE value="commit lại và fix trang chi tiết sp" />
-    <MESSAGE value="thu hồi public key và tạo cặp key mới" />
-    <MESSAGE value="update lại trạng thái đơn hàng" />
-    <MESSAGE value="fix lung tung" />
-    <MESSAGE value="fix lỗi gửi private key cho user" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix lỗi gửi private key cho user" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit lại và fix trang chi tiết sp" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -609,6 +874,16 @@
           <url>file://$PROJECT_DIR$/src/main/java/controller/web/API/LogisticAPI.java</url>
           <line>45</line>
           <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/util/HttpUtil.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controller/admin/ImportProductController.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
