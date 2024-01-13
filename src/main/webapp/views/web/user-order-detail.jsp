@@ -116,7 +116,7 @@
                                 </div>
                                 <div class="col-sm-4 invoice-col">
                                     <b>ID hoá đơn : </b> <%=order.getOder_id()%><br>
-                                    <b>Ngày lập hoá đơn : </b> <span id="ngay-hoa-don"><%=order.getDate_order()%></span><br>
+                                    <b>Ngày lập hoá đơn : </b> <span id="ngay-hoa-don"><%=order.convertDateTime(order.getDate_order().toString())%></span><br>
                                     <script>
                                         var ngayHienTai = document.getElementById("ngay-hoa-don").innerHTML;
                                         var ngayMoi = ngayHienTai.split("-").reverse().join("/");
@@ -202,6 +202,18 @@
                                                 <th>Tổng tiền:</th>
                                                 <td>
                                                     <%=order.formatCurrency(order.getTotal_money() + order.getFee())%>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <p class="lead">Chữ ký hoá đơn</p>
+
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <tr>
+                                                <th style="width:50%">Chữ ký xác nhận :</th>
+                                                <td>
+                                                    <%=order.getDigitalSignature()%>
                                                 </td>
                                             </tr>
                                         </table>

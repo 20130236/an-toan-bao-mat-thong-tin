@@ -32,7 +32,7 @@ public class AddWithNum extends HttpServlet {
         }
         cart.put(p, sl);
         request.getSession().setAttribute("cart",cart);
-        response.sendRedirect("/lab/cart_detail");
+        response.sendRedirect(request.getContextPath() + "/lab/cart_detail");
     }
 
     @Override

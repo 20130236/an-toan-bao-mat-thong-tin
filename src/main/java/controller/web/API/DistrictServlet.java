@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "DistrictServlet", urlPatterns = "/DistrictServlet")
+@WebServlet(name = "DistrictServlet", urlPatterns = "/lab/DistrictServlet")
 public class DistrictServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;

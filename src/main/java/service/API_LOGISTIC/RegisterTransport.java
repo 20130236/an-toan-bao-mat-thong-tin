@@ -87,7 +87,7 @@ public class RegisterTransport {
 
 
     public static void main(String[] args) throws IOException, JSONException, ParseException {
-        String token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTQwLjIzOC41NC4xMzYvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2ODIyMjk4MTYsImV4cCI6MTY4MjIzMDQxNiwibmJmIjoxNjgyMjI5ODE2LCJqdGkiOiJuZEtUU3pRZ1JacUtNa0R1Iiwic3ViIjoiODNjNGM1MWQ2N2Q1NGM0ODg4NWE4M2JjOGViYTJkZGMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.4Szj5kC8JjsHAEh4GPiEJtTC7cEWwrssofLb51fWiDE";
+        String token = Login_API.login();
         try {
             String from_district_id = "2264";
             String from_ward_id = "90816";

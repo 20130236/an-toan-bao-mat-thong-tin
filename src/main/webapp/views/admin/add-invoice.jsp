@@ -135,7 +135,7 @@
                   <div class="form-group col-md-6 ">
                     <div class="form-group">
                       <label>Sản phẩm</label>
-                      <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                      <div class="input-group date" id="reservationdate21" data-target-input="nearest">
                         <input type="text" class="form-control " data-target="#reservationdate" placeholder="">
                       </div>
                     </div>
@@ -143,7 +143,7 @@
                   <div class="form-group col-md-6 ">
                     <div class="form-group">
                       <label>Số lượng</label>
-                      <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                      <div class="input-group date" id="reservationdate22" data-target-input="nearest">
                         <input type="number" class="form-control " data-target="#reservationdate" placeholder="">
                       </div>
                     </div>
@@ -153,7 +153,7 @@
                   <div class="form-group col-md-6 ">
                     <div class="form-group">
                       <label>Đơn giá</label>
-                      <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                      <div class="input-group date" id="reservationdate23" data-target-input="nearest">
                         <input type="text" class="form-control " data-target="#reservationdate" placeholder="">
                       </div>
                     </div>
@@ -161,7 +161,7 @@
                   <div class="form-group col-md-6 ">
                     <div class="form-group">
                       <label>Thành tiền</label>
-                      <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                      <div class="input-group date" id="reservationdate24" data-target-input="nearest">
                         <input type="text" class="form-control " data-target="#reservationdate" placeholder="">
                       </div>
                     </div>

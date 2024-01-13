@@ -51,12 +51,22 @@ public class DetailOrderController extends HttpServlet {
             List<Order_detail> detailList = orderService.getOrderDById(aid);
             request.setAttribute("orderDetails", detailList);
             Transport transport = orderService.getTransportId(aid);
+            int idStatus = od.getStatus();
             if(transport != null){
                 request.setAttribute("transport", transport);
-            } else {
+            } if(transport == null && idStatus ==5) {
+                Transport transport1 = new Transport("Đơn hàng bị huỷ", new Order(), "Đơn hàng bị huỷ", "Đơn hàng bị huỷ");
+                request.setAttribute("transport", transport1);
+            } if(transport == null && idStatus ==6) {
+                Transport transport1 = new Transport("Đơn hàng bị huỷ", new Order(), "Đơn hàng bị huỷ", "Đơn hàng bị huỷ");
+                request.setAttribute("transport", transport1);
+            }
+
+            else if(transport == null) {
                 Transport transport1 = new Transport("Đơn hàng đang chờ xử lý", new Order(), "Đơn hàng đang chờ xử lý", "Đơn hàng đang chờ xử lý");
                 request.setAttribute("transport", transport1);
             }
+
             //
             RequestDispatcher rd = request.getRequestDispatcher("views/web/user-order-detail.jsp");
             rd.forward(request, response);

@@ -2,16 +2,15 @@ package model;
 
 
 import dao.DBConnection;
-import service.API_LOGISTIC.Login_API;
-import service.API_LOGISTIC.RegisterTransport;
-import service.API_LOGISTIC.Transport;
 import service.OrderService;
 
 import java.io.IOException;
 import java.sql.*;
 import java.text.NumberFormat;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Base64;
 import java.util.Locale;
 
 public class Order {
@@ -19,15 +18,16 @@ public class Order {
     public String user_name;
     public long total_money;
     public int fee;
-    public Date date_order;
+    public LocalDateTime date_order;
     public String payment;
     public String transport;
     public int status;
     public String address;
     public String note;
     public String phoneNum;
+    public String digitalSignature;
 
-    public Order(int oder_id, String user_name, long total_money, int fee, Date date_order, String payment, String transport, int status, String address, String note, String phoneNum) {
+    public Order(int oder_id, String user_name, long total_money, int fee, LocalDateTime date_order, String payment, String transport, int status, String address, String note, String phoneNum) {
         this.oder_id = oder_id;
         this.user_name = user_name;
         this.total_money = total_money;
@@ -73,11 +73,11 @@ public class Order {
         this.fee = fee;
     }
 
-    public Date getDate_order() {
+    public LocalDateTime getDate_order() {
         return date_order;
     }
 
-    public void setDate_order(Date date_order) {
+    public void setDate_order(LocalDateTime date_order) {
         this.date_order = date_order;
     }
 
@@ -134,6 +134,27 @@ public class Order {
         return current;
     }
 
+    public String getDigitalSignature() {
+        OrderService orderService = new OrderService();
+        String data = orderService.getSignatureText(oder_id);
+        String result = "Đơn hàng chưa được ký";
+        // Kiểm tra xem chuỗi có phải là Base64 hay không
+        if (isBase64(data)) {
+            byte[] decodedData = Base64.getDecoder().decode(data);
+            String decodedDataString = new String(decodedData);
+            if(decodedDataString.isEmpty()){
+                return result;
+            }
+            return result = "Đơn hàng đã được ký";
+        } else {
+            return result ;
+        }
+    }
+
+    public void setDigitalSignature(String digitalSignature) {
+        this.digitalSignature = digitalSignature;
+    }
+
     public Order() {
 
     }
@@ -155,6 +176,7 @@ public class Order {
 
 
     }
+
     public String getFullName(String userName) {
         String sql = "SELECT full_name FROM users WHERE user_name = ?";
         try (Connection connection = DBConnection.getConnection();
@@ -178,9 +200,10 @@ public class Order {
         NumberFormat currencyVN = NumberFormat.getCurrencyInstance(localeVN);
         return currencyVN.format(amount);
     }
-    public String statusOrder(int id){
+
+    public String statusOrder(int id) {
         String nameStatus = "Lỗi";
-        switch (id){
+        switch (id) {
             case 0:
                 nameStatus = "Chờ xác nhận";
                 break;
@@ -196,19 +219,51 @@ public class Order {
             case 4:
                 nameStatus = "Giao hàng thất bại";
                 break;
+            case 5:
+                nameStatus = "Đơn hàng bị huỷ";
+                break;
+            case 6:
+                nameStatus = "Đơn hàng bị huỷ - và hoàn tiền";
+                break;
+            case 7:
+                nameStatus = "Đơn hàng bị huỷ do lộ Private Key";
+                break;
         }
         return nameStatus;
     }
+
     public static String convertDate(String dateString) {
         LocalDate date = LocalDate.parse(dateString);
         return date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
     }
 
+    public static String convertDateTime(String dateTimeString) {
+        // Chuyển đổi chuỗi thành LocalDateTime
+        LocalDateTime dateTime = LocalDateTime.parse(dateTimeString, DateTimeFormatter.ISO_LOCAL_DATE_TIME);
+
+        // Định dạng lại LocalDateTime theo định dạng mong muốn
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss dd/MM/yyyy");
+        return dateTime.format(formatter);
+    }
+    // Hàm kiểm tra xem chuỗi có phải là Base64 hay không
+    private static boolean isBase64(String str) {
+        try {
+            Base64.getDecoder().decode(str);
+            return true;
+        } catch (IllegalArgumentException e) {
+            return false;
+        }
+    }
+
     public static void main(String[] args) throws IOException {
         Order o = new Order();
-        OrderService orderService = new OrderService()  ;
-        o = orderService.getOderById(26);
-        System.out.println(o.getUser_name());
-        System.out.println(o.getFullName(o.getUser_name()));
+        OrderService orderService = new OrderService();
+        o = orderService.getOderById(30);
+//        System.out.println(o.getUser_name());
+//        System.out.println(o.toString());
+//        System.out.println(o.getFullName(o.getUser_name()));
+//        System.out.println(o.getDate_order());
+//        System.out.println(convertDateTime("2023-12-05T21:52:28"));
+        //System.out.println(o.getDigitalSignature());
     }
 }

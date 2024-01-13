@@ -19,7 +19,7 @@ import java.sql.Date;
 import java.time.LocalDate;
 import java.util.List;
 
-@WebServlet(name = "Success", value = "/success")
+@WebServlet(name = "Success", value = "/lab/success")
 public class Success extends HttpServlet {
 
     @Override

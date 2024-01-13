@@ -28,7 +28,7 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Danh sách đơn hàng</li>
+                            <li class="breadcrumb-item active"><a href="<c:url value="/admin-order_controller"/>">Danh sách đơn hàng</a></li>
                         </ol>
                     </div>
                 </div>
@@ -41,17 +41,10 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
-                            <div class="card-header" style="margin-top: 10px;margin-bottom: -10px">
-                                <div class="form-group" style="width: 50%;float: left">
-                                    <select class="form-control ">
-                                        <option selected="selected" disabled="disabled">Tìm kiếm theo</option>
-                                        <option>Sản Phẩm mới</option>
-                                        <option>Sản Phẩm hot</option>
-                                    </select>
-                                </div>
-                                <button class="btn btn-primary" style="float: right;"><a href="#"
-                                                                                         style="color: white">Thêm
-                                    mới</a></button>
+                            <div class="card-header">
+                                <button class="btn btn-primary" style="float: right;"><a style="color: white">Thêm mới</a></button>
+                                <button id="check-btn" class="btn btn-success" style="float: right; margin-right: 10px" onclick="redirectToServlet()">Kiểm tra đơn hàng</button>
+                                <button id="duyet-btn" class="btn btn-info" style="float: right; margin-right: 10px" onclick="redirectToServlet1()">Duyệt đơn hàng</button>
                             </div>
 
                             <!-- /.card-header -->
@@ -64,9 +57,12 @@
                                     <thead>
                                     <tr>
                                         <th>Mã đơn hàng</th>
-                                        <th>Username</th>
-                                        <th>Ngày lập</th>
-                                        <th>Tình trạng</th>
+                                        <th>Khách hàng</th>
+                                        <th>Ngày tạo đơn hàng</th>
+                                        <th>Tổng tiền</th>
+                                        <th>Hình thức thanh toán</th>
+                                        <th>Đơn hàng hợp lệ</th>
+                                        <th>Trạng thái đơn hàng</th>
                                         <th>Tác vụ</th>
                                     </tr>
                                     </thead>
@@ -79,11 +75,13 @@
                                         </td>
                                         <td><%=o.getUser_name()%>
                                         </td>
-                                        <td><%=Order.convertDate(o.getDate_order().toString())%>
+                                        <td><%=Order.convertDateTime(o.getDate_order().toString())%></td>
+                                        <td><%=o.formatCurrency(o.getTotal_money())%></td>
+                                        <td><%=o.getPayment()%></td>
+                                        <td>
+                                            <span class="badge badge-primary">...</span>
                                         </td>
-
-                                        <td><%=o.statusOrder(o.getStatus())%>
-                                        </td>
+                                        <td><%=o.statusOrder(o.getStatus())%></td>
                                         <td>
                                             <button class="btn btn-info"><a class="order_detail" href="<c:url value="/order_detail?id="></c:url><%=o.getOder_id()%>"
                                                                             style="color:white">Chi tiết</a></button>
@@ -137,6 +135,24 @@
             e.preventDefault();
         }
     })
+</script>
+<script>
+    function redirectToServlet() {
+        // Lấy URL được tạo bởi JSTL
+        var servletUrl = '<c:url value="/admin-order-controller-check"/>';
+
+        // Chuyển hướng đến servlet khi nút được nhấn
+        window.location.href = servletUrl;
+    }
+</script>
+<script>
+    function redirectToServlet1() {
+        // Lấy URL được tạo bởi JSTL
+        var servletUrl = '<c:url value="/admin-check_order"/>';
+
+        // Chuyển hướng đến servlet khi nút được nhấn
+        window.location.href = servletUrl;
+    }
 </script>
 </body>
 </html>

@@ -2,12 +2,16 @@ package service;
 
 import dao.RoleDAO;
 import dao.UserDAO;
+import digitalsignature.API.KeyModel;
+import digitalsignature.SignatureImageCreator;
 import model.UserModel;
 
 import java.math.BigInteger;
+import java.security.KeyFactory;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+import java.security.spec.X509EncodedKeySpec;
 import java.sql.Timestamp;
 import java.util.Arrays;
 import java.util.Base64;
@@ -25,7 +29,7 @@ public class UserService {
     }
 
     public static void updateNumLogin(String username){
-         UserDAO.updateNumLogin(username);
+        UserDAO.updateNumLogin(username);
     }
 
     public static UserModel findById(int id){
@@ -39,8 +43,8 @@ public class UserService {
         UserDAO.changePassword(id,hashPassword(newPassword));
     }
 
-    public static void updateUserWeb(int id, String full_name, String phone_num, String email, String address, String gender){
-        UserDAO.updateUserWeb(id,full_name,phone_num,email,address,gender);
+    public static void updateUserWeb(int id, String full_name, String phone_num, String email, String address, String gender, String signature_text){
+        UserDAO.updateUserWeb(id,full_name,phone_num,email,address,gender,signature_text);
     }
 
     public static void register(String username, String password,String email, String full_name, String gender) {
@@ -111,7 +115,7 @@ public class UserService {
     public static void addToken(int id, String token){
         Long currentTime = getTimeNowInMillis();
         Timestamp token_expiry = getTokenExpiry(currentTime);
-        Timestamp create_date = new java.sql.Timestamp(currentTime);
+        Timestamp create_date = new Timestamp(currentTime);
         UserDAO.addToken(id,token, create_date,token_expiry);
     }
 
@@ -120,7 +124,7 @@ public class UserService {
     }
 
     private static Timestamp getTokenExpiry(Long timeNow){
-        return new java.sql.Timestamp(timeNow + 600000);
+        return new Timestamp(timeNow + 600000);
     }
 
     public static boolean checkTokenExpiry(int id, String token){
@@ -141,7 +145,7 @@ public class UserService {
 
     // 86400000 milliseconds  = 24 hours
     private static Timestamp getVerifyExpiry(Long timeNow){
-        return new java.sql.Timestamp(timeNow + 86400000);
+        return new Timestamp(timeNow + 86400000);
     }
 
     public static UserModel findByRdData(String rdData) {
@@ -155,7 +159,7 @@ public class UserService {
     public static void addVerify(int user_id,String rdData) {
         Long currentTime = getTimeNowInMillis();
         Timestamp verify_expiry = getVerifyExpiry(currentTime);
-        Timestamp create_date = new java.sql.Timestamp(currentTime);
+        Timestamp create_date = new Timestamp(currentTime);
         UserDAO.addVerify(user_id,rdData,create_date,verify_expiry);
     }
 
@@ -178,11 +182,34 @@ public class UserService {
         return UserDAO.getByIds(user);
     }
 
+
+    public static  String getPublicKey(int id) {
+        return UserDAO.getPublicKey(id);
+    }
+
+
+    public static String createSignature(String path, String username){
+        UserDAO.saveSignature(path,username);
+        return path;
+    }
+
     public static void main(String[] args) {
         UserModel user = UserService.checkLogin("Dung4","Dung112!");
         int [] oldPm = user.getIdPms();
         int [] newPm = {1,3,15};
         System.out.println(!(Arrays.equals(oldPm,newPm)));
+    }
+
+    public static String getSignature(int uid) {
+        return UserDAO.getSignature(uid);
+    }
+
+    public static void createKey(KeyModel keyModel, int id) {
+
+        UserDAO.createKey(keyModel,id);
+    }
+    public static int getIdByUserName(String username){
+        return UserDAO.findIDByUser(username);
     }
 }
 

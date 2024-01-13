@@ -20,8 +20,10 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
 
-@WebServlet(name = "ProductCheckOutController", value = "/checkout")
+@WebServlet(name = "ProductCheckOutController", value = "/lab/checkout")
 public class ProductCheckOutController extends HttpServlet {
+
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PostService service = new PostService();
@@ -38,7 +40,6 @@ public class ProductCheckOutController extends HttpServlet {
 
         Cart cart = (Cart) request.getSession().getAttribute("cart");
         UserModel user = (UserModel) request.getSession().getAttribute("user");
-
         //API LOGISTIC
         HttpSession session = request.getSession();
         Login_API login_api = new Login_API();
@@ -46,9 +47,9 @@ public class ProductCheckOutController extends HttpServlet {
         session.setAttribute("parameterName", API_KEY);
 
         if (Objects.isNull(user)) {
-            response.sendRedirect("/lab/login");
+            response.sendRedirect("/login");
         } else if (Objects.isNull(cart)) {
-            response.sendRedirect("/lab/home");
+            response.sendRedirect("/home");
 
         } else if (!Objects.isNull(user)) {
             UserModel userModel = UserService.findById(user.getId());
@@ -69,4 +70,7 @@ public class ProductCheckOutController extends HttpServlet {
 
 
     }
+
+
+
 }

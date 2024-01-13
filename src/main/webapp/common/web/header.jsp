@@ -174,7 +174,7 @@
                                 <% } %>
                                 <% if(user != null) {%>
                                 <div>
-                                    <a class="check-out" href="<c:url value="/checkout"/>" rel="nofollow" title="Checkout">
+                                    <a class="check-out" href="<c:url value="/lab/checkout"/>" rel="nofollow" title="Checkout">
                                         <i class="fa fa-check" aria-hidden="true"></i>
                                         <span>Thanh toán</span>
                                     </a>
@@ -186,12 +186,30 @@
                                     </a>
                                 </div>
                                 <div class="link_wishlist">
+                                    <a href="<c:url value="/user_listreport"/>" title="Report">
+                                        <i class="fa fa-wrench"></i>
+                                        <span> Danh sách Report</span>
+                                    </a>
+                                </div>
+                                <div class="link_wishlist">
                                     <a href="<c:url value="/favorite"/>" title="My Wishlists">
                                         <i class="fa fa-heart"></i>
                                         <span>Danh sách yêu thích</span>
                                     </a>
                                 </div>
+                                <div class="link_wishlist">
+                                    <a href="<c:url value="/user_key"/>" title="Private Key">
+                                        <i class="fa fa-key"></i>
+                                        <span>Tạo private key</span>
+                                    </a>
+                                </div>
 
+                                <div class="link_wishlist">
+                                    <a href="<c:url value="/user_report"/>" title="Report">
+                                        <i class="fa fa-wrench"></i>
+                                        <span>Report</span>
+                                    </a>
+                                </div>
 
                                 <div class="link_wishlist">
                                     <a href="<c:url value="/logout"></c:url>" title="Logout">
@@ -250,8 +268,8 @@
                                         <tr>
                                             <td colspan="3" class="d-flex justify-content-center">
                                                 <div class="cart-button">
-                                                    <a href="<c:url value="/cart_detail"/>" title="View Cart">Xem giỏ hàng</a>
-                                                    <a href="<c:url value="/checkout"/>" title="Checkout">Thanh toán</a>
+                                                    <a href="<c:url value="/lab/cart_detail"/>" title="View Cart">Xem giỏ hàng</a>
+                                                    <a href="<c:url value="/lab/checkout"/>" title="Checkout">Thanh toán</a>
                                                 </div>
                                             </td>
                                         </tr>

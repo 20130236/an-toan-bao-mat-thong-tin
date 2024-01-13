@@ -3,6 +3,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.text.NumberFormat" %>
 <%@ page import="java.util.Locale" %>
+<%@ page import="digitalsignature.CheckOrders" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
@@ -93,6 +94,8 @@
                                 <th>Mã đơn hàng</th>
                                 <th>Ngày đặt hàng</th>
                                 <th>Tổng hoá đơn</th>
+                                <th>Hình thức thanh toán</th>
+                                <th>Đơn hàng hợp lệ</th>
                                 <th>Trạng thái đơn hàng</th>
                                 <th>Tác vụ</th>
                             </tr>
@@ -103,8 +106,17 @@
                             %>
                             <tr>
                                 <td><%=o.getOder_id()%></td>
-                                <td><%=Order.convertDate(o.getDate_order().toString())%></td>
+                                <td><%=Order.convertDateTime(o.getDate_order().toString())%></td>
                                 <td><%=o.formatCurrency(o.getTotal_money() + o.getFee())%></td>
+                                <td><%=o.getPayment()%></td>
+                                <td>
+                                    <% if (CheckOrders.checkOrderIsNotChange(o.getOder_id())) { %>
+                                    <span class="badge badge-primary">Đơn hàng không bị chỉnh sửa</span>
+                                    <% } else{ %>
+
+                                    <span class="badge badge-warning">Đơn hàng bị chỉnh sửa</span>
+                                    <% } %>
+                                </td>
                                 <td><%=o.statusOrder(o.getStatus())%></td>
                                 <td>
                                     <button class="btn btn-info"><a href="user_order?id=<%=o.getOder_id()%>"
